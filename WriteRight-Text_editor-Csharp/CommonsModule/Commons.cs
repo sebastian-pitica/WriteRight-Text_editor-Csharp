@@ -24,8 +24,12 @@ namespace CommonsModule
     /// aveau nevoie de adaugarea unor caracteristici noi peste clasa de bază.
     /// </summary>
     /// <creator>Sebastian</creator>
-    public class RichTextBoxV2
+    //////////////////////////  matei  
+    public class RichTextBoxV2:Control
     {
+    
+    ////////////////// matei
+    
         public RichTextBox baseComponent { get; set; }
         private Boolean _isSaved;
         private string _progLangInTextbox;

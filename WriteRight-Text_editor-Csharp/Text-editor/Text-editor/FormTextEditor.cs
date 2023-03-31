@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using FileRibbonModule;
+using FormatRibbonModule;
 
 namespace TextEditor
 {
@@ -26,6 +27,10 @@ namespace TextEditor
             InitializeComponent();
             _richTextBoxMainV2 = new RichTextBoxV2();
             _richTextBoxMainV2.baseComponent = richTextBoxMain;
+            ///////////////////////////////////////////
+            this.Controls.Add(_richTextBoxMainV2);
+            ExecuteCommand(FormatRibbonModule.ColorCommand.GetCommandObj());
+            ///////////////////////////////////////
         }
 
         private void NewFileClick(object sender, EventArgs e)
@@ -96,12 +101,21 @@ namespace TextEditor
 
         private void ZoomOutClick(object sender, EventArgs e)
         {
-
+            /////////////////////////////////////-matei
+            FontStyle newFontStyle = (FontStyle)(richTextBoxMain.Font.Style);
+            if (richTextBoxMain.Font.Size - 5 > 0)
+            {
+                richTextBoxMain.Font = new Font(richTextBoxMain.Font.FontFamily, richTextBoxMain.Font.Size - 5, newFontStyle);
+            }
+            /////////////////////////////////////
         }
 
         private void ZoomInClick(object sender, EventArgs e)
         {
-
+            ///////////////////////////////////////-matei
+            FontStyle newFontStyle = (FontStyle)(richTextBoxMain.Font.Style);
+            richTextBoxMain.Font = new Font(richTextBoxMain.Font.FontFamily, richTextBoxMain.Font.Size + 5, newFontStyle);
+            //////////////////////////////////////
         }
 
         private void FormatDocumentClick(object sender, EventArgs e)
@@ -116,17 +130,21 @@ namespace TextEditor
 
         private void ColoringClick(object sender, EventArgs e)
         {
-
+            //////////////////////////////////-matei
+            ExecuteCommand(ColorCommand.GetCommandObj());
+            /////////////////////////////////
         }
 
         private void ColoringPreferencesClick(object sender, EventArgs e)
         {
-
+           
         }
 
         private void FontClick(object sender, EventArgs e)
         {
-
+            //////////////////////////////////-matei
+            ExecuteCommand(FontCommand.GetCommandObj());
+            /////////////////////////////////
         }
 
         private void SyntaxCheckerClick(object sender, EventArgs e)
@@ -161,6 +179,14 @@ namespace TextEditor
             mainTextBoxCommand.Execute();
         }
 
+        //////////////////////////////////////////////////-matei
+        private void ExecuteCommand(ITotalCommand totalCommand)
+        {
+            totalCommand.SetTargets(this, Controls);
+            totalCommand.Execute();
+        }
+        /////////////////////////////////////////////////
+
         private void RichTextBoxMainTextChanged(object sender, EventArgs e)
         {
             textBoxLinesNr.Text = CountMainBoxLines().ToString();
@@ -187,6 +213,7 @@ namespace TextEditor
         {
             ReportBugClick(sender, e);
         }
+
     }
 
 }

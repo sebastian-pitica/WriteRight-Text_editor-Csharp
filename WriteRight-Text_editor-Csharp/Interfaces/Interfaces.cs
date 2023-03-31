@@ -42,6 +42,15 @@ namespace Interfaces
     {
         abstract public void SetTarget(Form mainWindow);
     }
+	/////////////////////////////////////////////////////////matei
+	 /// <summary>
+    /// Interfața pentru toate obiectele de tip Singleton-Command care au drept target toate elementele ferestrei.
+    /// </summary>
+    public abstract class ITotalCommand : ISingletonCommand
+    {
+        abstract public void SetTargets(Form mainWindow, Control.ControlCollection controls);
+    }
+	/////////////////////////////////////////////////////////matei
 
     /// <summary>
     /// Interfața pentru un subiect de observat.Implementează design patternul Observer alături de Observer.

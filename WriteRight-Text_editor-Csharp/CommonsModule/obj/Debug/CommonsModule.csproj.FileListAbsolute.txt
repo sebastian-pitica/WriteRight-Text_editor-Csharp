@@ -4,3 +4,9 @@ D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debu
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.dll
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.dll
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb

@@ -20,3 +20,14 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.CopyComplete
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\FileRibbonModule.dll
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\FileRibbonModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\CommonsModule.dll
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\Interfaces.dll
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\CommonsModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\Interfaces.pdb
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.AssemblyReference.cache
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.CoreCompileInputs.cache
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.CopyComplete
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.dll
+C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.pdb
