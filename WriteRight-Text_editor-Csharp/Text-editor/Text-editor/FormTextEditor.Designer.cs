@@ -407,10 +407,11 @@
             // textBoxWordsNr
             // 
             this.textBoxWordsNr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxWordsNr.Location = new System.Drawing.Point(748, 487);
+            this.textBoxWordsNr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxWordsNr.Location = new System.Drawing.Point(748, 492);
             this.textBoxWordsNr.Name = "textBoxWordsNr";
             this.textBoxWordsNr.ReadOnly = true;
-            this.textBoxWordsNr.Size = new System.Drawing.Size(51, 20);
+            this.textBoxWordsNr.Size = new System.Drawing.Size(51, 13);
             this.textBoxWordsNr.TabIndex = 10;
             this.textBoxWordsNr.Text = "0";
             // 
@@ -437,10 +438,11 @@
             // textBoxLinesNr
             // 
             this.textBoxLinesNr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLinesNr.Location = new System.Drawing.Point(636, 487);
+            this.textBoxLinesNr.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLinesNr.Location = new System.Drawing.Point(636, 491);
             this.textBoxLinesNr.Name = "textBoxLinesNr";
             this.textBoxLinesNr.ReadOnly = true;
-            this.textBoxLinesNr.Size = new System.Drawing.Size(51, 20);
+            this.textBoxLinesNr.Size = new System.Drawing.Size(51, 13);
             this.textBoxLinesNr.TabIndex = 13;
             this.textBoxLinesNr.Text = "0";
             // 
