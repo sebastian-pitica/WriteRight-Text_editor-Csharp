@@ -1,0 +1,6 @@
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\bin\Debug\CommonsModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\bin\Debug\CommonsModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.pdb

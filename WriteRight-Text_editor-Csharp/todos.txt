@@ -1,0 +1,5 @@
+1. de cautat cum putem afisa line numbers
+2. cum putem face ca evenimentele de minimize si maximize ca lucrez doar intre limitele ferestrei ori maxima ori minima, fara redimensionari intre aceste dimensiuni
+3. dark theme de colorat gui
+
+LUCRAT CU TAG URI DUPA MODEL SI CU DESCRIERE DE FILE

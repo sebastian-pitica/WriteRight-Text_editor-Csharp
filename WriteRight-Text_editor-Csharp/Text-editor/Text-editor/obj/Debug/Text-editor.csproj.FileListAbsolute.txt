@@ -1,0 +1,86 @@
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\WriteRight-Text_editor-Csharp.exe.config
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\WriteRight-Text_editor-Csharp.exe
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\WriteRight-Text_editor-Csharp.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\Text-editor.csproj.AssemblyReference.cache
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\WriteRight_Text_editor_Csharp.Properties.Resources.resources
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\Text-editor.csproj.GenerateResource.cache
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\Text-editor.csproj.CoreCompileInputs.cache
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\WriteRight-Text_editor-Csharp.exe
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\WriteRight-Text_editor-Csharp.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\TextEditor.mainWindow.resources
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\EditRibbonModule.dll
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\Interfaces.dll
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\EditRibbonModule.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\bin\Debug\Interfaces.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\obj\Debug\Text-editor.csproj.CopyComplete
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe.config
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\EditRibbonModule.dll
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\Interfaces.dll
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\EditRibbonModule.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\bin\Debug\Interfaces.pdb
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.AssemblyReference.cache
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\TextEditor.MainWindow.resources
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\WriteRight_Text_editor_Csharp.Properties.Resources.resources
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.GenerateResource.cache
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CoreCompileInputs.cache
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.exe
+C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp - Copy\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe.config
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\EditRibbonModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\Interfaces.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\EditRibbonModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\Interfaces.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.AssemblyReference.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.SuggestedBindingRedirects.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight_Text_editor_Csharp.Properties.Resources.resources
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.GenerateResource.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CoreCompileInputs.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.exe
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CommonsModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CommonsModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\TextEditor.formMainWindow.resources
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe.config
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\CommonsModule.dll
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\EditRibbonModule.dll
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\Interfaces.dll
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\CommonsModule.pdb
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\EditRibbonModule.pdb
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\bin\Debug\Interfaces.pdb
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.AssemblyReference.cache
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.SuggestedBindingRedirects.cache
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\TextEditor.formMainWindow.resources
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\WriteRight_Text_editor_Csharp.Properties.Resources.resources
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.GenerateResource.cache
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CoreCompileInputs.cache
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.exe
+D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe.config
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\EditRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\EditRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.SuggestedBindingRedirects.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\TextEditor.formMainWindow.resources
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight_Text_editor_Csharp.Properties.Resources.resources
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.GenerateResource.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.exe
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\FileRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\FileRibbonModule.pdb
