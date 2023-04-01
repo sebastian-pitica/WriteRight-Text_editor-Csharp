@@ -27,7 +27,10 @@ namespace TextEditor
             InitializeComponent();
             _richTextBoxMainV2 = new RichTextBoxV2();
             _richTextBoxMainV2.baseComponent = richTextBoxMain;
-           
+            ///////////////////////////////////////////
+            this.Controls.Add(_richTextBoxMainV2);
+            ExecuteCommand(FormatRibbonModule.ColorCommand.GetCommandObj());
+            ///////////////////////////////////////
         }
 
         private void NewFileClick(object sender, EventArgs e)
