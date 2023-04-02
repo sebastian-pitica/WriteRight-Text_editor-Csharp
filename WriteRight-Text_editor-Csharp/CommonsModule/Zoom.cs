@@ -8,6 +8,10 @@ using System.Windows.Forms;
 
 namespace CommonsModule
 {
+    /// <summary>
+    /// Clasa ce ajuta modificarea dimensiunii Font-ului unui RichTextBox
+    /// </summary>
+    /// <creator>Matei</creator>
     public class Zoom 
     {
         public static void ZoomIn( RichTextBox textBox)

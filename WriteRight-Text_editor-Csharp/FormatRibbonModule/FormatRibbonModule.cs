@@ -28,13 +28,9 @@ namespace FormatRibbonModule
         }
         
         private static ColorCommand _singletonInstance = null;
-
         internal Form _mainFormWindowRef;
-
-
         internal List<Control> _controls= new List<Control>();
-
-        public bool isDarkmode=false;
+        static public bool isDarkmode=false;
       
         private ColorCommand()
         {
@@ -174,6 +170,43 @@ namespace FormatRibbonModule
 
       
     }
+    public class ColorPreferences : IMainWindowCommand
+    {
+        internal enum preference { Red, Yellow, Purple, Green, Blue };
+        private static ColorPreferences _singletonInstance = null;
+        internal Form _mainFormWindowRef;
+        internal List<Control> _controls = new List<Control>();
+        internal bool isDarkmode = false;
+
+
+        private ColorPreferences(){}
+        public static new ColorPreferences GetCommandObj()
+        {
+            if (_singletonInstance == null)
+            {
+                _singletonInstance = new ColorPreferences();
+            }
+            return _singletonInstance;
+        }
+
+        public override void Execute()
+        {
+            //get color
+            int color = 0;
+            DrawColors(color);
+        }
+
+        private void DrawColors(int preference) { 
+        
+            
+        
+        }
+
+        public override void SetTarget(Form mainWindow)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 
     public class FontCommand : IMainTextBoxCommand
@@ -181,10 +214,7 @@ namespace FormatRibbonModule
         private static FontCommand _singletonInstance = null;
         internal RichTextBoxV2 _mainRichTextBoxV2Ref;
 
-        private FontCommand()
-        {
-
-        }
+        private FontCommand(){}
 
         public static new FontCommand GetCommandObj()
         {

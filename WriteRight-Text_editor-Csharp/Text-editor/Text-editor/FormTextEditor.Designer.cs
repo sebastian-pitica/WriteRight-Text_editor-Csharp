@@ -230,6 +230,7 @@
             this.menuFormat.Name = "menuFormat";
             this.menuFormat.Size = new System.Drawing.Size(65, 23);
             this.menuFormat.Text = "Format";
+            this.menuFormat.DropDownOpened += new System.EventHandler(this.FormatClicked);
             // 
             // buttoColoring
             // 
@@ -281,8 +282,9 @@
             this.buttonDocs,
             this.buttonReportBug,
             this.buttonAbout});
+            this.menuHelp.Margin = new System.Windows.Forms.Padding(-1);
             this.menuHelp.Name = "menuHelp";
-            this.menuHelp.Size = new System.Drawing.Size(49, 23);
+            this.menuHelp.Size = new System.Drawing.Size(49, 25);
             this.menuHelp.Text = "Help";
             // 
             // buttonDocs
@@ -329,7 +331,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxMain.Location = new System.Drawing.Point(30, 32);
+            this.richTextBoxMain.Location = new System.Drawing.Point(31, 29);
             this.richTextBoxMain.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxMain.Name = "richTextBoxMain";
             this.richTextBoxMain.Size = new System.Drawing.Size(898, 450);
@@ -383,7 +385,7 @@
             // 
             this.buttonZoomIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonZoomIn.AutoSize = true;
-            this.buttonZoomIn.Location = new System.Drawing.Point(889, 485);
+            this.buttonZoomIn.Location = new System.Drawing.Point(889, 484);
             this.buttonZoomIn.Name = "buttonZoomIn";
             this.buttonZoomIn.Size = new System.Drawing.Size(24, 25);
             this.buttonZoomIn.TabIndex = 6;
@@ -395,9 +397,11 @@
             // 
             this.buttonZoomOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonZoomOut.AutoSize = true;
-            this.buttonZoomOut.Location = new System.Drawing.Point(861, 485);
+            this.buttonZoomOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonZoomOut.Location = new System.Drawing.Point(862, 484);
+            this.buttonZoomOut.Margin = new System.Windows.Forms.Padding(0);
             this.buttonZoomOut.Name = "buttonZoomOut";
-            this.buttonZoomOut.Size = new System.Drawing.Size(23, 25);
+            this.buttonZoomOut.Size = new System.Drawing.Size(24, 25);
             this.buttonZoomOut.TabIndex = 9;
             this.buttonZoomOut.Text = "-";
             this.buttonZoomOut.UseVisualStyleBackColor = true;

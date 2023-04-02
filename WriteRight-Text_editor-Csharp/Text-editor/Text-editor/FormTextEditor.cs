@@ -197,6 +197,11 @@ namespace TextEditor
             ReportBugClick(sender, e);
         }
 
+        private void FormatClicked(object sender, EventArgs e)
+        {
+           // menuStripRibbons.Renderer=new ToolStripRenderer(menuStripRibbons.Renderer);
+           // menuFormat. = Color.Red;
+        }
     }
 
 }
