@@ -20,3 +20,14 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.CopyComplete
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\FileRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\FileRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FileRibbonModule\obj\Debug\FileRibbonModule.pdb

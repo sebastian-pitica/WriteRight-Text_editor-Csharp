@@ -45,7 +45,7 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            _mainTextBoxRef.baseComponent.Undo();
+            _mainTextBoxRef.Undo();
         }
     }
 
@@ -73,7 +73,7 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            _mainTextBoxRef.baseComponent.Redo();
+            _mainTextBoxRef.Redo();
         }
     }
 
@@ -101,7 +101,7 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            _mainTextBoxRef.baseComponent.Cut();
+            _mainTextBoxRef.Cut();
         }
     }
 
@@ -129,7 +129,7 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            _mainTextBoxRef.baseComponent.Copy();
+            _mainTextBoxRef.Copy();
         }
     }
 
@@ -157,7 +157,7 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            _mainTextBoxRef.baseComponent.Paste();
+            _mainTextBoxRef.Paste();
         }
     }
 
@@ -185,7 +185,7 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            _mainTextBoxRef.baseComponent.SelectedText = "";
+            _mainTextBoxRef.SelectedText = "";
         }
     }
 
@@ -294,10 +294,10 @@ namespace EditRibbonModule
                     return;
 
                 int index = 0;
-                while ((index = _mainTextBoxRef.baseComponent.Text.IndexOf(searchWord, index)) != -1)
+                while ((index = _mainTextBoxRef.Text.IndexOf(searchWord, index)) != -1)
                 {
-                    _mainTextBoxRef.baseComponent.Select(index, searchWord.Length);
-                    _mainTextBoxRef.baseComponent.SelectedText = replaceText;
+                    _mainTextBoxRef.Select(index, searchWord.Length);
+                    _mainTextBoxRef.SelectedText = replaceText;
                     index += replaceText.Length;
                 }
 
@@ -327,12 +327,12 @@ namespace EditRibbonModule
 
                 if (indexReplaceNext != -1)
                 {
-                    indexReplaceNext = _mainTextBoxRef.baseComponent.Text.IndexOf(searchWord, indexReplaceNext);
+                    indexReplaceNext = _mainTextBoxRef.Text.IndexOf(searchWord, indexReplaceNext);
 
                     if (indexReplaceNext != -1)
                     {
-                        _mainTextBoxRef.baseComponent.Select(indexReplaceNext, searchWord.Length);
-                        _mainTextBoxRef.baseComponent.SelectedText = replaceText;
+                        _mainTextBoxRef.Select(indexReplaceNext, searchWord.Length);
+                        _mainTextBoxRef.SelectedText = replaceText;
                         indexReplaceNext += replaceText.Length;
                     }
                 }
@@ -442,10 +442,10 @@ namespace EditRibbonModule
                     return;
 
                 int index = 0;
-                while ((index = _mainTextBoxRef.baseComponent.Text.IndexOf(searchWord, index)) != -1)
+                while ((index = _mainTextBoxRef.Text.IndexOf(searchWord, index)) != -1)
                 {
-                    _mainTextBoxRef.baseComponent.Select(index, searchWord.Length);
-                    _mainTextBoxRef.baseComponent.SelectionBackColor = Color.Yellow;
+                    _mainTextBoxRef.Select(index, searchWord.Length);
+                    _mainTextBoxRef.SelectionBackColor = Color.Yellow;
                     index += searchWord.Length;
                 }
             };

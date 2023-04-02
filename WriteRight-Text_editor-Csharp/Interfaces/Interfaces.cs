@@ -44,6 +44,14 @@ namespace Interfaces
     }
 
     /// <summary>
+    /// Interfata pentru toate obiectele de tip Singleton-Command care au drept target tab-ul de fisiere
+    /// </summary>
+    public abstract class ITabControlCommand: ISingletonCommand
+    {
+        abstract public void SetTarget(TabControl tabControl);
+    }
+
+    /// <summary>
     /// Interfața pentru un subiect de observat.Implementează design patternul Observer alături de Observer.
     /// </summary>
     public interface ISubject

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainWindow));
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNew = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonClose = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonNewWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonUndo = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,24 +55,22 @@
             this.buttonFont = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.syntaxCheckerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wordCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonDocs = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonReportBug = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripRibbons = new System.Windows.Forms.MenuStrip();
-            this.richTextBoxMain = new System.Windows.Forms.RichTextBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.buttonZoomIn = new System.Windows.Forms.Button();
             this.buttonZoomOut = new System.Windows.Forms.Button();
             this.textBoxWordsNr = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLinesNr = new System.Windows.Forms.TextBox();
+            this.tabControlFiles = new System.Windows.Forms.TabControl();
             this.menuStripRibbons.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +81,7 @@
             this.buttonNew,
             this.buttonOpen,
             this.buttonSave,
+            this.buttonClose,
             this.buttonNewWindow});
             this.menuFile.Name = "menuFile";
             this.menuFile.Size = new System.Drawing.Size(49, 27);
@@ -91,28 +90,49 @@
             // buttonNew
             // 
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(195, 28);
+            this.buttonNew.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonNew.ShortcutKeyDisplayString = "";
+            this.buttonNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.buttonNew.Size = new System.Drawing.Size(303, 28);
             this.buttonNew.Text = "New";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNew.Click += new System.EventHandler(this.NewFileClick);
             // 
             // buttonOpen
             // 
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(195, 28);
+            this.buttonOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonOpen.ShortcutKeyDisplayString = "";
+            this.buttonOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.buttonOpen.Size = new System.Drawing.Size(303, 28);
             this.buttonOpen.Text = "Open";
+            this.buttonOpen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonOpen.Click += new System.EventHandler(this.OpenFileClick);
             // 
             // buttonSave
             // 
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(195, 28);
+            this.buttonSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.buttonSave.Size = new System.Drawing.Size(303, 28);
             this.buttonSave.Text = "Save";
+            this.buttonSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSave.Click += new System.EventHandler(this.SaveFileClick);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.buttonClose.Size = new System.Drawing.Size(303, 28);
+            this.buttonClose.Text = "Close";
+            this.buttonClose.Click += new System.EventHandler(this.CloseFileClick);
             // 
             // buttonNewWindow
             // 
+            this.buttonNewWindow.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonNewWindow.Name = "buttonNewWindow";
-            this.buttonNewWindow.Size = new System.Drawing.Size(195, 28);
+            this.buttonNewWindow.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.buttonNewWindow.Size = new System.Drawing.Size(303, 28);
             this.buttonNewWindow.Text = "New Window";
             this.buttonNewWindow.Click += new System.EventHandler(this.NewWindowClick);
             // 
@@ -255,8 +275,7 @@
             // menuOptions
             // 
             this.menuOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.syntaxCheckerToolStripMenuItem,
-            this.wordCountToolStripMenuItem});
+            this.syntaxCheckerToolStripMenuItem});
             this.menuOptions.Name = "menuOptions";
             this.menuOptions.Size = new System.Drawing.Size(84, 27);
             this.menuOptions.Text = "Options";
@@ -267,13 +286,6 @@
             this.syntaxCheckerToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
             this.syntaxCheckerToolStripMenuItem.Text = "Syntax Checker";
             this.syntaxCheckerToolStripMenuItem.Click += new System.EventHandler(this.SyntaxCheckerClick);
-            // 
-            // wordCountToolStripMenuItem
-            // 
-            this.wordCountToolStripMenuItem.Name = "wordCountToolStripMenuItem";
-            this.wordCountToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
-            this.wordCountToolStripMenuItem.Text = "Word Count";
-            this.wordCountToolStripMenuItem.Click += new System.EventHandler(this.WordCountClick);
             // 
             // menuHelp
             // 
@@ -322,27 +334,13 @@
             this.menuStripRibbons.Size = new System.Drawing.Size(1253, 31);
             this.menuStripRibbons.TabIndex = 1;
             // 
-            // richTextBoxMain
-            // 
-            this.richTextBoxMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxMain.Location = new System.Drawing.Point(40, 39);
-            this.richTextBoxMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBoxMain.Name = "richTextBoxMain";
-            this.richTextBoxMain.Size = new System.Drawing.Size(1197, 554);
-            this.richTextBoxMain.TabIndex = 2;
-            this.richTextBoxMain.Text = "";
-            this.richTextBoxMain.TextChanged += new System.EventHandler(this.RichTextBoxMainTextChanged);
-            // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.toolStripProgressBar});
+            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.statusStrip.Location = new System.Drawing.Point(0, 600);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
@@ -352,6 +350,7 @@
             // 
             // toolStripStatusLabel
             // 
+            this.toolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(50, 20);
             this.toolStripStatusLabel.Text = "Ready";
@@ -374,20 +373,14 @@
             this.toolStripSplitButton1.Size = new System.Drawing.Size(23, 23);
             this.toolStripSplitButton1.Text = "+";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // buttonZoomIn
             // 
             this.buttonZoomIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonZoomIn.AutoSize = true;
-            this.buttonZoomIn.Location = new System.Drawing.Point(1185, 597);
-            this.buttonZoomIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonZoomIn.Location = new System.Drawing.Point(1168, 599);
+            this.buttonZoomIn.Margin = new System.Windows.Forms.Padding(4);
             this.buttonZoomIn.Name = "buttonZoomIn";
-            this.buttonZoomIn.Size = new System.Drawing.Size(32, 31);
+            this.buttonZoomIn.Size = new System.Drawing.Size(32, 27);
             this.buttonZoomIn.TabIndex = 6;
             this.buttonZoomIn.Text = "+";
             this.buttonZoomIn.UseVisualStyleBackColor = true;
@@ -397,10 +390,10 @@
             // 
             this.buttonZoomOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonZoomOut.AutoSize = true;
-            this.buttonZoomOut.Location = new System.Drawing.Point(1148, 597);
-            this.buttonZoomOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonZoomOut.Location = new System.Drawing.Point(1121, 599);
+            this.buttonZoomOut.Margin = new System.Windows.Forms.Padding(4);
             this.buttonZoomOut.Name = "buttonZoomOut";
-            this.buttonZoomOut.Size = new System.Drawing.Size(31, 31);
+            this.buttonZoomOut.Size = new System.Drawing.Size(31, 27);
             this.buttonZoomOut.TabIndex = 9;
             this.buttonZoomOut.Text = "-";
             this.buttonZoomOut.UseVisualStyleBackColor = true;
@@ -409,8 +402,8 @@
             // textBoxWordsNr
             // 
             this.textBoxWordsNr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxWordsNr.Location = new System.Drawing.Point(997, 599);
-            this.textBoxWordsNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxWordsNr.Location = new System.Drawing.Point(933, 601);
+            this.textBoxWordsNr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxWordsNr.Name = "textBoxWordsNr";
             this.textBoxWordsNr.ReadOnly = true;
             this.textBoxWordsNr.Size = new System.Drawing.Size(67, 22);
@@ -421,7 +414,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(935, 606);
+            this.label1.Location = new System.Drawing.Point(855, 604);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 16);
@@ -432,7 +425,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(793, 606);
+            this.label2.Location = new System.Drawing.Point(678, 604);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 16);
@@ -442,13 +435,29 @@
             // textBoxLinesNr
             // 
             this.textBoxLinesNr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLinesNr.Location = new System.Drawing.Point(848, 599);
-            this.textBoxLinesNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLinesNr.Location = new System.Drawing.Point(746, 601);
+            this.textBoxLinesNr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLinesNr.Name = "textBoxLinesNr";
             this.textBoxLinesNr.ReadOnly = true;
             this.textBoxLinesNr.Size = new System.Drawing.Size(67, 22);
             this.textBoxLinesNr.TabIndex = 13;
             this.textBoxLinesNr.Text = "0";
+            // 
+            // tabControlFiles
+            // 
+            this.tabControlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlFiles.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControlFiles.Location = new System.Drawing.Point(0, 34);
+            this.tabControlFiles.Name = "tabControlFiles";
+            this.tabControlFiles.SelectedIndex = 0;
+            this.tabControlFiles.Size = new System.Drawing.Size(1253, 563);
+            this.tabControlFiles.TabIndex = 15;
+            this.tabControlFiles.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControlFilesDrawItem);
+            this.tabControlFiles.SelectedIndexChanged += new System.EventHandler(this.TabControlFilesSelectedIndexChanged);
+            this.tabControlFiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabControlFilesControlAdded);
+            this.tabControlFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControlFilesMouseDown);
             // 
             // FormMainWindow
             // 
@@ -463,8 +472,8 @@
             this.Controls.Add(this.buttonZoomOut);
             this.Controls.Add(this.buttonZoomIn);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.richTextBoxMain);
             this.Controls.Add(this.menuStripRibbons);
+            this.Controls.Add(this.tabControlFiles);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -504,24 +513,23 @@
         private System.Windows.Forms.ToolStripMenuItem buttonFont;
         private System.Windows.Forms.ToolStripMenuItem menuOptions;
         private System.Windows.Forms.ToolStripMenuItem syntaxCheckerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wordCountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem buttonDocs;
         private System.Windows.Forms.ToolStripMenuItem buttonReportBug;
         private System.Windows.Forms.ToolStripMenuItem buttonAbout;
         private System.Windows.Forms.MenuStrip menuStripRibbons;
-        private System.Windows.Forms.RichTextBox richTextBoxMain;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button buttonZoomIn;
         private System.Windows.Forms.Button buttonZoomOut;
         private System.Windows.Forms.TextBox textBoxWordsNr;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxLinesNr;
+        private System.Windows.Forms.ToolStripMenuItem buttonClose;
+        private System.Windows.Forms.TabControl tabControlFiles;
     }
 }
 

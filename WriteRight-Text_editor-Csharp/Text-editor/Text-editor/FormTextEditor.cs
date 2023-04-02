@@ -2,30 +2,23 @@
 using EditRibbonModule;
 using Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using FileRibbonModule;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using WriteRight_Text_editor_Csharp.Properties;
 
 namespace TextEditor
 {
     public partial class FormMainWindow : Form
     {
         private RichTextBoxV2 _richTextBoxMainV2;
+        private readonly string _windowTitle = "Editorescu";
 
         public FormMainWindow()
         {
             InitializeComponent();
-            _richTextBoxMainV2 = new RichTextBoxV2();
-            _richTextBoxMainV2.baseComponent = richTextBoxMain;
+            ExecuteCommand(NewFileCommand.GetCommandObj());
         }
 
         private void NewFileClick(object sender, EventArgs e)
@@ -41,6 +34,11 @@ namespace TextEditor
         private void SaveFileClick(object sender, EventArgs e)
         {
             ExecuteCommand(SaveFileCommand.GetCommandObj());
+        }
+
+        private void CloseFileClick(object sender, EventArgs e)
+        {
+            ExecuteCommand(CloseFileCommand.GetCommandObj());
         }
 
         private void NewWindowClick(object sender, EventArgs e)
@@ -161,6 +159,12 @@ namespace TextEditor
             mainTextBoxCommand.Execute();
         }
 
+        private void ExecuteCommand(ITabControlCommand tabControlCommand)
+        {
+            tabControlCommand.SetTarget(tabControlFiles);
+            tabControlCommand.Execute();
+        }
+
         private void RichTextBoxMainTextChanged(object sender, EventArgs e)
         {
             textBoxLinesNr.Text = CountMainBoxLines().ToString();
@@ -169,7 +173,7 @@ namespace TextEditor
 
         private int CountMainBoxLines()
         {
-            return _richTextBoxMainV2.baseComponent.Lines.Length;
+            return _richTextBoxMainV2.Lines.Length;
         }
 
         /// <summary>
@@ -180,13 +184,82 @@ namespace TextEditor
         /// <returns>Numarul de cuvinte</returns>
         private int CountMainBoxWords()
         {
-            return _richTextBoxMainV2.baseComponent.Text.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            return _richTextBoxMainV2.Text.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void TabControlFilesDrawItem(object sender, DrawItemEventArgs e)
         {
-            ReportBugClick(sender, e);
-        }
-    }
+            try
+            {
+                TabPage tabPage = tabControlFiles.TabPages[e.Index];
+                Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
+                
+                TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
+                    tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+                
+                var closeImage = Resources.CloseButton;
+                e.Graphics.DrawImage(closeImage,
+                (tabRect.Right - closeImage.Width),
+                tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void TabControlFilesMouseDown(object sender, MouseEventArgs e)
+        {
+            for (var i = 0; i < tabControlFiles.TabPages.Count; i++)
+            {
+                var tabRect = tabControlFiles.GetTabRect(i);
+                var closeImage = Resources.CloseButton;
+                var imageRect = new Rectangle(
+                    (tabRect.Right - closeImage.Width),
+                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                    closeImage.Width,
+                    closeImage.Height);
+                if (imageRect.Contains(e.Location))
+                {
+                    tabControlFiles.SelectedIndex = i;
+                    ExecuteCommand(CloseFileCommand.GetCommandObj());
+                    break;
+                }
+            }
+        }
+
+        private void TabControlFilesSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlFiles.SelectedIndex == -1)
+            {
+                ExecuteCommand(NewFileCommand.GetCommandObj());
+                return;
+            }
+            SetMainTextBoxReference();
+            SetWindowTitle();
+        }
+
+        private void TabControlFilesControlAdded(object sender, ControlEventArgs e)
+        {
+            SetMainTextBoxReference();
+            SetWindowTitle();
+        }
+
+        /// <summary>
+        /// Functia preia elementul RichTextBox din noul tab accesat pentru a pastra referinta la acesta
+        /// </summary>
+        private void SetMainTextBoxReference()
+        {
+            RichTextBoxV2 reference = Utilities.GetRichTextBoxV2FTabControl(tabControlFiles);
+            _richTextBoxMainV2 = reference;
+        }
+
+        private void SetWindowTitle()
+        {
+            string titleFileName = Utilities.GetFileNameFromTabControl(tabControlFiles);
+            this.Text = titleFileName + " - " + _windowTitle;
+        }
+
+    }
 }

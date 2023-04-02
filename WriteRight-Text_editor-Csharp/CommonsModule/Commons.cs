@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows.Forms;
 
 /**************************************************************************
@@ -24,14 +20,49 @@ namespace CommonsModule
     /// aveau nevoie de adaugarea unor caracteristici noi peste clasa de bază.
     /// </summary>
     /// <creator>Sebastian</creator>
-    public class RichTextBoxV2
+    /// <updated>Vasile</updated>
+    public class RichTextBoxV2 : RichTextBox
     {
-        public RichTextBox baseComponent { get; set; }
-        private Boolean _isSaved;
+        private bool _isSaved;
         private string _progLangInTextbox;
+        private string _filePath;
 
-        public RichTextBoxV2()
-        { 
+        public RichTextBoxV2() : base()
+        {
+            Dock = DockStyle.Fill;
+            _isSaved = true;
+            this.TextChanged += ControlTextChanged;
+        }
+
+        private void ControlTextChanged(object sender, System.EventArgs e)
+        {
+            _isSaved = false;
+        }
+
+        public string FilePath
+        {
+            get
+            {
+                return _filePath;
+            }
+            set
+            {
+                _filePath = value;
+            }
+        }
+
+        public bool IsSaved
+        {
+            get { return _isSaved; }
+            set { _isSaved = value; }
+        }
+
+        public string FileName
+        {
+            get
+            {
+                return Path.GetFileName(_filePath);
+            }
         }
     }
 }

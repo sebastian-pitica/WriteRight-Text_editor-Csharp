@@ -1,20 +1,16 @@
 ﻿using CommonsModule;
 using Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FileRibbonModule
 {
-    public class NewFileCommand : IMainTextBoxCommand
+    public class NewFileCommand : ITabControlCommand
     {
         private static NewFileCommand _singletonInstance = null;
-        private RichTextBoxV2 _mainTextBoxRef;
+        private TabControl _mainTabControlRef;
 
         private NewFileCommand()
         {
@@ -32,23 +28,28 @@ namespace FileRibbonModule
 
         public override void Execute()
         {
-            MessageBox.Show("Executing creating new file...");
+            TabPage tabPage = Utilities.CreateTab("new");
+            _mainTabControlRef.TabPages.Add(tabPage);
+            _mainTabControlRef.SelectedIndex = _mainTabControlRef.TabPages.Count - 1;
         }
 
-        public override void SetTarget(RichTextBoxV2 mainTextBox)
+        public override void SetTarget(TabControl tabControl)
         {
-            _mainTextBoxRef = mainTextBox;
+            _mainTabControlRef = tabControl;
         }
     }
 
-    public class OpenFileCommand : IMainTextBoxCommand
+    public class OpenFileCommand : ITabControlCommand
     {
         private static OpenFileCommand _singletonInstance = null;
-        private RichTextBoxV2 _mainTextBoxRef;
-
+        private TabControl _mainTabControlRef;
+        private OpenFileDialog _openFileDialog;
         private OpenFileCommand()
         {
-
+            _openFileDialog = new OpenFileDialog
+            {
+                Filter = "Text Files(*.txt)|*.txt|All Files(*.*)|*.*"
+            };
         }
 
         public static new OpenFileCommand GetCommandObj()
@@ -62,17 +63,26 @@ namespace FileRibbonModule
 
         public override void Execute()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (_openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string path = openFileDialog.FileName;
+                string path = _openFileDialog.FileName;
                 if (string.IsNullOrEmpty(path))
                     return;
+
                 try
                 {
-                    StreamReader streamReader = new StreamReader(path, true);
-                    _mainTextBoxRef.baseComponent.Text = streamReader.ReadToEnd();
+                    StreamReader streamReader = new StreamReader(path);
+
+                    TabPage tabPage = Utilities.CreateTab(Path.GetFileName(path));
+                    _mainTabControlRef.TabPages.Add(tabPage);
+                    _mainTabControlRef.SelectedIndex = _mainTabControlRef.TabPages.Count - 1;
+
+                    RichTextBoxV2 mainTextBoxRef = Utilities.GetRichTextBoxV2FTabControl(_mainTabControlRef);
+
+                    mainTextBoxRef.Text = streamReader.ReadToEnd();
+                    streamReader.Close();
+                    mainTextBoxRef.FilePath = path;
+                    mainTextBoxRef.IsSaved = true;
                 }
                 catch (Exception)
                 {
@@ -81,9 +91,9 @@ namespace FileRibbonModule
             }
         }
 
-        public override void SetTarget(RichTextBoxV2 mainTextBox)
+        public override void SetTarget(TabControl tabControl)
         {
-            _mainTextBoxRef = mainTextBox;
+            _mainTabControlRef = tabControl;
         }
     }
 
@@ -91,10 +101,14 @@ namespace FileRibbonModule
     {
         private static SaveFileCommand _singletonInstance = null;
         private RichTextBoxV2 _mainTextBoxRef;
-
+        private SaveFileDialog _saveFileDialog;
         private SaveFileCommand()
         {
-
+            _saveFileDialog = new SaveFileDialog
+            {
+                DefaultExt = "Text Files(*.txt)",
+                Filter = "Text Files(*.txt)|*.txt|All Files(*.*)|*.*"
+            };
         }
 
         public static new SaveFileCommand GetCommandObj()
@@ -108,16 +122,30 @@ namespace FileRibbonModule
 
         public override void Execute()
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.DefaultExt = "Text Files(*.txt)";
-            saveFileDialog.Filter = "Text Files(*.txt) | *.txt | All Files(*.*) | *.* ";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            string filePath = _mainTextBoxRef.FilePath;
+            if (!File.Exists(filePath))
             {
-                string path = saveFileDialog.FileName;
+                if (_saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string path = _saveFileDialog.FileName;
+                    try
+                    {
+                        Utilities.WriteFile(path, _mainTextBoxRef.Text);
+                        _mainTextBoxRef.FilePath = path;
+                        _mainTextBoxRef.IsSaved = true;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Could not save the file..", "Error: Save file");
+                    }
+                }
+            }
+            else if (!_mainTextBoxRef.IsSaved)
+            {
                 try
                 {
-                    StreamWriter streamWriter = new StreamWriter(path);
-                    streamWriter.Write(_mainTextBoxRef.baseComponent.Text);
+                    Utilities.WriteFile(filePath, _mainTextBoxRef.Text);
+                    _mainTextBoxRef.IsSaved = true;
                 }
                 catch (Exception)
                 {
@@ -129,6 +157,66 @@ namespace FileRibbonModule
         public override void SetTarget(RichTextBoxV2 mainTextBox)
         {
             _mainTextBoxRef = mainTextBox;
+        }
+    }
+
+    public class CloseFileCommand : ITabControlCommand
+    {
+        private static CloseFileCommand _singletonInstance = null;
+        private TabControl _mainTabControlRef;
+
+        private CloseFileCommand()
+        {
+
+        }
+
+        public static new CloseFileCommand GetCommandObj()
+        {
+            if (_singletonInstance == null)
+            {
+                _singletonInstance = new CloseFileCommand();
+            }
+            return _singletonInstance;
+        }
+
+        public override void Execute()
+        {
+            RichTextBoxV2 richTextBoxV2 = Utilities.GetRichTextBoxV2FTabControl(_mainTabControlRef);
+            if (!richTextBoxV2.IsSaved)
+            {
+                string fileName = Utilities.GetFileNameFromTabControl(_mainTabControlRef);
+                string message = "Save file \"" + fileName + "\"?";
+                DialogResult result = MessageBox.Show(message, "Save", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    IMainTextBoxCommand command = SaveFileCommand.GetCommandObj();
+                    command.SetTarget(richTextBoxV2);
+                    command.Execute();
+
+                    if (richTextBoxV2.IsSaved)
+                        RemoveCurrentTab();
+                }
+                else if (result == DialogResult.No)
+                {
+                    RemoveCurrentTab();
+                }
+            }
+            else
+            {
+                RemoveCurrentTab();
+            }
+        }
+
+        private void RemoveCurrentTab()
+        {
+            int index = _mainTabControlRef.SelectedIndex;
+            _mainTabControlRef.TabPages.RemoveAt(index);
+        }
+
+        public override void SetTarget(TabControl tabControl)
+        {
+            _mainTabControlRef = tabControl;
         }
     }
 
