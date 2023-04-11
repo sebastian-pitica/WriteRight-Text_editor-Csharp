@@ -115,6 +115,10 @@
       <Project>{31ddae14-adda-4a06-be84-6588ca00cdbd}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OptionsRibbonModule\OptionsRibbonModule.csproj">
+      <Project>{257BB49C-EA27-4D6D-A050-9EAD92E817D8}</Project>
+      <Name>OptionsRibbonModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

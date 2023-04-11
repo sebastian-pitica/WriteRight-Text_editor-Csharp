@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33424.131
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text-editor", "Text-editor\Text-editor.csproj", "{4482D650-22D1-4C55-BD6C-7D5C1E1EC3F6}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonsModule", "..\CommonsModule\CommonsModule.csproj", "{7BC394E9-AFA5-4CF3-A037-52EAE13355FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileRibbonModule", "..\FileRibbonModule\FileRibbonModule.csproj", "{17EEC643-7979-4414-9348-12229919B62F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionsRibbonModule", "OptionsRibbonModule\OptionsRibbonModule.csproj", "{257BB49C-EA27-4D6D-A050-9EAD92E817D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{17EEC643-7979-4414-9348-12229919B62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17EEC643-7979-4414-9348-12229919B62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17EEC643-7979-4414-9348-12229919B62F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{257BB49C-EA27-4D6D-A050-9EAD92E817D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{257BB49C-EA27-4D6D-A050-9EAD92E817D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{257BB49C-EA27-4D6D-A050-9EAD92E817D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{257BB49C-EA27-4D6D-A050-9EAD92E817D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

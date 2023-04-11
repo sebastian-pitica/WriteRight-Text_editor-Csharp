@@ -448,6 +448,7 @@
             this.tabControlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlFiles.Cursor = System.Windows.Forms.Cursors.No;
             this.tabControlFiles.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControlFiles.Location = new System.Drawing.Point(0, 34);
             this.tabControlFiles.Name = "tabControlFiles";

@@ -24,7 +24,6 @@ namespace CommonsModule
     public class RichTextBoxV2 : RichTextBox
     {
         private bool _isSaved;
-        private string _progLangInTextbox;
         private string _filePath;
 
         public RichTextBoxV2() : base()
@@ -62,6 +61,14 @@ namespace CommonsModule
             get
             {
                 return Path.GetFileName(_filePath);
+            }
+        }
+
+        public string FileType
+        {
+            get
+            {
+                return Path.GetExtension(_filePath);
             }
         }
     }

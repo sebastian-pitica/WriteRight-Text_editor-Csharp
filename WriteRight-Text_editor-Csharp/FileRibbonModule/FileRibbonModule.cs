@@ -48,7 +48,7 @@ namespace FileRibbonModule
         {
             _openFileDialog = new OpenFileDialog
             {
-                Filter = "Text Files(*.txt)|*.txt|All Files(*.*)|*.*"
+                Filter = "C/C++ Files (*.c, *.cpp)|*.c;*.cpp|Text Files(*.txt)|*.txt|All Files(*.*)|*.*"
             };
         }
 
