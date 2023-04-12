@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using CustomControls;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CommonsModule
@@ -17,8 +18,8 @@ namespace CommonsModule
         public static TabPage CreateTab(in string tabName)
         {
             TabPage tabPage = new TabPage(tabName);
-            RichTextBoxV2 richTextBoxV2 = new RichTextBoxV2();
-            tabPage.Controls.Add(richTextBoxV2);
+            TextEditor textEditor = new TextEditor();
+            tabPage.Controls.Add(textEditor);
             return tabPage;
         }
 
@@ -44,8 +45,8 @@ namespace CommonsModule
         public static RichTextBoxV2 GetRichTextBoxV2FTabControl(in TabControl tabControl)
         {
             TabPage selectedTabPage = tabControl.SelectedTab;
-            RichTextBoxV2 reference = (RichTextBoxV2)selectedTabPage.Controls[0];
-            return reference;
+            TextEditor reference = (TextEditor)selectedTabPage.Controls[0];
+            return reference.RichTextBoxEditor;
         }
 
         public static string GetFileNameFromTabControl(in TabControl tabControl)

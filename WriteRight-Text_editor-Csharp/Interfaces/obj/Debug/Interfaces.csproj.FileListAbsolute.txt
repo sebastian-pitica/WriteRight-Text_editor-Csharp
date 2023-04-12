@@ -40,3 +40,5 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_e
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CopyComplete
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\CustomControls.pdb

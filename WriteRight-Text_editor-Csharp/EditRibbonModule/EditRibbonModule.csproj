@@ -52,6 +52,10 @@
       <Project>{7bc394e9-afa5-4cf3-a037-52eae13355ff}</Project>
       <Name>CommonsModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
+      <Project>{75C23451-3E89-4517-9F24-4EA823542471}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{31ddae14-adda-4a06-be84-6588ca00cdbd}</Project>
       <Name>Interfaces</Name>
