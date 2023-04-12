@@ -7,6 +7,7 @@ using FileRibbonModule;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using WriteRight_Text_editor_Csharp.Properties;
+using CustomControls;
 
 namespace TextEditor
 {
@@ -129,7 +130,7 @@ namespace TextEditor
 
         private void SyntaxCheckerClick(object sender, EventArgs e)
         {
-
+            //ExecuteCommand(SyntaxCheckerCommand.GetCommandObj());
         }
 
         private void WordCountClick(object sender, EventArgs e)
@@ -191,7 +192,9 @@ namespace TextEditor
         {
             try
             {
+                e.Graphics.FillRectangle(new SolidBrush(tabControlFiles.BackColor), e.Bounds);
                 TabPage tabPage = tabControlFiles.TabPages[e.Index];
+
                 Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
                 
                 TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
@@ -260,6 +263,5 @@ namespace TextEditor
             string titleFileName = Utilities.GetFileNameFromTabControl(tabControlFiles);
             this.Text = titleFileName + " - " + _windowTitle;
         }
-
     }
 }

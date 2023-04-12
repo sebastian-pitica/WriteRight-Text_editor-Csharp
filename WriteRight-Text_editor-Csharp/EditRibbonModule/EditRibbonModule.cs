@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Windows.Forms;
 using System.Configuration;
+using CustomControls;
 
 /**************************************************************************
  *                                                                        *

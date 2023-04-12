@@ -85,7 +85,6 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\FileRibbonModule.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\FileRibbonModule.pdb
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.AssemblyReference.cache
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.SuggestedBindingRedirects.cache
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\TextEditor.FormMainWindow.resources
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight_Text_editor_Csharp.Properties.Resources.resources
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.GenerateResource.cache
@@ -104,3 +103,5 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_e
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\FileRibbonModule.pdb
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\Interfaces.pdb
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CustomControls.pdb

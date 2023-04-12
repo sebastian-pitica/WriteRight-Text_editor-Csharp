@@ -417,7 +417,7 @@
             this.label1.Location = new System.Drawing.Point(855, 604);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Words:";
             // 
@@ -428,7 +428,7 @@
             this.label2.Location = new System.Drawing.Point(678, 604);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Lines:";
             // 
@@ -448,6 +448,7 @@
             this.tabControlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlFiles.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControlFiles.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControlFiles.Location = new System.Drawing.Point(0, 34);
             this.tabControlFiles.Name = "tabControlFiles";

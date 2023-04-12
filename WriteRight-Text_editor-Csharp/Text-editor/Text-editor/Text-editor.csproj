@@ -103,6 +103,10 @@
       <Project>{7bc394e9-afa5-4cf3-a037-52eae13355ff}</Project>
       <Name>CommonsModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CustomControls\CustomControls.csproj">
+      <Project>{75C23451-3E89-4517-9F24-4EA823542471}</Project>
+      <Name>CustomControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\EditRibbonModule\EditRibbonModule.csproj">
       <Project>{e49d3b6f-7cb5-4659-9fcd-0bd119fbdc60}</Project>
       <Name>EditRibbonModule</Name>

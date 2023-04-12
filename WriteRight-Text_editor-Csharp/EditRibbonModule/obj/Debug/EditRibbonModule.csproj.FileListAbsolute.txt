@@ -53,3 +53,5 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_e
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CustomControls.pdb
