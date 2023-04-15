@@ -88,30 +88,6 @@ namespace CustomControls
             }
         }
 
-        public Color LineNumberingBackColor
-        {
-            get => _richTextBoxNumbering.BackColor;
-            set => _richTextBoxNumbering.BackColor = value;
-        }
-
-        public Color LineNumberingForeColor
-        {
-            get => _richTextBoxNumbering.ForeColor;
-            set => _richTextBoxNumbering.ForeColor = value;
-        }
-
-        public Color EditorBackColor
-        {
-            get => _richTextBoxContent.BackColor;
-            set => _richTextBoxContent.BackColor = value;
-        }
-
-        public Color EditorForeColor
-        {
-            get => _richTextBoxContent.ForeColor;
-            set => _richTextBoxContent.ForeColor = value;
-        }
-
         public RichTextBoxV2 RichTextBoxEditor
         {
             get => _richTextBoxContent;

@@ -449,7 +449,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlFiles.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabControlFiles.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControlFiles.Location = new System.Drawing.Point(0, 34);
             this.tabControlFiles.Name = "tabControlFiles";
             this.tabControlFiles.SelectedIndex = 0;
@@ -464,7 +463,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1253, 626);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxLinesNr);
@@ -476,6 +474,7 @@
             this.Controls.Add(this.menuStripRibbons);
             this.Controls.Add(this.tabControlFiles);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1271, 0);
             this.Name = "FormMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editorescu";
