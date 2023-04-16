@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static CustomControls.SystemMessageHandler;
+
 
 /**************************************************************************
  *                                                                        *
@@ -26,35 +27,39 @@ namespace CustomControls
     /// <updated>Vasile</updated>
     public class RichTextBoxV2 : RichTextBox
     {
+        private const int ScrollDown = 1;
+        private const int ScrollUp = 0;
+
         private readonly RichTextBox _richTextBoxRef;
         private bool _isSaved;
         private string _filePath;
 
-        private const int WM_VSCROLL = 0x115;  //tells the control to scroll
-        private const int WM_GETDLGCODE = 0x87;   //sent when the caret is going out of the 'visible area' (so scroll is needed)
-        private const int WM_MOUSEFIRST = 0x200;  //scrolls if the mouse leaves the 'visible area' (example when you select text)
-        private const int EM_GETSCROLLPOS = 0x4DD;
-        private const int EM_SETSCROLLPOS = 0x4DE;
-        private const int WM_MOUSEWHEEL = 0x20A;
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern int SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, ref Point lParam);
-
-
         public RichTextBoxV2(RichTextBox richTextBox) : base()
         {
+            MouseWheel += new MouseEventHandler(RichTextBoxContentMouseWheel);
             _richTextBoxRef = richTextBox;
             _isSaved = true;
+        }
+
+        private void RichTextBoxContentMouseWheel(object sender, MouseEventArgs e)
+        {
+            ((HandledMouseEventArgs)e).Handled = true;
+            // Determinam directia miscarii rotitei mouse-ului
+            int direction = Math.Sign(e.Delta);
+            // Setam directia de derulare
+            int scrollDirection = direction == -1 ? ScrollDown : ScrollUp;
+            SendMessage(Handle, WM_VSCROLL, (IntPtr)scrollDirection, IntPtr.Zero);
         }
 
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
 
-            if (m.Msg == WM_VSCROLL || m.Msg == WM_GETDLGCODE || m.Msg == WM_MOUSEFIRST || m.Msg == WM_MOUSEWHEEL)
+            if (m.Msg == WM_VSCROLL)
             {
                 Point p = new Point();
                 SendMessage(Handle, EM_GETSCROLLPOS, IntPtr.Zero, ref p);
+                p.X = 0;
                 SendMessage(_richTextBoxRef.Handle, EM_SETSCROLLPOS, IntPtr.Zero, ref p);
             }
         }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CustomControls
@@ -29,11 +26,11 @@ namespace CustomControls
             _richTextBoxContent = new RichTextBoxV2(_richTextBoxNumbering)
             {
                 Dock = DockStyle.Fill,
-                BorderStyle = BorderStyle.None
+                BorderStyle = BorderStyle.None,
+                WordWrap = false
             };
             _richTextBoxNumbering.Font = _richTextBoxContent.Font;
 
-            _richTextBoxContent.MouseWheel += new MouseEventHandler(RichTextBoxContentMouseWheel);
             _richTextBoxContent.TextChanged += new EventHandler(RichTextBoxTextChanged);
 
             // this control style
@@ -47,7 +44,6 @@ namespace CustomControls
 
             UpdateLineNumbers();
         }
-
         private void RichTextBoxTextChanged(object sender, EventArgs e)
         {
             if (_previousLineNumber != _richTextBoxContent.Lines.Length)
@@ -67,14 +63,6 @@ namespace CustomControls
                 sb.AppendLine(i.ToString());
             }
             _richTextBoxNumbering.Text = sb.ToString();
-        }
-
-        private void RichTextBoxContentMouseWheel(object sender, MouseEventArgs e)
-        {
-            if (ModifierKeys == Keys.Control)
-            {
-                ((HandledMouseEventArgs)e).Handled = true;
-            }
         }
 
         public override Font Font

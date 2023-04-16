@@ -1,5 +1,8 @@
 ﻿using CustomControls;
+using System;
+using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace CommonsModule
@@ -54,6 +57,5 @@ namespace CommonsModule
             RichTextBoxV2 reference = GetRichTextBoxV2FTabControl(tabControl);
             return reference.FilePath ?? tabControl.SelectedTab.Text;
         }
-
     }
 }

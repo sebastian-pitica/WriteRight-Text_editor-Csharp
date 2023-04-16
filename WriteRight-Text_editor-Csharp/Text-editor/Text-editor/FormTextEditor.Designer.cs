@@ -474,7 +474,7 @@
             this.Controls.Add(this.menuStripRibbons);
             this.Controls.Add(this.tabControlFiles);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1271, 0);
+            this.MinimumSize = new System.Drawing.Size(1271, 47);
             this.Name = "FormMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editorescu";
