@@ -196,7 +196,7 @@ namespace TextEditor
                 TabPage tabPage = tabControlFiles.TabPages[e.Index];
 
                 Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
-                
+
                 TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
                     tabRect, tabPage.ForeColor, TextFormatFlags.Left);
                 

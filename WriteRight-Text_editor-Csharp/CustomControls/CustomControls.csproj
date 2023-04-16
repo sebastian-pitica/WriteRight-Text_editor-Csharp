@@ -46,6 +46,7 @@
     <Compile Include="RichTextBoxV2.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SystemMessageHandler.cs" />
     <Compile Include="TextEditor.cs">
       <SubType>Component</SubType>
     </Compile>
