@@ -16,5 +16,8 @@ namespace CustomControls
 
         public const int EM_GETSCROLLPOS = 0x4DD;
         public const int EM_SETSCROLLPOS = 0x4DE;
+        public const int WM_GETDLGCODE = 0x87;
+        public const int WM_MOUSEFIRST = 0x200;
+
     }
 }

@@ -449,8 +449,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlFiles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabControlFiles.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControlFiles.Location = new System.Drawing.Point(0, 34);
             this.tabControlFiles.Name = "tabControlFiles";
+            this.tabControlFiles.Padding = new System.Drawing.Point(20, 4);
             this.tabControlFiles.SelectedIndex = 0;
             this.tabControlFiles.Size = new System.Drawing.Size(1253, 563);
             this.tabControlFiles.TabIndex = 15;

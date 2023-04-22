@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace CustomControls
 {
-    public class TextEditor : SplitContainer
+    public class TextEditorControl : SplitContainer
     {
         private readonly RichTextBoxV2 _richTextBoxContent;
         private readonly RichTextBox _richTextBoxNumbering;
         private int _previousLineNumber = 0;
 
-        public TextEditor()
+        public TextEditorControl()
         {
             _richTextBoxNumbering = new RichTextBox
             {

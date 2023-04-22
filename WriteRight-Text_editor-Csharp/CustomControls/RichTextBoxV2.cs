@@ -55,7 +55,7 @@ namespace CustomControls
         {
             base.WndProc(ref m);
 
-            if (m.Msg == WM_VSCROLL)
+            if (m.Msg == WM_VSCROLL || m.Msg == WM_GETDLGCODE || m.Msg == WM_MOUSEFIRST)
             {
                 Point p = new Point();
                 SendMessage(Handle, EM_GETSCROLLPOS, IntPtr.Zero, ref p);
