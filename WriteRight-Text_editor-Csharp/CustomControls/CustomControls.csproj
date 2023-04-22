@@ -47,7 +47,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SystemMessageHandler.cs" />
-    <Compile Include="TextEditor.cs">
+    <Compile Include="TextEditorControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

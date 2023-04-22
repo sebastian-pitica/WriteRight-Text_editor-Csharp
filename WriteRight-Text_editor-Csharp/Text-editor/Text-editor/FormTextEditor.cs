@@ -14,6 +14,7 @@ namespace TextEditor
     public partial class FormMainWindow : Form
     {
         private RichTextBoxV2 _richTextBoxMainV2;
+        private TextEditorControl _textEditorControl;
         private readonly string _windowTitle = "Editorescu";
 
         public FormMainWindow()
@@ -100,7 +101,7 @@ namespace TextEditor
 
         private void ZoomInClick(object sender, EventArgs e)
         {
-
+            
         }
 
         private void FormatDocumentClick(object sender, EventArgs e)
@@ -192,14 +193,15 @@ namespace TextEditor
         {
             try
             {
-                e.Graphics.FillRectangle(new SolidBrush(tabControlFiles.BackColor), e.Bounds);
                 TabPage tabPage = tabControlFiles.TabPages[e.Index];
 
                 Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
+                e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
 
+                tabRect.Inflate(-5, -2);
                 TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
                     tabRect, tabPage.ForeColor, TextFormatFlags.Left);
-                
+
                 var closeImage = Resources.CloseButton;
                 e.Graphics.DrawImage(closeImage,
                 (tabRect.Right - closeImage.Width),
@@ -240,12 +242,14 @@ namespace TextEditor
                 return;
             }
             SetMainTextBoxReference();
+            SetTextEditorReference();
             SetWindowTitle();
         }
 
         private void TabControlFilesControlAdded(object sender, ControlEventArgs e)
         {
             SetMainTextBoxReference();
+            SetTextEditorReference();
             SetWindowTitle();
         }
 
@@ -258,10 +262,19 @@ namespace TextEditor
             _richTextBoxMainV2 = reference;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private void SetTextEditorReference()
+        {
+            TextEditorControl reference = Utilities.GetTextEditorControlFTabControl(tabControlFiles);
+            _textEditorControl = reference;
+        }
+
         private void SetWindowTitle()
         {
             string titleFileName = Utilities.GetFileNameFromTabControl(tabControlFiles);
-            this.Text = titleFileName + " - " + _windowTitle;
+            Text = titleFileName + " - " + _windowTitle;
         }
     }
 }
