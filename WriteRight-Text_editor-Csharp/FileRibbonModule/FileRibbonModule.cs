@@ -5,6 +5,8 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing;
 
 namespace FileRibbonModule
 {
@@ -30,7 +32,19 @@ namespace FileRibbonModule
         public override void Execute()
         {
             TabPage tabPage = Utilities.CreateTab("new");
+            if (UtilitiesFormat.isDarkmode)
+            {
+                tabPage.BackColor =  ColorTranslator.FromHtml("#24292E");
+                tabPage.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                ((TextEditorControl)tabPage.Controls[0]).RichTextBoxEditor.BackColor = ColorTranslator.FromHtml("#24292E");
+                ((TextEditorControl)(tabPage.Controls[0])).RichTextBoxEditor.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                ((TextEditorControl)(tabPage.Controls[0])).BackColor = ColorTranslator.FromHtml("#C8D3DA");
+
+                (((TextEditorControl)tabPage.Controls[0])).RichTextBoxNumbering.BackColor = ColorTranslator.FromHtml("#24292E");
+                (((TextEditorControl)tabPage.Controls[0])).RichTextBoxNumbering.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+            }
             _mainTabControlRef.TabPages.Add(tabPage);
+            
             _mainTabControlRef.SelectedIndex = _mainTabControlRef.TabPages.Count - 1;
         }
 
