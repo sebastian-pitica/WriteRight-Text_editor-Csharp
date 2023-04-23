@@ -4,3 +4,9 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_e
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.csproj.CoreCompileInputs.cache
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CustomControls\bin\Debug\CustomControls.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CustomControls\bin\Debug\CustomControls.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.csproj.AssemblyReference.cache
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.csproj.CoreCompileInputs.cache
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.pdb

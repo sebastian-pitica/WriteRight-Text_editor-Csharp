@@ -5,9 +5,10 @@ using System;
 using System.Windows.Forms;
 using FileRibbonModule;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using WriteRight_Text_editor_Csharp.Properties;
 using CustomControls;
+using static CommonsModule.UtilitiesFormat;
+using FormatRibbonModule;
 
 namespace TextEditor
 {
@@ -21,6 +22,9 @@ namespace TextEditor
         {
             InitializeComponent();
             ExecuteCommand(NewFileCommand.GetCommandObj());
+            ExecuteCommand(ThemeCommand.GetCommandObj());
+            ExecuteCommand(ThemeCommand.GetCommandObj());
+            _textEditorControl.ZoomFactor = 1.50f;
         }
 
         private void NewFileClick(object sender, EventArgs e)
@@ -96,37 +100,46 @@ namespace TextEditor
 
         private void ZoomOutClick(object sender, EventArgs e)
         {
-
+            if (_textEditorControl.ZoomFactor > 0.25f)
+            {
+                _textEditorControl.ZoomFactor -= 0.25f;
+                _textEditorControl.SplitterDistance -= 3;
+            }
         }
 
         private void ZoomInClick(object sender, EventArgs e)
         {
-            
+            if (_textEditorControl.ZoomFactor < 4.25f)
+            {
+                _textEditorControl.ZoomFactor += 0.25f;
+                _textEditorControl.SplitterDistance += 3;
+            }
         }
 
         private void FormatDocumentClick(object sender, EventArgs e)
         {
-
+            ExecuteCommand(FormatDocument.GetCommandObj());
+            CompleteHighlight(_richTextBoxMainV2);
         }
 
         private void ToggleCommentClick(object sender, EventArgs e)
         {
-
+            CommentUncomment(_richTextBoxMainV2);
         }
 
-        private void ColoringClick(object sender, EventArgs e)
+        private void ThemeClick(object sender, EventArgs e)
         {
-
+            ExecuteCommand(ThemeCommand.GetCommandObj());
         }
 
-        private void ColoringPreferencesClick(object sender, EventArgs e)
+        private void SyntaxHighlighClick(object sender, EventArgs e)
         {
-
+            ExecuteCommand(SyntaxHighlightCommand.GetCommandObj());
         }
 
         private void FontClick(object sender, EventArgs e)
         {
-
+            ExecuteCommand(FontCommand.GetCommandObj());
         }
 
         private void SyntaxCheckerClick(object sender, EventArgs e)
@@ -165,12 +178,6 @@ namespace TextEditor
         {
             tabControlCommand.SetTarget(tabControlFiles);
             tabControlCommand.Execute();
-        }
-
-        private void RichTextBoxMainTextChanged(object sender, EventArgs e)
-        {
-            textBoxLinesNr.Text = CountMainBoxLines().ToString();
-            textBoxWordsNr.Text = CountMainBoxWords().ToString();
         }
 
         private int CountMainBoxLines()
@@ -275,6 +282,50 @@ namespace TextEditor
         {
             string titleFileName = Utilities.GetFileNameFromTabControl(tabControlFiles);
             Text = titleFileName + " - " + _windowTitle;
+        }
+
+        private void RichTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            tabControlFiles.SelectedTab.BorderStyle = BorderStyle.None;
+
+            //_richTextBoxMainV2.AcceptsTab = true; 
+
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                e.Handled = true;
+                FormatPaste(_richTextBoxMainV2);
+
+                if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+                {
+
+                    CompleteHighlight(_richTextBoxMainV2);
+                }
+            }
+        }
+
+        /// <summary>
+        ///  Aplica functiile dupa ce s-a terminat de apasat butonul si s-au facut schimbarile in textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RichTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    EnterTab(_richTextBoxMainV2);
+                }
+                if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Tab)
+                {
+                    _richTextBoxMainV2.HideSelection = true;
+                    this.ActiveControl = tabControlFiles;
+                    LiniarHighLighting(_richTextBoxMainV2);
+                    _richTextBoxMainV2.Select();
+                }
+            }
+            textBoxLinesNr.Text = CountMainBoxLines().ToString();
+            textBoxWordsNr.Text = CountMainBoxWords().ToString();
         }
     }
 }

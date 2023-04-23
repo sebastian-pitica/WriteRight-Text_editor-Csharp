@@ -20,6 +20,7 @@ namespace CustomControls
                 ReadOnly = true,
                 BorderStyle = BorderStyle.None,
                 SelectionAlignment = HorizontalAlignment.Center,
+                WordWrap = false    
             };
 
             _richTextBoxNumbering.GotFocus += (sender, e) => { _richTextBoxContent.Focus(); };
@@ -27,7 +28,8 @@ namespace CustomControls
             {
                 Dock = DockStyle.Fill,
                 BorderStyle = BorderStyle.None,
-                WordWrap = false
+                WordWrap = false,
+                AcceptsTab = true
             };
             _richTextBoxNumbering.Font = _richTextBoxContent.Font;
 
@@ -84,6 +86,17 @@ namespace CustomControls
         public RichTextBox RichTextBoxNumbering
         {
             get => _richTextBoxNumbering;
+        }
+
+        public float ZoomFactor
+        {
+            get => _richTextBoxContent.ZoomFactor;
+
+            set
+            {
+                _richTextBoxContent.ZoomFactor = value;
+                _richTextBoxNumbering.ZoomFactor = value;
+            }
         }
     }
 }

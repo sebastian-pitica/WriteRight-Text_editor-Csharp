@@ -99,6 +99,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule.csproj">
+      <Project>{b7cfa4a4-fadd-4ce9-8732-bfcc9e594dc9}</Project>
+      <Name>FormatRibbonModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CommonsModule\CommonsModule.csproj">
       <Project>{7bc394e9-afa5-4cf3-a037-52eae13355ff}</Project>
       <Name>CommonsModule</Name>
