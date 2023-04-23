@@ -105,6 +105,7 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_e
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CustomControls.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\CustomControls.pdb
+<<<<<<< HEAD
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe.config
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.exe
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\WriteRight-Text_editor-Csharp.pdb
@@ -129,3 +130,5 @@ C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.exe
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\WriteRight-Text_editor-Csharp.pdb
+=======
+>>>>>>> main

@@ -55,6 +55,7 @@ D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_e
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CustomControls.dll
 D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CustomControls.pdb
+<<<<<<< HEAD
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.dll
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.dll
@@ -68,3 +69,5 @@ C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Edit
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
+=======
+>>>>>>> main
