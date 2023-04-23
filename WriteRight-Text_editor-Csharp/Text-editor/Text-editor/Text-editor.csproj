@@ -99,10 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule.csproj">
-      <Project>{b7cfa4a4-fadd-4ce9-8732-bfcc9e594dc9}</Project>
-      <Name>FormatRibbonModule</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\CommonsModule\CommonsModule.csproj">
       <Project>{7bc394e9-afa5-4cf3-a037-52eae13355ff}</Project>
       <Name>CommonsModule</Name>
@@ -118,6 +114,10 @@
     <ProjectReference Include="..\..\FileRibbonModule\FileRibbonModule.csproj">
       <Project>{17eec643-7979-4414-9348-12229919b62f}</Project>
       <Name>FileRibbonModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FormatRibbonModule\FormatRibbonModule.csproj">
+      <Project>{b7cfa4a4-fadd-4ce9-8732-bfcc9e594dc9}</Project>
+      <Name>FormatRibbonModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
       <Project>{31ddae14-adda-4a06-be84-6588ca00cdbd}</Project>

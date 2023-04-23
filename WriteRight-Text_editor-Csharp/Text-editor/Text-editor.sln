@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileRibbonModule", "..\File
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "..\CustomControls\CustomControls.csproj", "{75C23451-3E89-4517-9F24-4EA823542471}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatRibbonModule", "..\..\..\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule.csproj", "{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatRibbonModule", "..\FormatRibbonModule\FormatRibbonModule.csproj", "{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

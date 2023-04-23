@@ -12,7 +12,7 @@ using static CommonsModule.UtilitiesFormat;
 
 namespace FormatRibbonModule
 {
-    public class ColorCommand : IMainWindowCommand
+    public class ThemeCommand : IMainWindowCommand
     {
         [DllImport("dwmapi.dll")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
@@ -22,17 +22,17 @@ namespace FormatRibbonModule
             DwmSetWindowAttribute(handle, 20, ref preference, sizeof(int));
         }
         
-        private static ColorCommand _singletonInstance = null;
+        private static ThemeCommand _singletonInstance = null;
         internal Form _mainFormWindowRef;
         internal List<Control> _controls= new List<Control>();
         
-        private ColorCommand(){}
+        private ThemeCommand(){}
 
-        public static new ColorCommand GetCommandObj()
+        public static new ThemeCommand GetCommandObj()
         {
             if (_singletonInstance == null)
             {
-                _singletonInstance = new ColorCommand();
+                _singletonInstance = new ThemeCommand();
             }
             return _singletonInstance;
         }
@@ -148,22 +148,22 @@ namespace FormatRibbonModule
             }
         }
     }
-    public class ColorPreferences : IMainTextBoxCommand
+    public class SyntaxHighlightCommand : IMainTextBoxCommand
     {
-        private static ColorPreferences _singletonInstance = null;
+        private static SyntaxHighlightCommand _singletonInstance = null;
         internal RichTextBoxV2 _mainRichTextBoxV2Ref;
         internal Form popupForm;
         internal Label label;
         internal bool isDefault=true;
         public static bool isXMLChanged=false;
 
-        private ColorPreferences() { }
+        private SyntaxHighlightCommand() { }
 
-        public static new ColorPreferences GetCommandObj()
+        public static new SyntaxHighlightCommand GetCommandObj()
         {
             if (_singletonInstance == null)
             {
-                _singletonInstance = new ColorPreferences();
+                _singletonInstance = new SyntaxHighlightCommand();
             }
             return _singletonInstance;
         }
