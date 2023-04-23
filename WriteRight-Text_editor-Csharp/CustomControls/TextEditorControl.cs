@@ -50,8 +50,8 @@ namespace CustomControls
             {
                 _previousLineNumber = _richTextBoxContent.Lines.Length;
                 UpdateLineNumbers();
-                _richTextBoxContent.IsSaved = false;
             }
+            _richTextBoxContent.IsSaved = false;
         }
 
         private void UpdateLineNumbers()
