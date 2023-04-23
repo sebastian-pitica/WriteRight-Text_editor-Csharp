@@ -1,0 +1,6 @@
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\bin\Debug\CustomControls.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CustomControls\obj\Debug\CustomControls.pdb
