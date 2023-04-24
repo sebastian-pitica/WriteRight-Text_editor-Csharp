@@ -89,6 +89,18 @@ namespace FileRibbonModule
 
                     TabPage tabPage = Utilities.CreateTab(Path.GetFileName(path));
                     _mainTabControlRef.TabPages.Add(tabPage);
+                    if (UtilitiesFormat.isDarkmode)
+                    {
+                        tabPage.BackColor = ColorTranslator.FromHtml("#24292E");
+                        tabPage.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        ((TextEditorControl)tabPage.Controls[0]).RichTextBoxEditor.BackColor = ColorTranslator.FromHtml("#24292E");
+                        ((TextEditorControl)(tabPage.Controls[0])).RichTextBoxEditor.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        ((TextEditorControl)(tabPage.Controls[0])).BackColor = ColorTranslator.FromHtml("#C8D3DA");
+
+                        (((TextEditorControl)tabPage.Controls[0])).RichTextBoxNumbering.BackColor = ColorTranslator.FromHtml("#24292E");
+                        (((TextEditorControl)tabPage.Controls[0])).RichTextBoxNumbering.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                    }
+
                     _mainTabControlRef.SelectedIndex = _mainTabControlRef.TabPages.Count - 1;
 
                     RichTextBoxV2 mainTextBoxRef = Utilities.GetRichTextBoxV2FTabControl(_mainTabControlRef);

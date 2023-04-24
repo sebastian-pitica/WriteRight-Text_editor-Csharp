@@ -35,6 +35,11 @@ namespace TextEditor
         private void OpenFileClick(object sender, EventArgs e)
         {
             ExecuteCommand(OpenFileCommand.GetCommandObj());
+            if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+            {
+
+                CompleteHighlight(_richTextBoxMainV2);
+            }
         }
 
         private void SaveFileClick(object sender, EventArgs e)
@@ -130,6 +135,10 @@ namespace TextEditor
         private void ThemeClick(object sender, EventArgs e)
         {
             ExecuteCommand(ThemeCommand.GetCommandObj());
+            if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+            {
+                CompleteHighlight(_richTextBoxMainV2);
+            }
         }
 
         private void SyntaxHighlighClick(object sender, EventArgs e)

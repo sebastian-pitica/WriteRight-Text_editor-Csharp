@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CommonsModule
 {
@@ -171,7 +172,7 @@ namespace CommonsModule
             ColorWordsList(richTextBox, list, send);
 
             /*strings*/
-            string pattern = "\\\"([^\\\"\\r\\n]*)\\\"";
+            string pattern = "(?<!\\\\)\".*?(?<!\\\\)\"";
             Regex regex = new Regex(pattern);
             Color wordsColor = ColorTranslator.FromHtml(stringColor); ;
             int index = 0;
@@ -295,7 +296,7 @@ namespace CommonsModule
                 currentLine = comment + richTextBox.Text.Substring(lineStartIndex + currentLine.IndexOf("*/"), lineEndIndex - lineStartIndex - currentLine.IndexOf("*/"));
             }
 
-
+            char[] sep = {'\t',' '};
             foreach (string word in currentLine.Replace("\n", " ").Split(' '))
             {
                 if (Array.IndexOf(types, word) >= 0)
@@ -326,14 +327,16 @@ namespace CommonsModule
                     richTextBox.SelectionColor = ColorTranslator.FromHtml(preprocesorColor);
                     richTextBox.DeselectAll();
                 }
-                else if (word.Length > 2 && word[0] == '\"' && word[word.Length - 1] == '\"')
-                {
-                    startIndex = lineStartIndex + currentLine.IndexOf(word);
-                    richTextBox.Select(startIndex, word.Length);
-                    richTextBox.SelectionColor = ColorTranslator.FromHtml(stringColor);
-                    richTextBox.DeselectAll();
+                //else if (word.Length > 2 && word[0] == '\"' && word[word.Length - 1] == '\"')
+                //{
+                //    startIndex = lineStartIndex + currentLine.IndexOf(word);
+                //    richTextBox.Select(startIndex, word.Length);
+                //    richTextBox.SelectionColor = ColorTranslator.FromHtml(stringColor);
+                //    richTextBox.DeselectAll();
 
-                }
+                //}
+
+                
                 else
                 {
                     if (currentLine.Contains("*/")) { continue; }
@@ -341,6 +344,19 @@ namespace CommonsModule
                     richTextBox.Select(startIndex, word.Length);
                     richTextBox.SelectionColor = Color.Black;
                     richTextBox.DeselectAll();
+
+                    if (Regex.Matches(currentLine, "(?<!\\\\)\".*?(?<!\\\\)\"").Count > 0)
+                    {
+                        MatchCollection matches = Regex.Matches(currentLine, "(?<!\\\\)\".*?(?<!\\\\)\"");
+                        foreach (Match matchy in matches)
+                        {
+                            startIndex = lineStartIndex + currentLine.IndexOf(matchy.Value);
+                            richTextBox.Select(startIndex, matchy.Length);
+                            richTextBox.SelectionColor = ColorTranslator.FromHtml(stringColor);
+                        }
+                        richTextBox.DeselectAll();
+                        richTextBox.SelectionStart = initialPos;
+                    }
 
                     if (currentLine.Contains("//"))
                     {
@@ -352,6 +368,7 @@ namespace CommonsModule
                         continue;
                     }
                 }
+                
             }
             richTextBox.SelectionStart = initialPos;
         }
@@ -438,7 +455,6 @@ namespace CommonsModule
                 richTextBox.SelectedText = richTextBox.SelectedText.Replace("*/", "").Replace("/*", "");
                 return;
             }
-
             richTextBox.SelectionColor = Color.Green;
             richTextBox.SelectedText = "/*" + richTextBox.SelectedText + "*/";
         }

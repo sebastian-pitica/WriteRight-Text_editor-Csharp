@@ -1,61 +1,3 @@
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.AssemblyReference.cache
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.dll
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\DialogBoxes.exe
-C:\Users\caule\Desktop\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\DialogBoxes.pdb
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.dll
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.dll
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.pdb
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.AssemblyReference.cache
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CoreCompileInputs.cache
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.dll
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.pdb
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.AssemblyReference.cache
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CoreCompileInputs.cache
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\obj\Debug\EditRibbonModule.dll
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\bin\Debug\EditRibbonModule.dll
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\bin\Debug\CommonsModule.dll
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\bin\Debug\Interfaces.dll
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\bin\Debug\CommonsModule.pdb
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\bin\Debug\Interfaces.pdb
-D:\AC\an III\WriteRight-Text_editor-Csharp - Copie\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.AssemblyReference.cache
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CoreCompileInputs.cache
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\Interfaces.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.AssemblyReference.cache
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CoreCompileInputs.cache
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CustomControls.dll
-D:\FACULTY\anul3\sem2\IP\proiect\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CustomControls.pdb
-<<<<<<< HEAD
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.dll
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\EditRibbonModule.pdb
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\bin\Debug\CommonsModule.dll
@@ -69,5 +11,3 @@ C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Edit
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.csproj.CopyComplete
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.dll
 C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\EditRibbonModule\obj\Debug\EditRibbonModule.pdb
-=======
->>>>>>> main
