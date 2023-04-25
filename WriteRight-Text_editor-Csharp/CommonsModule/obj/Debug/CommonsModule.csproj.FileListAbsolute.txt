@@ -1,6 +1,11 @@
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\bin\Debug\CommonsModule.dll
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\bin\Debug\CommonsModule.pdb
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.dll
-D:\AC\an III\IP\WriteRight-Text_editor-Csharp\Text-editor\CommonsModule\obj\Debug\CommonsModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CopyComplete
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb

@@ -2,40 +2,45 @@
 using EditRibbonModule;
 using Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using FileRibbonModule;
+using System.Drawing;
+using WriteRight_Text_editor_Csharp.Properties;
+using CustomControls;
+using static CommonsModule.UtilitiesFormat;
+using FormatRibbonModule;
+using HelpModule;
+using static CommonsModule.Utilities;
+
+/**************************************************************************
+ *                                                                        *
+ *  File:        FormTextEditor.cs                                        *
+ *  Copyright:                                                            *
+ *  Description: Fișierul conține codul interfeței grafice pentru         *
+ *  proiectul WriteRight.                                                 *
+ *  Designed by: Pitica Sebastian                                         *
+ *  Updated by: Pitica Sebastian, Caulea Vasile                           *
+ *                                                                        *
+ **************************************************************************/
 
 namespace TextEditor
 {
-    public partial class FormMainWindow : Form
+    public partial class FormMainWindow : Form, IObserver
     {
         private RichTextBoxV2 _richTextBoxMainV2;
+        private TextEditorControl _textEditorControl;
+        private const string WindowTitle = "WriteRight";
 
         public FormMainWindow()
         {
-            InitializeComponent();
-            _richTextBoxMainV2 = new RichTextBoxV2();
-            _richTextBoxMainV2.baseComponent = richTextBoxMain;
+            ExecuteInitCommands();
         }
 
+        #region Simple command objects calls
+        #region <creator>Pitica Sebastian</creator>
         private void NewFileClick(object sender, EventArgs e)
         {
             ExecuteCommand(NewFileCommand.GetCommandObj());
-        }
-
-        private void OpenFileClick(object sender, EventArgs e)
-        {
-            ExecuteCommand(OpenFileCommand.GetCommandObj());
         }
 
         private void SaveFileClick(object sender, EventArgs e)
@@ -43,10 +48,14 @@ namespace TextEditor
             ExecuteCommand(SaveFileCommand.GetCommandObj());
         }
 
+        private void CloseFileClick(object sender, EventArgs e)
+        {
+            ExecuteCommand(CloseFileCommand.GetCommandObj());
+        }
+
         private void NewWindowClick(object sender, EventArgs e)
         {
-            ISingletonCommand command = OpenNewWindowCommand.GetCommandObj();
-            command.Execute();
+            ExecuteCommand(OpenNewWindowCommand.GetCommandObj());
         }
 
         private void UndoClick(object sender, EventArgs e)
@@ -94,82 +103,122 @@ namespace TextEditor
             ExecuteCommand(ReportBugCommand.GetCommandObj());
         }
 
-        private void ZoomOutClick(object sender, EventArgs e)
+        private void SyntaxHighlightClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void ZoomInClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormatDocumentClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToggleCommentClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ColoringClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ColoringPreferencesClick(object sender, EventArgs e)
-        {
-
+            ExecuteCommand(SyntaxHighlightCommand.GetCommandObj());
         }
 
         private void FontClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void SyntaxCheckerClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WordCountClick(object sender, EventArgs e)
-        {
-
+            ExecuteCommand(FontCommand.GetCommandObj());
         }
 
         private void DocsClick(object sender, EventArgs e)
         {
-
+            ExecuteCommand(HelpCommand.GetCommandObj());
         }
 
         private void AboutClick(object sender, EventArgs e)
         {
-
+            ExecuteCommand(AboutCommand.GetCommandObj());
         }
 
-        private void ExecuteCommand(IMainWindowCommand mainWindowCommand)
+        private void ZoomOutClick(object sender, EventArgs e)
+        {
+            ExecuteCommand(ZoomOutCommand.GetCommandObj());
+        }
+
+        private void ZoomInClick(object sender, EventArgs e)
+        {
+            ExecuteCommand(ZoomInCommand.GetCommandObj());
+        }
+        #endregion
+        #endregion
+
+        #region Complex command objects calls
+        private void OpenFileClick(object sender, EventArgs e)
+        {
+            SetStatus(Loading);
+            ExecuteCommand(OpenFileCommand.GetCommandObj());
+            if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+            {
+                CompleteHighlight(_richTextBoxMainV2);
+            }
+            SetStatus(Ready);
+        }
+
+        private void FormatDocumentClick(object sender, EventArgs e)
+        {
+            SetStatus(Loading);
+            ExecuteCommand(FormatDocument.GetCommandObj());
+            CompleteHighlight(_richTextBoxMainV2);
+            SetStatus(Ready); 
+        }
+
+        private void ToggleCommentClick(object sender, EventArgs e)
+        {
+            CommentUncomment(_richTextBoxMainV2);
+        }
+
+        private void ThemeClick(object sender, EventArgs e)
+        {
+            SetStatus(Loading);
+            ExecuteCommand(ThemeCommand.GetCommandObj());
+            if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+            {
+                CompleteHighlight(_richTextBoxMainV2);
+            }
+            SetStatus(Ready); 
+        }
+        #endregion
+
+        #region Execute command function series
+        #region <creator>Pitica Sebastian</creator>
+        private void ExecuteCommand(MainWindowCommand mainWindowCommand)
         {
             mainWindowCommand.SetTarget(this);
             mainWindowCommand.Execute();
         }
 
-        private void ExecuteCommand(IMainTextBoxCommand mainTextBoxCommand)
+        private void ExecuteCommand(MainTextBoxCommand mainTextBoxCommand)
         {
             mainTextBoxCommand.SetTarget(_richTextBoxMainV2);
             mainTextBoxCommand.Execute();
         }
 
-        private void RichTextBoxMainTextChanged(object sender, EventArgs e)
+        private void ExecuteCommand(TabControlCommand tabControlCommand)
         {
-            textBoxLinesNr.Text = CountMainBoxLines().ToString();
-            textBoxWordsNr.Text = CountMainBoxWords().ToString();
+            tabControlCommand.SetTarget(tabControlFiles);
+            tabControlCommand.Execute();
+        }
+
+        private void ExecuteCommand(SingletonCommand singletonCommand)
+        {
+            singletonCommand.Execute();
+        }
+
+        private void ExecuteInitCommands()
+        {
+            InitializeComponent();
+            ExecuteCommand(NewFileCommand.GetCommandObj());
+            ExecuteCommand(ThemeCommand.GetCommandObj());
+            ExecuteCommand(ThemeCommand.GetCommandObj());
+            _textEditorControl.ZoomFactor = 1.50f;
+        }
+        #endregion
+        #endregion
+
+        #region Other functions
+        #region <creator>Pitica Sebastian</creator>
+
+        private void SetStatus(string status)
+        {
+            toolStripStatusLabel.Text = status;
         }
 
         private int CountMainBoxLines()
         {
-            return _richTextBoxMainV2.baseComponent.Lines.Length;
+            return _richTextBoxMainV2.Lines.Length;
         }
 
         /// <summary>
@@ -180,13 +229,157 @@ namespace TextEditor
         /// <returns>Numarul de cuvinte</returns>
         private int CountMainBoxWords()
         {
-            return _richTextBoxMainV2.baseComponent.Text.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            return _richTextBoxMainV2.Text.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void PrintCounts()
         {
-            ReportBugClick(sender, e);
+            textBoxLinesNr.Text = CountMainBoxLines().ToString();
+            textBoxWordsNr.Text = CountMainBoxWords().ToString();
         }
-    }
+        #endregion
 
+        #region <creator>Vasile</creator>
+
+        private void TabControlFilesDrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                TabPage tabPage = tabControlFiles.TabPages[e.Index];
+
+                Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
+                e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
+
+                tabRect.Inflate(-5, -2);
+                TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
+                    tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+
+                var closeImage = Resources.CloseButton;
+                e.Graphics.DrawImage(closeImage,
+                (tabRect.Right - closeImage.Width),
+                tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void TabControlFilesMouseDown(object sender, MouseEventArgs e)
+        {
+            for (var i = 0; i < tabControlFiles.TabPages.Count; i++)
+            {
+                var tabRect = tabControlFiles.GetTabRect(i);
+                var closeImage = Resources.CloseButton;
+                var imageRect = new Rectangle(
+                    (tabRect.Right - closeImage.Width),
+                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                    closeImage.Width,
+                    closeImage.Height);
+                if (!imageRect.Contains(e.Location)) continue;
+                tabControlFiles.SelectedIndex = i;
+                ExecuteCommand(CloseFileCommand.GetCommandObj());
+                break;
+            }
+        }
+
+        private void TabControlFilesSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlFiles.SelectedIndex == -1)
+            {
+                ExecuteCommand(NewFileCommand.GetCommandObj());
+                return;
+            }
+            SetMainTextBoxReference();
+            SetTextEditorReference();
+            SetWindowTitle();
+        }
+
+        private void TabControlFilesControlAdded(object sender, ControlEventArgs e)
+        {
+            SetMainTextBoxReference();
+            SetTextEditorReference();
+            SetWindowTitle();
+            _richTextBoxMainV2.Attach(this);
+        }
+
+        /// <summary>
+        /// Functia preia elementul RichTextBoxV2 din noul tab accesat pentru a pastra referinta la acesta
+        /// </summary>
+        private void SetMainTextBoxReference()
+        {
+            RichTextBoxV2 reference = GetRichTextBoxV2FromTabControl(tabControlFiles);
+            _richTextBoxMainV2 = reference;
+        }
+
+        /// <summary>
+        /// Functia preia elementul TextEditorControl din noul tab accesat pentru a pastra referinta la acesta
+        /// </summary>
+        private void SetTextEditorReference()
+        {
+            TextEditorControl reference = GetTextEditorControlFromTabControl(tabControlFiles);
+            _textEditorControl = reference;
+        }
+
+        private void SetWindowTitle()
+        {
+            string titleFileName = GetFileNameFromTabControl(tabControlFiles);
+            Text = titleFileName + " - " + WindowTitle;
+        }
+
+        public void UpdateObserver()
+        {
+            SetWindowTitle();
+        }
+
+        #endregion
+
+        private void RichTextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            tabControlFiles.SelectedTab.BorderStyle = BorderStyle.None;
+
+            //_richTextBoxMainV2.AcceptsTab = true; 
+
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                e.Handled = true;
+                FormatPaste(_richTextBoxMainV2);
+
+                if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+                {
+
+                    CompleteHighlight(_richTextBoxMainV2);
+                }
+            }
+            PrintCounts();
+        }
+
+        /// <summary>
+        ///  Aplica functiile dupa ce s-a terminat de apasat butonul si s-au facut schimbarile in textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RichTextBoxKeyUp(object sender, KeyEventArgs e)
+        {
+            if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    EnterTab(_richTextBoxMainV2);
+                }
+                if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Back || e.KeyCode == Keys.Tab)
+                {
+                    _richTextBoxMainV2.HideSelection = true;
+                    ActiveControl = tabControlFiles;
+                    LiniarHighLighting(_richTextBoxMainV2);
+                    _richTextBoxMainV2.Select();
+                }
+            }
+            PrintCounts();
+        }
+
+        #endregion
+
+    }
 }
