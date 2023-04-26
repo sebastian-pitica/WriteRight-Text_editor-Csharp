@@ -256,10 +256,10 @@ namespace TextEditor
             try
             {
                 TabPage tabPage = tabControlFiles.TabPages[e.Index];
-
                 Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
-                e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
 
+                e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
+                
                 tabRect.Inflate(-5, -2);
                 TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
                     tabRect, tabPage.ForeColor, TextFormatFlags.Left);
