@@ -192,6 +192,16 @@ namespace TextEditor
             tabControlCommand.Execute();
         }
 
+        #region <updated>Caulea Vasile</updated>
+
+        private void ExecuteCommand(TextEditorControlCommand textEditorControlCommand)
+        {
+            textEditorControlCommand.SetTarget(_textEditorControl);
+            textEditorControlCommand.Execute();
+        }
+        
+        #endregion
+        
         private void ExecuteCommand(SingletonCommand singletonCommand)
         {
             singletonCommand.Execute();

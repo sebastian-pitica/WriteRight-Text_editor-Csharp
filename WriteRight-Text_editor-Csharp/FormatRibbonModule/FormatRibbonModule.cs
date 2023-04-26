@@ -23,6 +23,8 @@ namespace FormatRibbonModule
         private static ThemeCommand _singletonInstance;
         private Form _mainFormWindowRef;
         private readonly List<Control> _controls= new List<Control>();
+        private static readonly Color BackColor = ColorTranslator.FromHtml("#24292E");
+        private static readonly Color ForeColor = ColorTranslator.FromHtml("#C8D3DA");
         
         private ThemeCommand(){}
 
@@ -41,16 +43,15 @@ namespace FormatRibbonModule
                     string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");                    
                     switch (type) {
                         case "RichTextBox":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
+                            _controls[i].BackColor = BackColor;
                             _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
                             break;
                         case "Label":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E"); 
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA"); 
-                            break;
                         case "TextBox":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA"); 
+                        case "StatusStrip":
+                        case "Button":
+                            _controls[i].BackColor = BackColor;
+                            _controls[i].ForeColor = ForeColor;
                             break;
                         case "MenuStrip":
                             _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
@@ -68,24 +69,16 @@ namespace FormatRibbonModule
                                 }
                             }
                             break;
-                        case "StatusStrip":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            break;
-                        case "Button":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            break;
                         case "TabControl":
                             foreach (TabPage page in ((TabControl)_controls[i]).TabPages) {
-                                page.BackColor = ColorTranslator.FromHtml("#24292E");
-                                page.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = ColorTranslator.FromHtml("#24292E");
-                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                                ((TextEditorControl)page.Controls[0]).BackColor = ColorTranslator.FromHtml("#C8D3DA");
+                                page.BackColor = BackColor;
+                                page.ForeColor = ForeColor;
+                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = BackColor;
+                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = ForeColor;
+                                ((TextEditorControl)page.Controls[0]).BackColor = ForeColor;
 
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = ColorTranslator.FromHtml("#24292E");
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = BackColor;
+                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ForeColor;
                             }
                             break;
                     }

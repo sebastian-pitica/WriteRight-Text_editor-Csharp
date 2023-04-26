@@ -48,7 +48,10 @@ namespace CommonsModule
         /// <returns>TabPage</returns>
         public static TabPage CreateTab(in string tabName)
         {
-            TabPage tabPage = new TabPage(tabName);
+            TabPage tabPage = new TabPage(tabName)
+            {
+                BorderStyle = BorderStyle.None
+            };
             TextEditorControl textEditor = new TextEditorControl();
             tabPage.Controls.Add(textEditor);
 

@@ -123,3 +123,4 @@ D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRigh
 D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\Interfaces.pdb
 D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\bin\Debug\HelpModule.pdb
 D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\Text-editor\obj\Debug\Text-editor.csproj.SuggestedBindingRedirects.cache

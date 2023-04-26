@@ -106,6 +106,7 @@ namespace CustomControls
         private readonly RichTextBoxV2 _richTextBoxContent;
         private readonly RichTextBox _richTextBoxNumbering;
         private int _previousLineNumber;
+        private int _previousTextLength;
 
         public TextEditorControl()
         {
@@ -149,7 +150,12 @@ namespace CustomControls
                 _previousLineNumber = _richTextBoxContent.Lines.Length;
                 UpdateLineNumbers();
             }
-            _richTextBoxContent.IsSaved = false;
+
+            if (_previousTextLength != _richTextBoxContent.TextLength)
+            {
+                _previousTextLength = _richTextBoxContent.TextLength;
+                _richTextBoxContent.IsSaved = false;
+            }
         }
 
         private void UpdateLineNumbers()
