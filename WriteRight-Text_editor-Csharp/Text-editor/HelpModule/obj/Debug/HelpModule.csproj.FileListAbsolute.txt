@@ -22,3 +22,16 @@ D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp
 D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\obj\Debug\HelpModule.pdb
 D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\CommonsModule.dll
 D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\obj\Debug\HelpModule.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\obj\Debug\HelpModule.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\obj\Debug\HelpModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\obj\Debug\HelpModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\HelpModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\HelpModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\CustomControls.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Text-editor\HelpModule\obj\Debug\HelpModule.csproj.CopyComplete

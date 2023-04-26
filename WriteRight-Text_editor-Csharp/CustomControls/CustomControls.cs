@@ -85,6 +85,8 @@ namespace CustomControls
 
         public void Attach(IObserver observer)
         {
+            if (_observers.Contains(observer))
+                return;
             _observers.Add(observer);
         }
 

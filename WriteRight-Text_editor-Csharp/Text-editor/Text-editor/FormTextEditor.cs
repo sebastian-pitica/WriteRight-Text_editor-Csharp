@@ -152,7 +152,7 @@ namespace TextEditor
             SetStatus(Loading);
             ExecuteCommand(FormatDocument.GetCommandObj());
             CompleteHighlight(_richTextBoxMainV2);
-            SetStatus(Ready); 
+            SetStatus(Ready);
         }
 
         private void ToggleCommentClick(object sender, EventArgs e)
@@ -168,7 +168,7 @@ namespace TextEditor
             {
                 CompleteHighlight(_richTextBoxMainV2);
             }
-            SetStatus(Ready); 
+            SetStatus(Ready);
         }
         #endregion
 
@@ -293,15 +293,14 @@ namespace TextEditor
             }
             SetMainTextBoxReference();
             SetTextEditorReference();
-            SetWindowTitle();
+            SetTitles();
         }
 
         private void TabControlFilesControlAdded(object sender, ControlEventArgs e)
         {
             SetMainTextBoxReference();
             SetTextEditorReference();
-            SetWindowTitle();
-            _richTextBoxMainV2.Attach(this);
+            SetTitles();
         }
 
         /// <summary>
@@ -311,6 +310,7 @@ namespace TextEditor
         {
             RichTextBoxV2 reference = GetRichTextBoxV2FromTabControl(tabControlFiles);
             _richTextBoxMainV2 = reference;
+            _richTextBoxMainV2.Attach(this);
         }
 
         /// <summary>
@@ -322,15 +322,23 @@ namespace TextEditor
             _textEditorControl = reference;
         }
 
-        private void SetWindowTitle()
+        /// <summary>
+        /// Functia seteaza titlul ferestrei curente si titlul tab-ului selectat.
+        /// </summary>
+        private void SetTitles()
         {
-            string titleFileName = GetFileNameFromTabControl(tabControlFiles);
+            bool saved = _richTextBoxMainV2.IsSaved;
+
+            string titleFileName = ((!saved) ? "*" : "") + GetFileNameFromTabControl(tabControlFiles, true);
+            string titleTab = ((!saved) ? "* " : "") + GetFileNameFromTabControl(tabControlFiles, false);
+
             Text = titleFileName + " - " + WindowTitle;
+            tabControlFiles.SelectedTab.Text = titleTab;
         }
 
         public void UpdateObserver()
         {
-            SetWindowTitle();
+            SetTitles();
         }
 
         #endregion

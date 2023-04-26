@@ -88,10 +88,18 @@ namespace CommonsModule
             return reference;
         }
 
-        public static string GetFileNameFromTabControl(in TabControl tabControl)
+        /// <summary>
+        /// Obtine calea/numele fisierului deschis in tab-ul curent
+        /// </summary>
+        /// <param name="tabControl"></param>
+        /// <param name="isFilePath"></param>
+        /// <returns>Un string care reprezinta calea/numele fisierului</returns>
+        public static string GetFileNameFromTabControl(in TabControl tabControl, bool isFilePath)
         {
             RichTextBoxV2 reference = GetRichTextBoxV2FromTabControl(tabControl);
-            return reference.FilePath ?? tabControl.SelectedTab.Text;
+            string fileName = reference.FileName ?? tabControl.SelectedTab.Text.Replace("* ", "");
+            string filePath = reference.FilePath ?? fileName;
+            return isFilePath ? filePath : fileName;
         }
 
         public static void HandleException(Exception ex)

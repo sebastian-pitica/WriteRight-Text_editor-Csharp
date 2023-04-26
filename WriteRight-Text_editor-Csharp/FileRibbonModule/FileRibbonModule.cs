@@ -166,7 +166,7 @@ namespace FileRibbonModule
             RichTextBoxV2 richTextBoxV2 = Utilities.GetRichTextBoxV2FromTabControl(_mainTabControlRef);
             if (!richTextBoxV2.IsSaved)
             {
-                string fileName = Utilities.GetFileNameFromTabControl(_mainTabControlRef);
+                string fileName = Utilities.GetFileNameFromTabControl(_mainTabControlRef, true);
                 string message = "Save file \"" + fileName + "\"?";
                 DialogResult result = MessageBox.Show(message, "Save", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
