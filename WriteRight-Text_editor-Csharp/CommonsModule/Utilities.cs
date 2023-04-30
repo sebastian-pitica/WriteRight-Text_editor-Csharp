@@ -114,7 +114,7 @@ namespace CommonsModule
             }
         }
 
-        private static void ColorWordsFromRichTextBox(RichTextBox richTextBox, List<string> words, Color wordsColor)
+        private static void ColorWordsFromRichTextBox(RichTextBox richTextBox, string[] words, Color wordsColor)
         {
             foreach (string keyword in words)
             {
@@ -141,19 +141,16 @@ namespace CommonsModule
             string[] toBeChecked = text.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
             /*types*/
-            var list = new List<string> { "void", "int", "string", "char", "float", "double", "asm", "auto", "bool", "class", "concept", "const", "enum", "explicit", "export", "extern", "friend", "inline", "long", "mutable", "private", "protected", "public", "register", "short", "signed", "static", "struct", "template", "union", "unsigned", "virtual", "volatile" };
             Color send = ColorTranslator.FromHtml(typesColor);
-            ColorWordsFromRichTextBox(richTextBox, list, send);
+            ColorWordsFromRichTextBox(richTextBox, types, send);
 
             /*expressions*/
-            list = new List<string> { "and", "and_eq", "break", "case", "catch", "continue", "default", "delete", "do", "dynamic_cast", "else", "false", "for", "goto", "if", "namespace", "new", "not", "not_eq", "nullptr", "operator", "or", "or_eq", "return", "sizeof", "switch", "this", "throw", "true", "try", "typedef", "using", "while", "xor", "xor_eq" };
             send = ColorTranslator.FromHtml(expressionColor);
-            ColorWordsFromRichTextBox(richTextBox, list, send);
+            ColorWordsFromRichTextBox(richTextBox, expressions, send);
 
             /*operators*/
-            list = new List<string> { "+", "-", "%", "/", "&", "*", "=", "<", ">" };
             Color opColor = ColorTranslator.FromHtml(operatorsColor);
-            foreach (string keyword in list)
+            foreach (string keyword in operators)
             {
                 int indexOp = 0;
                 while (indexOp < richTextBox.Text.Length)
@@ -170,9 +167,8 @@ namespace CommonsModule
             }
 
             /*preprocesor*/
-            list = new List<string> { "#define", "#elif", "#else", "#endif", "#error", "#if", "#ifdef", "#ifndef", "#import", "#include", "#line", "#pragma", "#undef", "#using" };
             send = ColorTranslator.FromHtml(preprocesorColor);
-            ColorWordsFromRichTextBox(richTextBox, list, send);
+            ColorWordsFromRichTextBox(richTextBox, preprocessors, send);
 
             /*strings*/
             string pattern = "(?<!\\\\)\".*?(?<!\\\\)\"";
@@ -280,11 +276,9 @@ namespace CommonsModule
 
             int lineStartIndex = richTextBox.GetFirstCharIndexOfCurrentLine();
             int lineEndIndex = richTextBox.GetFirstCharIndexFromLine(richTextBox.GetLineFromCharIndex(lineStartIndex) + 1);
-
             int startIndex = 0;
             if (lineEndIndex == -1) lineEndIndex = richTextBox.Text.Length;
             currentLine = richTextBox.Text.Substring(lineStartIndex, lineEndIndex - lineStartIndex);
-
             if (currentLine.Contains("/*"))
             {
                 currentLine = richTextBox.Text.Substring(lineStartIndex, currentLine.IndexOf("/*"));
@@ -316,36 +310,6 @@ namespace CommonsModule
                     richTextBox.SelectionColor = ColorTranslator.FromHtml(expressionColor);
                     richTextBox.DeselectAll();
                 }
-                else if (operators.Any(s => currentLine.Contains(s)))  
-                {
-                    foreach (string keyword in operators)
-                    {
-                        int indexOp = 0;
-                        while (indexOp < currentLine.Length)
-                        {
-                            indexOp = currentLine.IndexOf(keyword, indexOp);
-                            if (indexOp == -1)
-                                break;
-
-                            startIndex = lineStartIndex + indexOp;
-                            richTextBox.Select(startIndex, 1);
-                            richTextBox.SelectionColor = ColorTranslator.FromHtml(operatorsColor);
-                            richTextBox.DeselectAll();
-                            indexOp++;
-                        }
-                    }
-                    /*1
-                    if (currentLine.Contains("//"))
-                    {
-                        startIndex = lineStartIndex + currentLine.IndexOf("//");
-                        richTextBox.Select(startIndex, lineEndIndex - lineStartIndex - currentLine.IndexOf("//"));
-                        richTextBox.SelectionColor = ColorTranslator.FromHtml(commentColor);
-                        richTextBox.DeselectAll();
-                        richTextBox.SelectionStart = initialPos;
-                        continue;
-                    }*/
-
-                }
                 else if (Array.IndexOf(preprocessors, word) >= 0)
                 {
                     startIndex = lineStartIndex + currentLine.IndexOf(word);
@@ -353,16 +317,6 @@ namespace CommonsModule
                     richTextBox.SelectionColor = ColorTranslator.FromHtml(preprocesorColor);
                     richTextBox.DeselectAll();
                 }
-                //0
-                //else if (word.Length > 2 && word[0] == '\"' && word[word.Length - 1] == '\"')
-                //{
-                //    startIndex = lineStartIndex + currentLine.IndexOf(word);
-                //    richTextBox.Select(startIndex, word.Length);
-                //    richTextBox.SelectionColor = ColorTranslator.FromHtml(stringColor);
-                //    richTextBox.DeselectAll();
-
-                //}
-
                 
                 else
                 {
@@ -384,18 +338,25 @@ namespace CommonsModule
                         richTextBox.DeselectAll();
                         richTextBox.SelectionStart = initialPos;
                     }
-
-                    /*1
-                    if (currentLine.Contains("//"))
+                }
+                if (operators.Any(s => currentLine.Contains(s)))
+                {
+                    foreach (string keyword in operators)
                     {
-                        startIndex = lineStartIndex + currentLine.IndexOf("//");
-                        richTextBox.Select(startIndex, lineEndIndex - lineStartIndex - currentLine.IndexOf("//"));
-                        richTextBox.SelectionColor = ColorTranslator.FromHtml(commentColor);
-                        richTextBox.DeselectAll();
-                        richTextBox.SelectionStart = initialPos;
-                        continue;
+                        int indexOp = 0;
+                        while (indexOp < currentLine.Length)
+                        {
+                            indexOp = currentLine.IndexOf(keyword, indexOp);
+                            if (indexOp == -1)
+                                break;
+
+                            startIndex = lineStartIndex + indexOp;
+                            richTextBox.Select(startIndex, 1);
+                            richTextBox.SelectionColor = ColorTranslator.FromHtml(operatorsColor);
+                            richTextBox.DeselectAll();
+                            indexOp++;
+                        }
                     }
-                    */
                 }
                 if (currentLine.Contains("//"))
                 {
@@ -411,6 +372,7 @@ namespace CommonsModule
             }
             richTextBox.SelectionStart = initialPos;
         }
+
         /// <summary>
         /// Verifica daca Selection este intr-un multiline commment block
         /// </summary>
