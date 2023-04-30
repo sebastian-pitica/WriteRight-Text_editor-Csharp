@@ -458,7 +458,7 @@ namespace FormatRibbonModule
             richTextBox.Text = richTextBox.Text.Replace("\t", " ");
             richTextBox.Text = (Regex.Replace(richTextBox.Text, @"\s+", " ")).Replace("\n\n", "\n");
             
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 _tabNum = 0;
                 string total = "";

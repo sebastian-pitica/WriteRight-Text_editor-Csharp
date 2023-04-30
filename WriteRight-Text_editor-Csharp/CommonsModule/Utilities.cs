@@ -69,6 +69,9 @@ namespace CommonsModule
             return reference.FilePath ?? tabControl.SelectedTab.Text;
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public static class UtilitiesFormat
     {
         public static bool isXMLChanged = false;
@@ -111,9 +114,9 @@ namespace CommonsModule
             }
         }
 
-        private static void ColorWordsList(RichTextBox richTextBox, List<string> lista, Color wordsColor)
+        private static void ColorWordsFromRichTextBox(RichTextBox richTextBox, List<string> words, Color wordsColor)
         {
-            foreach (string keyword in lista)
+            foreach (string keyword in words)
             {
                 int index = 0;
                 while (index < richTextBox.Text.Length)
@@ -140,12 +143,12 @@ namespace CommonsModule
             /*types*/
             var list = new List<string> { "void", "int", "string", "char", "float", "double", "asm", "auto", "bool", "class", "concept", "const", "enum", "explicit", "export", "extern", "friend", "inline", "long", "mutable", "private", "protected", "public", "register", "short", "signed", "static", "struct", "template", "union", "unsigned", "virtual", "volatile" };
             Color send = ColorTranslator.FromHtml(typesColor);
-            ColorWordsList(richTextBox, list, send);
+            ColorWordsFromRichTextBox(richTextBox, list, send);
 
             /*expressions*/
             list = new List<string> { "and", "and_eq", "break", "case", "catch", "continue", "default", "delete", "do", "dynamic_cast", "else", "false", "for", "goto", "if", "namespace", "new", "not", "not_eq", "nullptr", "operator", "or", "or_eq", "return", "sizeof", "switch", "this", "throw", "true", "try", "typedef", "using", "while", "xor", "xor_eq" };
             send = ColorTranslator.FromHtml(expressionColor);
-            ColorWordsList(richTextBox, list, send);
+            ColorWordsFromRichTextBox(richTextBox, list, send);
 
             /*operators*/
             list = new List<string> { "+", "-", "%", "/", "&", "*", "=", "<", ">" };
@@ -169,7 +172,7 @@ namespace CommonsModule
             /*preprocesor*/
             list = new List<string> { "#define", "#elif", "#else", "#endif", "#error", "#if", "#ifdef", "#ifndef", "#import", "#include", "#line", "#pragma", "#undef", "#using" };
             send = ColorTranslator.FromHtml(preprocesorColor);
-            ColorWordsList(richTextBox, list, send);
+            ColorWordsFromRichTextBox(richTextBox, list, send);
 
             /*strings*/
             string pattern = "(?<!\\\\)\".*?(?<!\\\\)\"";
@@ -212,7 +215,7 @@ namespace CommonsModule
             {
                 startComment = richTextBox.Text.IndexOf("/*", repeat);
                 endComment = richTextBox.Text.IndexOf("*/", repeat);
-                if (startComment == -1) break;
+                if (startComment == -1 || startComment==0) break;
                 if (richTextBox.Text[startComment - 1] == '\"' && richTextBox.Text[startComment + 2] == '\"')
                 {
                     repeat = startComment + 1;
@@ -296,8 +299,8 @@ namespace CommonsModule
                 currentLine = comment + richTextBox.Text.Substring(lineStartIndex + currentLine.IndexOf("*/"), lineEndIndex - lineStartIndex - currentLine.IndexOf("*/"));
             }
 
-            char[] sep = {'\t',' '};
-            foreach (string word in currentLine.Replace("\n", " ").Split(' '))
+          
+            foreach (string word in currentLine.Replace("\n", " ").Replace("\t"," ").Split(' '))
             {
                 if (Array.IndexOf(types, word) >= 0)
                 {
@@ -313,12 +316,35 @@ namespace CommonsModule
                     richTextBox.SelectionColor = ColorTranslator.FromHtml(expressionColor);
                     richTextBox.DeselectAll();
                 }
-                else if (operators.Contains(word))
+                else if (operators.Any(s => currentLine.Contains(s)))  
                 {
-                    startIndex = lineStartIndex + currentLine.IndexOf(word);
-                    richTextBox.Select(startIndex, word.Length);
-                    richTextBox.SelectionColor = ColorTranslator.FromHtml(operatorsColor);
-                    richTextBox.DeselectAll();
+                    foreach (string keyword in operators)
+                    {
+                        int indexOp = 0;
+                        while (indexOp < currentLine.Length)
+                        {
+                            indexOp = currentLine.IndexOf(keyword, indexOp);
+                            if (indexOp == -1)
+                                break;
+
+                            startIndex = lineStartIndex + indexOp;
+                            richTextBox.Select(startIndex, 1);
+                            richTextBox.SelectionColor = ColorTranslator.FromHtml(operatorsColor);
+                            richTextBox.DeselectAll();
+                            indexOp++;
+                        }
+                    }
+                    /*1
+                    if (currentLine.Contains("//"))
+                    {
+                        startIndex = lineStartIndex + currentLine.IndexOf("//");
+                        richTextBox.Select(startIndex, lineEndIndex - lineStartIndex - currentLine.IndexOf("//"));
+                        richTextBox.SelectionColor = ColorTranslator.FromHtml(commentColor);
+                        richTextBox.DeselectAll();
+                        richTextBox.SelectionStart = initialPos;
+                        continue;
+                    }*/
+
                 }
                 else if (Array.IndexOf(preprocessors, word) >= 0)
                 {
@@ -327,6 +353,7 @@ namespace CommonsModule
                     richTextBox.SelectionColor = ColorTranslator.FromHtml(preprocesorColor);
                     richTextBox.DeselectAll();
                 }
+                //0
                 //else if (word.Length > 2 && word[0] == '\"' && word[word.Length - 1] == '\"')
                 //{
                 //    startIndex = lineStartIndex + currentLine.IndexOf(word);
@@ -358,6 +385,7 @@ namespace CommonsModule
                         richTextBox.SelectionStart = initialPos;
                     }
 
+                    /*1
                     if (currentLine.Contains("//"))
                     {
                         startIndex = lineStartIndex + currentLine.IndexOf("//");
@@ -367,11 +395,26 @@ namespace CommonsModule
                         richTextBox.SelectionStart = initialPos;
                         continue;
                     }
+                    */
                 }
-                
+                if (currentLine.Contains("//"))
+                {
+                    startIndex = lineStartIndex + currentLine.IndexOf("//");
+                    richTextBox.Select(startIndex, lineEndIndex - lineStartIndex - currentLine.IndexOf("//"));
+                    richTextBox.SelectionColor = ColorTranslator.FromHtml(commentColor);
+                    richTextBox.DeselectAll();
+                    richTextBox.SelectionStart = initialPos;
+                   
+
+                }
+
             }
             richTextBox.SelectionStart = initialPos;
         }
+        /// <summary>
+        /// Verifica daca Selection este intr-un multiline commment block
+        /// </summary>
+        /// <param name="richTextBox"></param>
         private static bool IsSelectionInCommentBlock(RichTextBox richTextBox)
         {
             int selectionStart = richTextBox.SelectionStart;
@@ -445,6 +488,10 @@ namespace CommonsModule
             }
         }
 
+        /// <summary>
+        /// Comenteaza cu /* */ textul selectat si decomenteaza textul selectat si pozitionat intre /* */
+        /// </summary>
+        /// <param name="richTextBox"></param>
         public static void CommentUncomment(RichTextBox richTextBox)
         {
             Color currColor = richTextBox.ForeColor;
