@@ -23,7 +23,7 @@ namespace TextEditor
             InitializeComponent();
             ExecuteCommand(NewFileCommand.GetCommandObj());
             ExecuteCommand(ThemeCommand.GetCommandObj());
-            ExecuteCommand(ThemeCommand.GetCommandObj());
+           
             _textEditorControl.ZoomFactor = 1.50f;
         }
 

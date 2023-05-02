@@ -142,7 +142,10 @@ namespace CommonsModule
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
         private static void ColorOperatorsFromRichTextBox(RichTextBox richTextBox) {
             Color opColor = ColorTranslator.FromHtml(operatorsColor);
             foreach (string keyword in operators)
@@ -162,7 +165,10 @@ namespace CommonsModule
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
         private static void ColorStringsFromRichTextBox(RichTextBox richTextBox)
         {
             int index = 0;
@@ -182,7 +188,10 @@ namespace CommonsModule
                 index = start + length;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
         private static void ColorLineCommentsFromRichTextBox(RichTextBox richTextBox)
         {
             Color colorCom = ColorTranslator.FromHtml(commentColor);
@@ -198,7 +207,10 @@ namespace CommonsModule
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
         private static void ColorMultilineCommentsFromRichTextBox(RichTextBox richTextBox)
         {
             int repeat = 0;
@@ -282,7 +294,10 @@ namespace CommonsModule
             richTextBox.SelectionStart = pozitieInitiala;
             richTextBox.Visible = true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
         private static void ColorCommentBlock(RichTextBox richTextBox) {
             int selectionStart = richTextBox.SelectionStart;
             int startIndexBlock = richTextBox.Text.LastIndexOf("/*", selectionStart);
@@ -296,7 +311,13 @@ namespace CommonsModule
 
             richTextBox.SelectionStart = selectionStart;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
+        /// <param name="lineStartIndex"></param>
+        /// <param name="lineEndIndex"></param>
+        /// <param name="currentLine"></param>
         private static void CompleteCurrentLine(in RichTextBoxV2 richTextBox, in int lineStartIndex, in int lineEndIndex, ref  string currentLine) {
             currentLine = richTextBox.Text.Substring(lineStartIndex, lineEndIndex - lineStartIndex);
             if (currentLine.Contains("/*"))
@@ -313,14 +334,28 @@ namespace CommonsModule
                 currentLine = comment + richTextBox.Text.Substring(lineStartIndex + currentLine.IndexOf("*/"), lineEndIndex - lineStartIndex - currentLine.IndexOf("*/"));
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
+        /// <param name="lineStartIndex"></param>
+        /// <param name="lineEndIndex"></param>
+        /// <param name="word"></param>
+        /// <param name="currentLine"></param>
+        /// <param name="color"></param>
         private static void ColorWordFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string word, in string currentLine,in string color) {
             var startIndex = lineStartIndex + currentLine.IndexOf(word);
             richTextBox.Select(startIndex, word.Length);
             richTextBox.SelectionColor = ColorTranslator.FromHtml(color);
             richTextBox.DeselectAll();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
+        /// <param name="lineStartIndex"></param>
+        /// <param name="lineEndIndex"></param>
+        /// <param name="currentLine"></param>
         private static void ColorOperatorsFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string currentLine)
         {
             foreach (string op in operators)
@@ -352,6 +387,13 @@ namespace CommonsModule
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
+        /// <param name="lineStartIndex"></param>
+        /// <param name="lineEndIndex"></param>
+        /// <param name="currentLine"></param>
         private static void ColorStringsFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string currentLine)
         {
             MatchCollection matches = Regex.Matches(currentLine, "(?<!\\\\)\".*?(?<!\\\\)\"");
@@ -363,7 +405,13 @@ namespace CommonsModule
             }
             richTextBox.DeselectAll();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="richTextBox"></param>
+        /// <param name="lineStartIndex"></param>
+        /// <param name="lineEndIndex"></param>
+        /// <param name="currentLine"></param>
         private static void ColorLineCommentFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string currentLine) {
             var startIndex = lineStartIndex + currentLine.IndexOf("//");
             richTextBox.Select(startIndex, lineEndIndex - lineStartIndex - currentLine.IndexOf("//"));
@@ -371,10 +419,10 @@ namespace CommonsModule
             richTextBox.DeselectAll();
         }
 
-            /// <summary>
-            /// Realizeaza highlight pe toate tpurile de cuvinte cheie de pe linia curenta
-            /// </summary>
-            /// <param name="richTextBox"></param>
+        /// <summary>
+        /// Realizeaza highlight pe toate tpurile de cuvinte cheie de pe linia curenta
+        /// </summary>
+        /// <param name="richTextBox"></param>
         public static void LiniarHighLighting(RichTextBoxV2 richTextBox)
         {
 

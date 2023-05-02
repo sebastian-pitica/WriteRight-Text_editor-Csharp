@@ -36,107 +36,118 @@ namespace FormatRibbonModule
             }
             return _singletonInstance;
         }
-   
+        internal void SetDarkMode() {
+            SetDarkTitleBar(_mainFormWindowRef.Handle);
+            _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
+            for (int i = 0; i < _controls.Count; i++)
+            {
+                string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");
+                switch (type)
+                {
+                    case "RichTextBox":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
+                        _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
+                        break;
+                    case "Label":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
+                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        break;
+                    case "TextBox":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
+                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        break;
+                    case "MenuStrip":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
+                        foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
+                        {
+                            item.BackColor = ColorTranslator.FromHtml("#1F2428");
+                            item.ForeColor = ColorTranslator.FromHtml("#D7DADE");
+                            foreach (ToolStripItem subItem in item.DropDownItems)
+                            {
+                                if (subItem.Text == "Theme: Light")
+                                {
+                                    subItem.Text = "Theme: Dark";
+                                }
+                                subItem.BackColor = ColorTranslator.FromHtml("#1F2428");
+                                subItem.ForeColor = ColorTranslator.FromHtml("#D7DADE");
+                            }
+                        }
+                        break;
+                    case "StatusStrip":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
+                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        break;
+                    case "Button":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
+                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        break;
+                    case "TabControl":
+                        foreach (TabPage page in ((TabControl)_controls[i]).TabPages)
+                        {
+                            page.BackColor = ColorTranslator.FromHtml("#24292E");
+                            page.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.BackColor = ColorTranslator.FromHtml("#24292E");
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                            ((TextEditorControl)page.Controls[0]).BackColor = ColorTranslator.FromHtml("#C8D3DA");
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = ColorTranslator.FromHtml("#24292E");
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+                        }
+                        break;
+                }
+            }
+            isDarkmode = true;
+        }
+
+        internal void SetLightMode() {
+            foreach (Control control in this._controls)
+            {
+                control.BackColor = new Color(); ;
+                control.ForeColor = new Color(); ;
+            }
+            _mainFormWindowRef.BackColor = new Color(); ;
+            for (int i = 0; i < _controls.Count; i++)
+            {
+                if (_controls[i] is MenuStrip)
+                {
+                    foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
+                    {
+                        item.BackColor = new Color(); ;
+                        item.ForeColor = new Color(); ;
+                        foreach (ToolStripItem subItem in item.DropDownItems)
+                        {
+                            if (subItem.Text == "Theme: Dark")
+                            {
+                                subItem.Text = "Theme: Light";
+                            }
+                            subItem.BackColor = new Color(); ;
+                            subItem.ForeColor = new Color(); ;
+                        }
+                    }
+                }
+                else if (_controls[i] is TabControl)
+                {
+                    foreach (TabPage page in ((TabControl)_controls[i]).Controls)
+                    {
+                        page.BackColor = new Color(); ;
+                        page.ForeColor = new Color(); ;
+                        ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.BackColor = new Color(); ;
+                        ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.ForeColor = new Color(); ;
+                        ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = new Color(); ;
+                        ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = new Color(); ;
+                    }
+                }
+            }
+            isDarkmode = false;
+        }
 
         public override void Execute()
         {
             if (!isDarkmode)
             {
-                SetDarkTitleBar(_mainFormWindowRef.Handle);
-                _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
-                for (int i = 0; i < _controls.Count; i++) {
-                    string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");                    
-                    switch (type) {
-                        case "RichTextBox":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
-                            break;
-                        case "Label":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E"); 
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA"); 
-                            break;
-                        case "TextBox":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA"); 
-                            break;
-                        case "MenuStrip":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
-                            foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
-                            {
-                                item.BackColor = ColorTranslator.FromHtml("#1F2428");
-                                item.ForeColor = ColorTranslator.FromHtml("#D7DADE");
-                                foreach (ToolStripItem subItem in item.DropDownItems)
-                                {
-                                    if (subItem.Text == "Theme: Light") {
-                                        subItem.Text = "Theme: Dark";
-                                    }
-                                    subItem.BackColor = ColorTranslator.FromHtml("#1F2428");
-                                    subItem.ForeColor = ColorTranslator.FromHtml("#D7DADE");
-                                }
-                            }
-                            break;
-                        case "StatusStrip":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            break;
-                        case "Button":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            break;
-                        case "TabControl":
-                            foreach (TabPage page in ((TabControl)_controls[i]).TabPages) {
-                                page.BackColor = ColorTranslator.FromHtml("#24292E");
-                                page.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.BackColor = ColorTranslator.FromHtml("#24292E");
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                                ((TextEditorControl)page.Controls[0]).BackColor = ColorTranslator.FromHtml("#C8D3DA");
-
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = ColorTranslator.FromHtml("#24292E");
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            }
-                            break;
-                    }
-                }
-                isDarkmode = true;
+                SetDarkMode();
             }
             else {
-                foreach (Control control in this._controls)
-                { 
-                   control.BackColor= new Color(); ;
-                   control.ForeColor=new Color(); ;
-                }
-                _mainFormWindowRef.BackColor = new Color(); ;
-                for (int i = 0; i < _controls.Count; i++) {
-                    if (_controls[i] is MenuStrip)
-                    {
-                        foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
-                        {
-                            item.BackColor = new Color(); ;
-                            item.ForeColor = new Color(); ;
-                            foreach (ToolStripItem subItem in item.DropDownItems)
-                            {
-                                if (subItem.Text == "Theme: Dark")
-                                {
-                                    subItem.Text = "Theme: Light";
-                                }
-                                subItem.BackColor = new Color(); ;
-                                subItem.ForeColor = new Color(); ;
-                            }
-                        }
-                    }
-                    else if (_controls[i] is TabControl) {
-                        foreach (TabPage page in ((TabControl)_controls[i]).Controls) {
-                            page.BackColor = new Color(); ;
-                            page.ForeColor = new Color(); ;
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.BackColor = new Color(); ;
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.ForeColor = new Color(); ;
-
-                           ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = new Color(); ;
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = new Color(); ;
-                        }
-                    }
-                }
-                isDarkmode = false;
+                SetLightMode();
             }
         }
 
