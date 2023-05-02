@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "..\Custom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatRibbonModule", "..\FormatRibbonModule\FormatRibbonModule.csproj", "{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpModule", "HelpModule\HelpModule.csproj", "{15F95071-ACA5-41EA-9FF4-73856BB07B65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

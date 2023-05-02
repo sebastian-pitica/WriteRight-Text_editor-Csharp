@@ -1,74 +1,26 @@
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\branch\WriteRight-Text_editor-Csharp\FormatRibbonModule\FormatRibbonModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\proj\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
-C:\Users\matei\Desktop\ip_proiect\vasile2\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\vasile3\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\backup final\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete

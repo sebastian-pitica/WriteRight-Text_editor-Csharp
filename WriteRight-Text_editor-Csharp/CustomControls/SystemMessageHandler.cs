@@ -2,6 +2,15 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 
+/**************************************************************************
+ *                                                                        *
+ *  File:        Utilities.cs                                             *
+ *  Copyright:   (c) 2023, Caulea Vasile                                  *
+ *  Description: Fisierul contine clasa care se ocupa cu mentinearea      *
+ *  functiilor care se ocupa cu trimiterea mesajelor catre sistem         *
+ *                                                                        *
+ **************************************************************************/
+
 namespace CustomControls
 {
     public static class SystemMessageHandler
@@ -11,13 +20,16 @@ namespace CustomControls
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, ref Point lParam);
+        
+        [DllImport("dwmapi.dll")]
+        public static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int attrValue, int attrSize);
+        
+        public const int WmVscroll = 0x115;
 
-        public const int WM_VSCROLL = 0x115;
-
-        public const int EM_GETSCROLLPOS = 0x4DD;
-        public const int EM_SETSCROLLPOS = 0x4DE;
-        public const int WM_GETDLGCODE = 0x87;
-        public const int WM_MOUSEFIRST = 0x200;
+        public const int EmGetscrollpos = 0x4DD;
+        public const int EmSetscrollpos = 0x4DE;
+        public const int WmGetdlgcode = 0x87;
+        public const int WmMousefirst = 0x200;
 
     }
 }
