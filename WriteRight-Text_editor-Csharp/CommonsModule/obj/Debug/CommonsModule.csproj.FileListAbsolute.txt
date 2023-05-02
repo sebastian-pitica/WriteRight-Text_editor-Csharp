@@ -1,9 +1,22 @@
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CopyComplete
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb

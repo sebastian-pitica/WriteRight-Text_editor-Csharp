@@ -46,15 +46,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.buttonSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonSearchAndReplace = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.buttonFormatDocument = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonToggleComment = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormat = new System.Windows.Forms.ToolStripMenuItem();
             this.buttoColoring = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonColoringPreferences = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonFont = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.syntaxCheckerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonDocs = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonReportBug = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +66,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLinesNr = new System.Windows.Forms.TextBox();
             this.tabControlFiles = new System.Windows.Forms.TabControl();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.buttonFormatDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonToggleComment = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripRibbons.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -148,10 +146,7 @@
             this.buttonDelete,
             this.toolStripSeparator2,
             this.buttonSearch,
-            this.buttonSearchAndReplace,
-            this.toolStripSeparator3,
-            this.buttonFormatDocument,
-            this.buttonToggleComment});
+            this.buttonSearchAndReplace});
             this.menuEdit.Name = "menuEdit";
             this.menuEdit.Size = new System.Drawing.Size(44, 23);
             this.menuEdit.Text = "Edit";
@@ -159,94 +154,78 @@
             // buttonUndo
             // 
             this.buttonUndo.Name = "buttonUndo";
-            this.buttonUndo.Size = new System.Drawing.Size(220, 24);
+            this.buttonUndo.Size = new System.Drawing.Size(195, 24);
             this.buttonUndo.Text = "Undo";
             this.buttonUndo.Click += new System.EventHandler(this.UndoClick);
             // 
             // buttonRedo
             // 
             this.buttonRedo.Name = "buttonRedo";
-            this.buttonRedo.Size = new System.Drawing.Size(220, 24);
+            this.buttonRedo.Size = new System.Drawing.Size(195, 24);
             this.buttonRedo.Text = "Redo";
             this.buttonRedo.Click += new System.EventHandler(this.RedoClick);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
             // 
             // buttonCut
             // 
             this.buttonCut.Name = "buttonCut";
-            this.buttonCut.Size = new System.Drawing.Size(220, 24);
+            this.buttonCut.Size = new System.Drawing.Size(195, 24);
             this.buttonCut.Text = "Cut";
             this.buttonCut.Click += new System.EventHandler(this.CutClick);
             // 
             // buttonCopy
             // 
             this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(220, 24);
+            this.buttonCopy.Size = new System.Drawing.Size(195, 24);
             this.buttonCopy.Text = "Copy";
             this.buttonCopy.Click += new System.EventHandler(this.CopyClick);
             // 
             // buttonPaste
             // 
             this.buttonPaste.Name = "buttonPaste";
-            this.buttonPaste.Size = new System.Drawing.Size(220, 24);
+            this.buttonPaste.Size = new System.Drawing.Size(195, 24);
             this.buttonPaste.Text = "Paste";
             this.buttonPaste.Click += new System.EventHandler(this.PasteClick);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(220, 24);
+            this.buttonDelete.Size = new System.Drawing.Size(195, 24);
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.Click += new System.EventHandler(this.DeleteClick);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
             // 
             // buttonSearch
             // 
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(220, 24);
+            this.buttonSearch.Size = new System.Drawing.Size(195, 24);
             this.buttonSearch.Text = "Search";
             this.buttonSearch.Click += new System.EventHandler(this.SearchClick);
             // 
             // buttonSearchAndReplace
             // 
             this.buttonSearchAndReplace.Name = "buttonSearchAndReplace";
-            this.buttonSearchAndReplace.Size = new System.Drawing.Size(220, 24);
+            this.buttonSearchAndReplace.Size = new System.Drawing.Size(195, 24);
             this.buttonSearchAndReplace.Text = "Search and Replace";
             this.buttonSearchAndReplace.Click += new System.EventHandler(this.SearchAndReplaceClick);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(217, 6);
-            // 
-            // buttonFormatDocument
-            // 
-            this.buttonFormatDocument.Name = "buttonFormatDocument";
-            this.buttonFormatDocument.Size = new System.Drawing.Size(220, 24);
-            this.buttonFormatDocument.Text = "Format Document";
-            this.buttonFormatDocument.Click += new System.EventHandler(this.FormatDocumentClick);
-            // 
-            // buttonToggleComment
-            // 
-            this.buttonToggleComment.Name = "buttonToggleComment";
-            this.buttonToggleComment.Size = new System.Drawing.Size(220, 24);
-            this.buttonToggleComment.Text = "Comment/Uncomment";
-            this.buttonToggleComment.Click += new System.EventHandler(this.ToggleCommentClick);
             // 
             // menuFormat
             // 
             this.menuFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buttoColoring,
             this.buttonColoringPreferences,
-            this.buttonFont});
+            this.buttonFont,
+            this.toolStripSeparator4,
+            this.buttonFormatDocument,
+            this.buttonToggleComment});
             this.menuFormat.Name = "menuFormat";
             this.menuFormat.Size = new System.Drawing.Size(65, 23);
             this.menuFormat.Text = "Format";
@@ -254,38 +233,23 @@
             // buttoColoring
             // 
             this.buttoColoring.Name = "buttoColoring";
-            this.buttoColoring.Size = new System.Drawing.Size(180, 24);
+            this.buttoColoring.Size = new System.Drawing.Size(220, 24);
             this.buttoColoring.Text = "Theme: Light";
             this.buttoColoring.Click += new System.EventHandler(this.ThemeClick);
             // 
             // buttonColoringPreferences
             // 
             this.buttonColoringPreferences.Name = "buttonColoringPreferences";
-            this.buttonColoringPreferences.Size = new System.Drawing.Size(180, 24);
+            this.buttonColoringPreferences.Size = new System.Drawing.Size(220, 24);
             this.buttonColoringPreferences.Text = "Syntax highlight";
-            this.buttonColoringPreferences.Click += new System.EventHandler(this.SyntaxHighlighClick);
+            this.buttonColoringPreferences.Click += new System.EventHandler(this.SyntaxHighlightClick);
             // 
             // buttonFont
             // 
             this.buttonFont.Name = "buttonFont";
-            this.buttonFont.Size = new System.Drawing.Size(204, 24);
+            this.buttonFont.Size = new System.Drawing.Size(220, 24);
             this.buttonFont.Text = "Font";
             this.buttonFont.Click += new System.EventHandler(this.FontClick);
-            // 
-            // menuOptions
-            // 
-            this.menuOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.syntaxCheckerToolStripMenuItem});
-            this.menuOptions.Name = "menuOptions";
-            this.menuOptions.Size = new System.Drawing.Size(70, 23);
-            this.menuOptions.Text = "Options";
-            // 
-            // syntaxCheckerToolStripMenuItem
-            // 
-            this.syntaxCheckerToolStripMenuItem.Name = "syntaxCheckerToolStripMenuItem";
-            this.syntaxCheckerToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
-            this.syntaxCheckerToolStripMenuItem.Text = "Syntax Checker";
-            this.syntaxCheckerToolStripMenuItem.Click += new System.EventHandler(this.SyntaxCheckerClick);
             // 
             // menuHelp
             // 
@@ -300,21 +264,21 @@
             // buttonDocs
             // 
             this.buttonDocs.Name = "buttonDocs";
-            this.buttonDocs.Size = new System.Drawing.Size(151, 24);
+            this.buttonDocs.Size = new System.Drawing.Size(180, 24);
             this.buttonDocs.Text = "Docs";
             this.buttonDocs.Click += new System.EventHandler(this.DocsClick);
             // 
             // buttonReportBug
             // 
             this.buttonReportBug.Name = "buttonReportBug";
-            this.buttonReportBug.Size = new System.Drawing.Size(151, 24);
+            this.buttonReportBug.Size = new System.Drawing.Size(180, 24);
             this.buttonReportBug.Text = "Report  Bug";
             this.buttonReportBug.Click += new System.EventHandler(this.ReportBugClick);
             // 
             // buttonAbout
             // 
             this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(151, 24);
+            this.buttonAbout.Size = new System.Drawing.Size(180, 24);
             this.buttonAbout.Text = "About";
             this.buttonAbout.Click += new System.EventHandler(this.AboutClick);
             // 
@@ -326,7 +290,6 @@
             this.menuFile,
             this.menuEdit,
             this.menuFormat,
-            this.menuOptions,
             this.menuHelp});
             this.menuStripRibbons.Location = new System.Drawing.Point(0, 0);
             this.menuStripRibbons.Name = "menuStripRibbons";
@@ -459,9 +422,28 @@
             this.tabControlFiles.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.TabControlFilesDrawItem);
             this.tabControlFiles.SelectedIndexChanged += new System.EventHandler(this.TabControlFilesSelectedIndexChanged);
             this.tabControlFiles.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabControlFilesControlAdded);
-            this.tabControlFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RichTextBox_KeyDown);
-            this.tabControlFiles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RichTextBox_KeyUp);
+            this.tabControlFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RichTextBoxKeyDown);
+            this.tabControlFiles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RichTextBoxKeyUp);
             this.tabControlFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabControlFilesMouseDown);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(217, 6);
+            // 
+            // buttonFormatDocument
+            // 
+            this.buttonFormatDocument.Name = "buttonFormatDocument";
+            this.buttonFormatDocument.Size = new System.Drawing.Size(220, 24);
+            this.buttonFormatDocument.Text = "Format Document";
+            this.buttonFormatDocument.Click += new System.EventHandler(this.FormatDocumentClick);
+            // 
+            // buttonToggleComment
+            // 
+            this.buttonToggleComment.Name = "buttonToggleComment";
+            this.buttonToggleComment.Size = new System.Drawing.Size(220, 24);
+            this.buttonToggleComment.Text = "Comment/Uncomment";
+            this.buttonToggleComment.Click += new System.EventHandler(this.ToggleCommentClick);
             // 
             // FormMainWindow
             // 
@@ -481,7 +463,7 @@
             this.MinimumSize = new System.Drawing.Size(957, 45);
             this.Name = "FormMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editorescu";
+            this.Text = "WriteRight";
             this.menuStripRibbons.ResumeLayout(false);
             this.menuStripRibbons.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -508,15 +490,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem buttonSearch;
         private System.Windows.Forms.ToolStripMenuItem buttonSearchAndReplace;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem buttonFormatDocument;
-        private System.Windows.Forms.ToolStripMenuItem buttonToggleComment;
         private System.Windows.Forms.ToolStripMenuItem menuFormat;
         private System.Windows.Forms.ToolStripMenuItem buttoColoring;
         private System.Windows.Forms.ToolStripMenuItem buttonColoringPreferences;
         private System.Windows.Forms.ToolStripMenuItem buttonFont;
-        private System.Windows.Forms.ToolStripMenuItem menuOptions;
-        private System.Windows.Forms.ToolStripMenuItem syntaxCheckerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem buttonDocs;
         private System.Windows.Forms.ToolStripMenuItem buttonReportBug;
@@ -534,6 +511,9 @@
         private System.Windows.Forms.TextBox textBoxLinesNr;
         private System.Windows.Forms.ToolStripMenuItem buttonClose;
         private System.Windows.Forms.TabControl tabControlFiles;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem buttonFormatDocument;
+        private System.Windows.Forms.ToolStripMenuItem buttonToggleComment;
     }
 }
 

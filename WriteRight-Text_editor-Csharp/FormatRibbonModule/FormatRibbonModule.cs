@@ -4,150 +4,125 @@ using System.Linq;
 using Interfaces;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Xml;
 using CustomControls;
 using static CommonsModule.UtilitiesFormat;
+using static CustomControls.SystemMessageHandler;
 
 namespace FormatRibbonModule
 {
-    public class ThemeCommand : IMainWindowCommand
+    public class ThemeCommand : MainWindowCommand
     {
-        [DllImport("dwmapi.dll")]
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
-        public static void SetDarkTitleBar(IntPtr handle)
+        private static void SetDarkTitleBar(IntPtr handle)
         {
             int preference = 1;    
             DwmSetWindowAttribute(handle, 20, ref preference, sizeof(int));
         }
         
-        private static ThemeCommand _singletonInstance = null;
-        internal Form _mainFormWindowRef;
-        internal List<Control> _controls= new List<Control>();
+        private static ThemeCommand _singletonInstance;
+        private Form _mainFormWindowRef;
+        private readonly List<Control> _controls= new List<Control>();
+        private static readonly Color BackColor = ColorTranslator.FromHtml("#24292E");
+        private static readonly Color ForeColor = ColorTranslator.FromHtml("#C8D3DA");
         
         private ThemeCommand(){}
 
-        public static new ThemeCommand GetCommandObj()
+        public new static ThemeCommand GetCommandObj()
         {
-            if (_singletonInstance == null)
-            {
-                _singletonInstance = new ThemeCommand();
-            }
-            return _singletonInstance;
+            return _singletonInstance ?? (_singletonInstance = new ThemeCommand());
         }
-        internal void SetDarkMode() {
-            SetDarkTitleBar(_mainFormWindowRef.Handle);
-            _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
-            for (int i = 0; i < _controls.Count; i++)
-            {
-                string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");
-                switch (type)
-                {
-                    case "RichTextBox":
-                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                        _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
-                        break;
-                    case "Label":
-                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                        break;
-                    case "TextBox":
-                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                        break;
-                    case "MenuStrip":
-                        _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
-                        foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
-                        {
-                            item.BackColor = ColorTranslator.FromHtml("#1F2428");
-                            item.ForeColor = ColorTranslator.FromHtml("#D7DADE");
-                            foreach (ToolStripItem subItem in item.DropDownItems)
-                            {
-                                if (subItem.Text == "Theme: Light")
-                                {
-                                    subItem.Text = "Theme: Dark";
-                                }
-                                subItem.BackColor = ColorTranslator.FromHtml("#1F2428");
-                                subItem.ForeColor = ColorTranslator.FromHtml("#D7DADE");
-                            }
-                        }
-                        break;
-                    case "StatusStrip":
-                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                        break;
-                    case "Button":
-                        _controls[i].BackColor = ColorTranslator.FromHtml("#24292E");
-                        _controls[i].ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                        break;
-                    case "TabControl":
-                        foreach (TabPage page in ((TabControl)_controls[i]).TabPages)
-                        {
-                            page.BackColor = ColorTranslator.FromHtml("#24292E");
-                            page.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.BackColor = ColorTranslator.FromHtml("#24292E");
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                            ((TextEditorControl)page.Controls[0]).BackColor = ColorTranslator.FromHtml("#C8D3DA");
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = ColorTranslator.FromHtml("#24292E");
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
-                        }
-                        break;
-                }
-            }
-            isDarkmode = true;
-        }
-
-        internal void SetLightMode() {
-            foreach (Control control in this._controls)
-            {
-                control.BackColor = new Color(); ;
-                control.ForeColor = new Color(); ;
-            }
-            _mainFormWindowRef.BackColor = new Color(); ;
-            for (int i = 0; i < _controls.Count; i++)
-            {
-                if (_controls[i] is MenuStrip)
-                {
-                    foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
-                    {
-                        item.BackColor = new Color(); ;
-                        item.ForeColor = new Color(); ;
-                        foreach (ToolStripItem subItem in item.DropDownItems)
-                        {
-                            if (subItem.Text == "Theme: Dark")
-                            {
-                                subItem.Text = "Theme: Light";
-                            }
-                            subItem.BackColor = new Color(); ;
-                            subItem.ForeColor = new Color(); ;
-                        }
-                    }
-                }
-                else if (_controls[i] is TabControl)
-                {
-                    foreach (TabPage page in ((TabControl)_controls[i]).Controls)
-                    {
-                        page.BackColor = new Color(); ;
-                        page.ForeColor = new Color(); ;
-                        ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.BackColor = new Color(); ;
-                        ((TextEditorControl)page.Controls[0]).RichTextBoxEditor.ForeColor = new Color(); ;
-                        ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = new Color(); ;
-                        ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = new Color(); ;
-                    }
-                }
-            }
-            isDarkmode = false;
-        }
-
+        
         public override void Execute()
         {
-            if (!isDarkmode)
+            if (!IsDarkmode)
             {
-                SetDarkMode();
+                SetDarkTitleBar(_mainFormWindowRef.Handle);
+                _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
+                for (int i = 0; i < _controls.Count; i++) {
+                    string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");                    
+                    switch (type) {
+                        case "RichTextBox":
+                            _controls[i].BackColor = BackColor;
+                            _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
+                            break;
+                        case "Label":
+                        case "TextBox":
+                        case "StatusStrip":
+                        case "Button":
+                            _controls[i].BackColor = BackColor;
+                            _controls[i].ForeColor = ForeColor;
+                            break;
+                        case "MenuStrip":
+                            _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
+                            foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
+                            {
+                                item.BackColor = ColorTranslator.FromHtml("#1F2428");
+                                item.ForeColor = ColorTranslator.FromHtml("#D7DADE");
+                                foreach (ToolStripItem subItem in item.DropDownItems)
+                                {
+                                    if (subItem.Text == "Theme: Light") {
+                                        subItem.Text = "Theme: Dark";
+                                    }
+                                    subItem.BackColor = ColorTranslator.FromHtml("#1F2428");
+                                    subItem.ForeColor = ColorTranslator.FromHtml("#D7DADE");
+                                }
+                            }
+                            break;
+                        case "TabControl":
+                            foreach (TabPage page in ((TabControl)_controls[i]).TabPages) {
+                                page.BackColor = BackColor;
+                                page.ForeColor = ForeColor;
+                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = BackColor;
+                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = ForeColor;
+                                ((TextEditorControl)page.Controls[0]).BackColor = ForeColor;
+
+                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = BackColor;
+                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ForeColor;
+                            }
+                            break;
+                    }
+                }
+                IsDarkmode = true;
             }
             else {
-                SetLightMode();
+                foreach (Control control in _controls)
+                { 
+                   control.BackColor= new Color();
+                   control.ForeColor=new Color();
+                }
+                _mainFormWindowRef.BackColor = new Color();
+                for (int i = 0; i < _controls.Count; i++) {
+                    if (_controls[i] is MenuStrip)
+                    {
+                        foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
+                        {
+                            item.BackColor = new Color();
+                            item.ForeColor = new Color();
+                            foreach (ToolStripItem subItem in item.DropDownItems)
+                            {
+                                if (subItem.Text == "Theme: Dark")
+                                {
+                                    subItem.Text = "Theme: Light";
+                                }
+                                subItem.BackColor = new Color();
+                                subItem.ForeColor = new Color();
+                            }
+                        }
+                    }
+                    else if (_controls[i] is TabControl) {
+                        foreach (TabPage page in ((TabControl)_controls[i]).Controls) {
+                            page.BackColor = new Color();
+                            page.ForeColor = new Color();
+                            ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = new Color();
+                            ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = new Color();
+
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = new Color();
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = new Color();
+                        }
+                    }
+                }
+                IsDarkmode = false;
             }
         }
 
@@ -159,149 +134,150 @@ namespace FormatRibbonModule
             }
         }
     }
-    public class SyntaxHighlightCommand : IMainTextBoxCommand
+    public class SyntaxHighlightCommand : MainTextBoxCommand
     {
-        private static SyntaxHighlightCommand _singletonInstance = null;
-        internal RichTextBoxV2 _mainRichTextBoxV2Ref;
-        internal Form popupForm;
-        internal Label label;
-        internal bool isDefault=true;
-        public static bool isXMLChanged=false;
+        private static SyntaxHighlightCommand _singletonInstance;
+        private RichTextBoxV2 _mainRichTextBoxV2Ref;
+        private Form _popupForm;
+        private Label _label;
+        private bool _isDefault=true;
+        public static bool IsXmlChanged=false;
 
         private SyntaxHighlightCommand() { }
 
-        public static new SyntaxHighlightCommand GetCommandObj()
+        public new static SyntaxHighlightCommand GetCommandObj()
         {
-            if (_singletonInstance == null)
-            {
-                _singletonInstance = new SyntaxHighlightCommand();
-            }
-            return _singletonInstance;
+            return _singletonInstance ?? (_singletonInstance = new SyntaxHighlightCommand());
         }
         public override void Execute()
         {
             ShowDialog();
         }
 
-        public override void SetTarget(RichTextBoxV2 mainTextBox)
+        public override void SetTarget(IRichTextBoxV2 mainTextBox)
         {
-            _mainRichTextBoxV2Ref = mainTextBox;
+            _mainRichTextBoxV2Ref =(RichTextBoxV2) mainTextBox;
         }
 
-        internal void ShowDialog()
+        private void ShowDialog()
         {
-            popupForm = new Form();
-            popupForm.Height = 210;
-            popupForm.Width = 195;
-            popupForm.MinimizeBox = false;
-            popupForm.StartPosition = FormStartPosition.CenterScreen;
+            _popupForm = new Form();
+            _popupForm.Height = 210;
+            _popupForm.Width = 195;
+            _popupForm.MinimizeBox = false;
+            _popupForm.StartPosition = FormStartPosition.CenterScreen;
 
-             label = new Label();
-            label.Text = "Choose your setup";
-            label.AutoSize = true;
-            label.Location = new Point(20, 10);
-            popupForm.Controls.Add(label);
+             _label = new Label();
+            _label.Text = "Choose your setup";
+            _label.AutoSize = true;
+            _label.Location = new Point(20, 10);
+            _popupForm.Controls.Add(_label);
 
             Button button1 = new Button();
             button1.Text = "Default";
             button1.Location = new Point(20, 50);
-            button1.Click += new EventHandler(ChangeProfile_Click);
-            popupForm.Controls.Add(button1);
+            button1.Click += ChangeProfile_Click;
+            _popupForm.Controls.Add(button1);
 
             Button button2 = new Button();
             button2.Text = "Personalized";
             button2.Location = new Point(20, 80);
-            button2.Click += new EventHandler(ChangeProfile_Click);
-            popupForm.Controls.Add(button2);
+            button2.Click += ChangeProfile_Click;
+            _popupForm.Controls.Add(button2);
             
             Button button3 = new Button();
             button3.Location = new Point(100, 140);
             button3.Text = "Close";
-            button3.Click += new EventHandler(ButtonActions_Click);
-            popupForm.Controls.Add(button3);
+            button3.Click += ButtonActions_Click;
+            _popupForm.Controls.Add(button3);
 
             Button button4 = new Button();
             button4.Location = new Point(20, 140);
             button4.Text = "Save";
-            button4.Click += new EventHandler(ButtonActions_Click);
-            popupForm.Controls.Add(button4);
+            button4.Click += ButtonActions_Click;
+            _popupForm.Controls.Add(button4);
             
             Button button5 = new Button();
             button5.Text = "Types";
             button5.Location = new Point(120, 50);
             button5.Tag = "Types";
-            button5.Click += new EventHandler(ButtonChooseColor_Click);
+            button5.Click += ButtonChooseColor_Click;
             button5.Visible = false;
-            popupForm.Controls.Add(button5);
+            _popupForm.Controls.Add(button5);
 
             Button buttton6 = new Button();
             buttton6.Text = "Expressions";
             buttton6.Location = new Point(120, 80);
             buttton6.Tag = "Expressions";
-            buttton6.Click += new EventHandler(ButtonChooseColor_Click);
+            buttton6.Click += ButtonChooseColor_Click;
             buttton6.Visible = false;
-            popupForm.Controls.Add(buttton6);
+            _popupForm.Controls.Add(buttton6);
 
             Button button7 = new Button();
             button7.Text = "Operators";
             button7.Location = new Point(120, 110);
             button7.Tag = "Operators";
-            button7.Click += new EventHandler(ButtonChooseColor_Click);
+            button7.Click += ButtonChooseColor_Click;
             button7.Visible = false;
-            popupForm.Controls.Add(button7);
+            _popupForm.Controls.Add(button7);
 
             Button button8 = new Button();
             button8.Text = "Comments";
             button8.Location = new Point(200, 50);
             button8.Tag = "Comments";
-            button8.Click += new EventHandler(ButtonChooseColor_Click);
+            button8.Click += ButtonChooseColor_Click;
             button8.Visible = false;
-            popupForm.Controls.Add(button8);
+            _popupForm.Controls.Add(button8);
 
             Button button9 = new Button();
             button9.Text = "Strings";
             button9.Location = new Point(200, 80);
             button9.Tag = "Strings";
-            button9.Click += new EventHandler(ButtonChooseColor_Click);
+            button9.Click += ButtonChooseColor_Click;
             button9.Visible = false;
-            popupForm.Controls.Add(button9);
+            _popupForm.Controls.Add(button9);
 
             Button button10 = new Button();
             button10.Text = "Preprocesor";
             button10.Location = new Point(200, 110);
             button10.Tag = "Preprocesor";
-            button10.Click += new EventHandler(ButtonChooseColor_Click);
+            button10.Click += ButtonChooseColor_Click;
             button10.Visible = false;
-            popupForm.Controls.Add(button10);
+            _popupForm.Controls.Add(button10);
 
-            popupForm.ShowDialog();
+            _popupForm.ShowDialog();
         }
         private void ChangeProfile_Click(object sender, EventArgs e)
         {
-            string buttonText = (string)((Button)sender).Text;
+            string buttonText = ((Button)sender).Text;
             switch (buttonText)
             {
                 case "Default":
-                    isDefault = true;
+                    _isDefault = true;
                     break;
                 case "Personalized":
-                    if (popupForm.Width == 300)
+                    if (_popupForm.Width == 300)
                     {
-                        popupForm.Width = 195;
+                        _popupForm.Width = 195;
                     }
-                    else if (popupForm.Width == 195) {
-                        popupForm.Width = 300;
+                    else if (_popupForm.Width == 195) {
+                        _popupForm.Width = 300;
                     }
-                    isDefault = false;
-                    foreach (Control control in popupForm.Controls) {
-                        if (control is Button  && (control.Text == "Strings" || control.Text == "Types" || control.Text == "Expressions" || control.Text == "Comments" || control.Text == "Preprocesor" || control.Text == "Operators")) {
-                            if (control.Visible == false)
-                            {
+                    _isDefault = false;
+                    foreach (Control control in _popupForm.Controls)
+                    {
+                        if (!(control is Button) || (control.Text != "Strings" && control.Text != "Types" &&
+                                                     control.Text != "Expressions" && control.Text != "Comments" &&
+                                                     control.Text != "Preprocesor" &&
+                                                     control.Text != "Operators")) continue;
+                        switch (control.Visible)
+                        {
+                            case false:
                                 control.Visible = true;
-                            }
-                            else if (control.Visible==true){
+                                break;
+                            case true:
                                 control.Visible = false;
-                            }
+                                break;
                         }
                     }
                     break;
@@ -315,17 +291,17 @@ namespace FormatRibbonModule
             doc.Load("../../../../colors.xml");
             switch (buttonText) { 
                 case "Close":
-                    popupForm.Close();
+                    _popupForm.Close();
                     break;
                 case "Save":
-                    if (isDefault)
+                    if (_isDefault)
                     {
                         doc.SelectSingleNode("//default").InnerText="true";
-                        isXMLChanged = true;
+                        IsXmlChanged = true;
                     }
                     else {
                         doc.SelectSingleNode("//default").InnerText = "false";
-                        isXMLChanged = true;
+                        IsXmlChanged = true;
                     }
                     break;
             }
@@ -379,26 +355,22 @@ namespace FormatRibbonModule
                 int b = 255 - colorDialog.Color.B;
                 Color contrastingColor = Color.FromArgb(r, g, b);
                 ((Button)sender).ForeColor = contrastingColor;
-            xml.InnerText = ColorTranslator.ToHtml(colorDialog.Color);
-            doc.Save("../../../../colors.xml");
-            isXMLChanged = true;
+                if (xml != null) xml.InnerText = ColorTranslator.ToHtml(colorDialog.Color);
+                doc.Save("../../../../colors.xml");
+            IsXmlChanged = true;
             }
         }
     }
-    public class FontCommand : IMainTextBoxCommand
+    public class FontCommand : MainTextBoxCommand
     {
-        private static FontCommand _singletonInstance = null;
-        internal RichTextBoxV2 _mainRichTextBoxV2Ref;
+        private static FontCommand _singletonInstance;
+        private RichTextBoxV2 _mainRichTextBoxV2Ref;
 
         private FontCommand(){}
 
-        public static new FontCommand GetCommandObj()
+        public new static FontCommand GetCommandObj()
         {
-            if (_singletonInstance == null)
-            {
-                _singletonInstance = new FontCommand();
-            }
-            return _singletonInstance;
+            return _singletonInstance ?? (_singletonInstance = new FontCommand());
         }
        
         public override void Execute()
@@ -412,27 +384,23 @@ namespace FormatRibbonModule
             }            
         }
 
-        public override void SetTarget(RichTextBoxV2 mainTextBox)
+        public override void SetTarget(IRichTextBoxV2 mainTextBox)
         {
-            _mainRichTextBoxV2Ref = mainTextBox;
+            _mainRichTextBoxV2Ref = (RichTextBoxV2) mainTextBox;
           
         }
     }
-    public class FormatDocument : IMainTextBoxCommand
+    public class FormatDocument : MainTextBoxCommand
     {
-        private static FormatDocument _singletonInstance = null;
-        internal RichTextBoxV2 _mainRichTextBoxV2Ref;
-        internal int _tabNum = 0;
+        private static FormatDocument _singletonInstance;
+        private RichTextBoxV2 _mainRichTextBoxV2Ref;
+        private int _tabNum;
 
         private FormatDocument() { }
 
-        public static new FormatDocument GetCommandObj()
+        public new static FormatDocument GetCommandObj()
         {
-            if (_singletonInstance == null)
-            {
-                _singletonInstance = new FormatDocument();
-            }
-            return _singletonInstance;
+            return _singletonInstance ?? (_singletonInstance = new FormatDocument());
         }
 
         public override void Execute()
@@ -440,9 +408,10 @@ namespace FormatRibbonModule
             ExecuteFormat();
         }
 
-        public override void SetTarget(RichTextBoxV2 mainTextBox)
+        public override void SetTarget(IRichTextBoxV2 mainTextBox)
         {
-            _mainRichTextBoxV2Ref = mainTextBox;
+            _mainRichTextBoxV2Ref =(RichTextBoxV2)mainTextBox;
+
         }
 
         private string Tabs()
@@ -463,13 +432,14 @@ namespace FormatRibbonModule
                 return tabs;
             }
         }
-        public void ExecuteFormat()
+
+        private void ExecuteFormat()
         {
             RichTextBoxV2 richTextBox = _mainRichTextBoxV2Ref;
             richTextBox.Text = richTextBox.Text.Replace("\t", " ");
             richTextBox.Text = (Regex.Replace(richTextBox.Text, @"\s+", " ")).Replace("\n\n", "\n");
             
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 _tabNum = 0;
                 string total = "";
@@ -486,11 +456,11 @@ namespace FormatRibbonModule
                             index = 0;
                             while (index != -1)
                             {
-                                index = replacedLine.IndexOf(";", index);
+                                index = replacedLine.IndexOf(";", index, StringComparison.Ordinal);
                                 if (index == -1) break;
-                                int open = replacedLine.LastIndexOf("(", index);
+                                int open = replacedLine.LastIndexOf("(", index, StringComparison.Ordinal);
                                 if (open == -1) break;
-                                int closed = replacedLine.IndexOf(")", open);
+                                int closed = replacedLine.IndexOf(")", open, StringComparison.Ordinal);
 
                                 if (index > open && index < closed){}
                                 else
@@ -505,8 +475,8 @@ namespace FormatRibbonModule
                             index = 0;
                             while (index != -1)
                             {
-                                int indexSimple = replacedLine.IndexOf(";", index);
-                                int indexString = replacedLine.IndexOf("\";\"", index);
+                                int indexSimple = replacedLine.IndexOf(";", index, StringComparison.Ordinal);
+                                int indexString = replacedLine.IndexOf("\";\"", index, StringComparison.Ordinal);
                                 if (indexSimple == -1) break;
 
                                 if (indexString + 1 != indexSimple)
@@ -527,40 +497,49 @@ namespace FormatRibbonModule
                         modif = Tabs() + replacedLine.Replace("{", "\n" + Tabs() + "{\n");
                         _tabNum++;
                     }
-                    else if (replacedLine[0] == '{')
+                    else switch (replacedLine[0])
                     {
-                        modif = replacedLine.Replace("{", Tabs() + "{\n");
-                        _tabNum++;
-                    }
-                    else if (replacedLine[0] == '}')
-                    {
-                        _tabNum--;
-                        if (replacedLine.Length >= 2 && replacedLine[1] == ';')
+                        case '{':
+                            modif = replacedLine.Replace("{", Tabs() + "{\n");
+                            _tabNum++;
+                            break;
+                        case '}':
                         {
-                            modif = replacedLine.Replace("};", Tabs() + "};\n");
+                            _tabNum--;
+                            if (replacedLine.Length >= 2 && replacedLine[1] == ';')
+                            {
+                                modif = replacedLine.Replace("};", Tabs() + "};\n");
+                            }
+                            else
+                            {
+                                modif = replacedLine.Replace("}", Tabs() + "}\n");
+                            }
+
+                            break;
                         }
-                        else
+                        default:
                         {
-                            modif = replacedLine.Replace("}", Tabs() + "}\n");
+                            if (replacedLine.Contains('}') && replacedLine[0] != '}')
+                            {
+                                _tabNum--;
+                                if (replacedLine.Contains("};"))
+                                {
+                                    modif = replacedLine.Replace("};", "\n" + Tabs() + "};\n");
+                                    modif = Tabs() + modif;
+                                }
+                                else
+                                {
+                                    modif = replacedLine.Replace("}", "\n" + Tabs() + "}\n");
+                                    modif = Tabs() + modif;
+                                }
+                            }
+                            else if (!replacedLine.Contains('{') && !replacedLine.Contains('}'))
+                            {
+                                modif = Tabs() + replacedLine + "\n";
+                            }
+
+                            break;
                         }
-                    }
-                    else if (replacedLine.Contains('}') && replacedLine[0] != '}')
-                    {
-                        _tabNum--;
-                        if (replacedLine.Contains("};"))
-                        {
-                            modif = replacedLine.Replace("};", "\n" + Tabs() + "};\n");
-                            modif = Tabs() + modif;
-                        }
-                        else
-                        {
-                            modif = replacedLine.Replace("}", "\n" + Tabs() + "}\n");
-                            modif = Tabs() + modif;
-                        }
-                    }
-                    else if (!replacedLine.Contains('{') && !replacedLine.Contains('}'))
-                    {
-                        modif = Tabs() + replacedLine + "\n";
                     }
                     total += modif;
                 }

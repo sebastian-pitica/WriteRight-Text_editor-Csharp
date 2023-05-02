@@ -1,11 +1,11 @@
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\CommonsModule.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\CustomControls.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\CommonsModule.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\CustomControls.pdb
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.AssemblyReference.cache
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CopyComplete
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
-C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.AssemblyReference.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\proiect\newText\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb
