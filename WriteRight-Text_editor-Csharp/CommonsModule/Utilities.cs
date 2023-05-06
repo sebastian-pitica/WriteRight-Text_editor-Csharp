@@ -11,13 +11,13 @@ using System.Xml;
 /**************************************************************************
  *                                                                        *
  *  File:        Utilities.cs                                             *
- *  Copyright:   (c) 2023, Caulea Vasile, Pitica Sebastian                *
+ *  Copyright:   (c) 2023, Caulea Vasile, Pitica Sebastian, Matei Rares   *
  *  Description: Fișierul conține clasele cu caracter general utilizate   *
  *  în cadrul proiectului, separate pentru a putea fi folosit pe tot      *
  *  cuprinsul celorlalte module sau pentru că nu pot fi asociate cu alt   *
  *  modul concret.                                                        *
  *  Designed by: Pitica Sebastian                                         *
- *  Updated by: Pitica Sebastian                                          *
+ *  Updated by: Pitica Sebastian, Matei Rares                             *
  *                                                                        *
  **************************************************************************/
 
@@ -41,6 +41,7 @@ namespace CommonsModule
             "All Files(*.*)|*.*"
         };
 
+        #region <updated>Matei Rares</updated>
         /// <summary>
         /// Creaza un TabPage care contine un element TextEditorControl.
         /// </summary>
@@ -69,7 +70,7 @@ namespace CommonsModule
 
             return tabPage;
         }
-
+        #endregion
         public static void WriteFile(in string filePath, in string text)
         {
             StreamWriter streamWriter = new StreamWriter(filePath);
@@ -115,7 +116,7 @@ namespace CommonsModule
 
     #region <creator>Matei Rares</creator>
     /// <summary>
-    /// Clasa utilizata pentru a face highlight pe cuvintele cheie dintr-un fisier C/C++/C#.
+    /// Această clasă este utilizată pentru a face highlight pe cuvintele cheie dintr-un fisier C/C++/C#.
     /// </summary>
     public static class UtilitiesFormat
     {
@@ -133,7 +134,8 @@ namespace CommonsModule
         static readonly string[] preprocessors = { "#define", "#elif", "#else", "#endif", "#error", "#if", "#ifdef", "#ifndef", "#import", "#include", "#line", "#pragma", "#undef", "#using" };
 
         /// <summary>
-        /// Daca s-au facut modificari in fisierul colors.xml, se face update la variabilele specifice culorilor.
+        /// Această funcție verifică dacă s-au făcut modificări în fișierul colors.xml, în caz că s-au făcut,
+        /// se face update la variabilele specifice culorilor.
         /// </summary>
         internal static void InitColors()
         {
@@ -163,11 +165,11 @@ namespace CommonsModule
             }
         }
         /// <summary>
-        /// Coloreaza cuvintele din listă găsite textul unui RichTextBox in culoarea wordColors.
+        /// Această funcție colorează cuvintele din vector, găsite în text, în culoarea trimisă ca argument.
         /// </summary>
-        /// <param name="richTextBox"></param>
-        /// <param name="words"></param>
-        /// <param name="wordsColor"></param>
+        /// <param name="richTextBox">Parametrul reprezinta Controlul în a cărui text se caută și se colorează cuvintele</param>
+        /// <param name="words">Parametrul reprezintă vectorul de cuvinte căutate in text</param>
+        /// <param name="wordsColor">Paremetrul reprezintă culoarea pe care o vor avea cuvintele din text</param>
         private static void ColorWordsFromRichTextBox(RichTextBox richTextBox, string[] words, Color wordsColor)
         {
             foreach (string keyword in words)
@@ -187,9 +189,9 @@ namespace CommonsModule
             }
         }
         /// <summary>
-        /// Coloreaza operatorii dintr-un RichTextBox.
+        /// Coloreaza operatorii dintr-un RichTextBox în culoarea specifică operatorilor.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezinta Controlul în a cărui text se caută și se colorează operatorii</param>
         private static void ColorOperatorsFromRichTextBox(RichTextBox richTextBox)
         {
             Color opColor = ColorTranslator.FromHtml(operatorsColor);
@@ -211,9 +213,9 @@ namespace CommonsModule
         }
 
         /// <summary>
-        /// Coloreaza stringurile dintr-un RichTextBox.
+        /// Coloreaza operatorii dintr-un RichTextBox în culoarea specifică operatorilor.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezinta Controlul în a cărui text se caută și se colorează stringurile</param>
         private static void ColorStringsFromRichTextBox(RichTextBox richTextBox)
         {
             int index = 0;
@@ -234,9 +236,9 @@ namespace CommonsModule
             }
         }
         /// <summary>
-        /// Coloreaza comentariile liniare (care incep cu "//") dintr-un RichTextBox.
+        /// Coloreaza comentariile liniare (care incep cu "//") dintr-un RichTextBox în culoarea specifică comentariilor liniare.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezinta Controlul în a cărui text se caută și se colorează comentariile liniare</param>
         private static void ColorLineCommentsFromRichTextBox(RichTextBox richTextBox)
         {
             Color colorCom = ColorTranslator.FromHtml(commentColor);
@@ -253,9 +255,9 @@ namespace CommonsModule
             }
         }
         /// <summary>
-        /// Coloreaza tot continutul aflat intre caracterele "/*" si "*/" dintr-un RichTextBox.
+        /// Coloreaza tot continutul aflat intre caracterele "/*" si "*/" dintr-un RichTextBox în culoarea specifică comentariilor multiple.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezinta Controlul în a cărui text se caută și se colorează comentariile multiple</param>
         private static void ColorMultilineCommentsFromRichTextBox(RichTextBox richTextBox)
         {
             int repeat = 0;
@@ -302,10 +304,10 @@ namespace CommonsModule
         }
 
         /// <summary>
-        /// Se realizeaza highlight pe toate tipuri speciale de cuvinte: tipuri, expresii, operatori, preprocesor, strings,
-        /// comentarii line si multiline. Cat timp se fac aceste procesari, richtextbox devine invizibil.
+        /// Funcția realizează highlight pe toate tipuri speciale de cuvinte: tipuri, expresii, operatori, preprocesor, strings,
+        /// comentarii line si multiline. Cât timp se fac aceste procesari, richtextbox-ul devine invizibil.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezinta Controlul în a cărui text se caută și se colorează comentariile multiple</param>
         public static void CompleteHighlight(RichTextBox richTextBox)
         {
             try
@@ -353,9 +355,9 @@ namespace CommonsModule
             richTextBox.Visible = true;
         }
         /// <summary>
-        /// Coloreaza comment block-ul in care se afla Selection.
+        /// Aceasta funcție colorează comment block-ul în care se află Selection.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Control-ul în a cărui text se caută și se coloreaza comment block-ul</param>
         private static void ColorCommentBlock(RichTextBox richTextBox)
         {
             int selectionStart = richTextBox.SelectionStart;
@@ -373,10 +375,10 @@ namespace CommonsModule
         /// <summary>
         /// Modifica linia curenta pentru a se poate face si alte procesari pe liniile cu comentarii.
         /// </summary>
-        /// <param name="richTextBox"></param>
-        /// <param name="lineStartIndex"></param>
-        /// <param name="lineEndIndex"></param>
-        /// <param name="currentLine"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
+        /// <param name="lineStartIndex">Parametrul reprezintă indexul de start a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="lineEndIndex">Parametrul reprezintă indexul de sfârșit a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="currentLine">Parametrul reprezinta conținutul liniei curente</param>
         private static void CompleteCurrentLine(in RichTextBoxV2 richTextBox, in int lineStartIndex, in int lineEndIndex, ref string currentLine)
         {
             currentLine = richTextBox.Text.Substring(lineStartIndex, lineEndIndex - lineStartIndex);
@@ -397,12 +399,12 @@ namespace CommonsModule
         /// <summary>
         /// Coloreaza cuvantul regasit pe linia curenta dintr-un RichTextBox, indecsii sunt folositi la gasirea liniei curente.
         /// </summary>
-        /// <param name="richTextBox"></param>
-        /// <param name="lineStartIndex"></param>
-        /// <param name="lineEndIndex"></param>
-        /// <param name="word"></param>
-        /// <param name="currentLine"></param>
-        /// <param name="color"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
+        /// <param name="lineStartIndex">Parametrul reprezintă indexul de start a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="lineEndIndex">Parametrul reprezintă indexul de sfârșit a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="word">Parametrul reprezintă cuvântul căutat in text</param>
+        /// <param name="currentLine">Parametrul reprezinta conținutul liniei curente</param>
+        /// <param name="color">Parametrul reprezintă culoarea pe care o va avea cuvantul cautat</param>
         private static void ColorWordFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string word, in string currentLine, in string color)
         {
             var startIndex = lineStartIndex + currentLine.IndexOf(word);
@@ -413,10 +415,10 @@ namespace CommonsModule
         /// <summary>
         /// Coloreaza operatorii aflati pe linia curenta dintr-un RichTextBox, indecsii sunt folositi la gasirea liniei curente. 
         /// </summary>
-        /// <param name="richTextBox"></param>
-        /// <param name="lineStartIndex"></param>
-        /// <param name="lineEndIndex"></param>
-        /// <param name="currentLine"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
+        /// <param name="lineStartIndex">Parametrul reprezintă indexul de start a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="lineEndIndex">Parametrul reprezintă indexul de sfârșit a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="currentLine">Parametrul reprezinta conținutul liniei curente</param>
         private static void ColorOperatorsFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string currentLine)
         {
             foreach (string op in operators)
@@ -451,10 +453,10 @@ namespace CommonsModule
         /// <summary>
         /// Coloreaza continutul aflat intre ghilimele aflate pe linia curenta dintr-un RichTextBox, indecsii sunt folositi la gasirea liniei curente.
         /// </summary>
-        /// <param name="richTextBox"></param>
-        /// <param name="lineStartIndex"></param>
-        /// <param name="lineEndIndex"></param>
-        /// <param name="currentLine"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
+        /// <param name="lineStartIndex">Parametrul reprezintă indexul de start a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="lineEndIndex">Parametrul reprezintă indexul de sfârșit a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="currentLine">Parametrul reprezinta conținutul liniei curente</param>
         private static void ColorStringsFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string currentLine)
         {
             MatchCollection matches = Regex.Matches(currentLine, "(?<!\\\\)\".*?(?<!\\\\)\"");
@@ -469,10 +471,10 @@ namespace CommonsModule
         /// <summary>
         /// Coloreaza continutul aflat dupa "//" de pe linia curenta dintr-un RichTextBox, indecsii sunt folositi la gasirea liniei curente. 
         /// </summary>
-        /// <param name="richTextBox"></param>
-        /// <param name="lineStartIndex"></param>
-        /// <param name="lineEndIndex"></param>
-        /// <param name="currentLine"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
+        /// <param name="lineStartIndex">Parametrul reprezintă indexul de start a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="lineEndIndex">Parametrul reprezintă indexul de sfârșit a liniei curente din textul RichTextBox-ului.</param>
+        /// <param name="currentLine">Parametrul reprezinta conținutul liniei curente</param>
         private static void ColorLineCommentFromCurrentLine(RichTextBox richTextBox, in int lineStartIndex, in int lineEndIndex, in string currentLine)
         {
             var startIndex = lineStartIndex + currentLine.IndexOf("//");
@@ -485,7 +487,7 @@ namespace CommonsModule
         /// Se realizeaza highlight pe toate tipuri speciale de cuvinte aflate pe linia curenta: tipuri, expresii,
         /// operatori, preprocesor, strings,comentarii line si multiline.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         public static void LiniarHighLighting(RichTextBoxV2 richTextBox)
         {
             try
@@ -574,7 +576,7 @@ namespace CommonsModule
         /// <summary>
         /// Verifica daca Selection este intr-un commment block
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         private static bool IsSelectionInCommentBlock(RichTextBox richTextBox)
         {
             int selectionStart = richTextBox.SelectionStart;
@@ -590,7 +592,7 @@ namespace CommonsModule
         /// <summary>
         /// Adauga taburi in functie de pozitia cursorului relativ la "{" si "}"
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         public static void EnterTab(RichTextBox richTextBox)
         {
             int currentPos = richTextBox.SelectionStart;
@@ -626,7 +628,7 @@ namespace CommonsModule
         /// <summary>
         /// Modifica continutul din clipboard cu fontul si culoarea actuala.
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         public static void FormatPaste(RichTextBox richTextBox)
         {
             int initialPos = richTextBox.SelectionStart;
@@ -651,7 +653,7 @@ namespace CommonsModule
         /// <summary>
         /// Comenteaza cu "/"* respectiv "*/" textul selectat si decomenteaza textul selectat si pozitionat intre "/*" si "*/"
         /// </summary>
-        /// <param name="richTextBox"></param>
+        /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         public static void CommentUncomment(RichTextBox richTextBox)
         {
             Color currColor = richTextBox.ForeColor;

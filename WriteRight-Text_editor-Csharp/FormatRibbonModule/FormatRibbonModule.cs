@@ -15,13 +15,18 @@ using CommonsModule;
  *                                                                        *
  *  File:        FormatRibbonModule.cs                                    *
  *  Copyright:   (c) 2023, Matei Rares                                    *
- *  Description:                                                          *
+ *  Desciprtion: Fișierul conține obiectele de tip Singleton-Command      *
+ *  aferente ribbonului Format, separate pentru a se putea lucra          *
+ *  individual de celelalte ribbonuri.                                    *
  *  Updated by: Matei Rares                                               *
  *                                                                        *
  **************************************************************************/
 
 namespace FormatRibbonModule
 {
+    /// <summary>
+    /// Această clasă are ca scop schimbarea tematicii din Form-ul principal.
+    /// </summary>
     public class ThemeCommand : MainWindowCommand
     {
         private static ThemeCommand _singletonInstance;
@@ -30,7 +35,10 @@ namespace FormatRibbonModule
         private static readonly Color BackColor = ColorTranslator.FromHtml("#24292E");
         private static readonly Color ForeColor = ColorTranslator.FromHtml("#C8D3DA");
 
-
+        /// <summary>
+        /// Această funcție schimbă culoarea de fundal a barei de fundal din default, în negru.
+        /// </summary>
+        /// <param name="handle">Parametrul reprezinta Handle-ul Form-ului</param>
         private static void SetDarkTitleBar(IntPtr handle)
         {
             int preference = 1;    
@@ -70,7 +78,7 @@ namespace FormatRibbonModule
         }
 
         /// <summary>
-        /// Aplica un background si un foreground pentru fiecare Control din Form
+        /// Această functie aplică un background și un foreground pentru fiecare Control din Form.
         /// </summary>
         internal void SetDarkmode() {
             SetDarkTitleBar(_mainFormWindowRef.Handle);
@@ -124,7 +132,7 @@ namespace FormatRibbonModule
             }
         }
         /// <summary>
-        /// Aplica fundal alb si font negru pentru controalele din Form
+        /// Această funcție aplică un fundal alb și un font negru pentru controalele din Form.
         /// </summary>
         internal void SetWhiteMode()
         {
@@ -178,7 +186,9 @@ namespace FormatRibbonModule
         }
     }
 
-
+    /// <summary>
+    /// Această clasă are ca scop crearea unui dialog care face posibilă alegerea unui profil de culori pentru cuvintele speciale din RichTextBox.
+    /// </summary>
     public class SyntaxHighlightCommand : MainTextBoxCommand
     {
         private static SyntaxHighlightCommand _singletonInstance;
@@ -200,7 +210,7 @@ namespace FormatRibbonModule
                 ShowDialog();
             }
             catch (Exception ex) { 
-            Utilities.HandleException(ex);
+                Utilities.HandleException(ex);
             }
         }
 
@@ -210,7 +220,7 @@ namespace FormatRibbonModule
         }
 
         /// <summary>
-        /// Acesta functie afiseaza un Form din care se poate selecta profilul de culori pentru cuvinte cheie.
+        /// Acestă funcție afișează un Form din care se poate selecta profilul de culori pentru cuvintele cheie.
         /// </summary>
         private void ShowDialog()
         {
@@ -302,11 +312,12 @@ namespace FormatRibbonModule
         }
 
         /// <summary>
-        /// Daca s-a apasat default/personalized se seteaza profilul de culori.In cazul in care s-a apasat Personalized 
-        /// butoanele pentru fiecare tip de cuvant devin vizibile.
+        /// Această funcție tratează evenimentul de click pe unul din butoanele de selectare a profilului de culori.
+        /// Dacă s-a apăsat default/personalized se setează profilul de culori respectiv.
+        /// În cazul în care s-a apăsat Personalized, butoanele pentru fiecare tip de cuvânt special devin vizibile.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Acest parametru reprezintă butonul apăsat</param>
+        /// <param name="e">Acest parametru reprezintă evenimentul de click</param>
         private void ChangeProfile_Click(object sender, EventArgs e)
         {
             string buttonText = ((Button)sender).Text;
@@ -345,11 +356,12 @@ namespace FormatRibbonModule
             }
         }
         /// <summary>
+        /// Această funcție tratează evenimentul de salvare sau închidere a Form-ului de selectare a profilului de culori.
         /// Daca se apasa Save, se salveaza profilul ales.
         /// Daca se apasa Close,ferestra se inchide.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Acest parametru reprezintă butonul apăsat</param>
+        /// <param name="e">Acest parametru reprezintă evenimentul de click</param>
         private void ButtonActions_Click(object sender, EventArgs e)
         {
             string buttonText = ((Button)sender).Text;
@@ -383,11 +395,12 @@ namespace FormatRibbonModule
         }
 
         /// <summary>
-        /// Apasarea unui buton va deschide un ColorDialog prin care va seta cculoarea pentru o categorie de cuvinte.
-        /// Alegerea unei culori duce la salvarea culorii in fisierul colors.xml
+        /// Această funcție tratează evenimentul de alegere a unei culori pentru un tip de cuvânt special.
+        /// Apăsarea unui buton va deschide un ColorDialog prin care va seta culoarea pentru o categorie de cuvinte.
+        /// Alegerea unei culori duce la salvarea culorii în fișierul colors.xml.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Acest parametru reprezintă butonul apăsat</param>
+        /// <param name="e">Acest parametru reprezintă evenimentul de click</param>
         private void ButtonChooseColor_Click(object sender, EventArgs e)
         {
             string buttonTag = (string)((Button)sender).Tag;
@@ -441,7 +454,7 @@ namespace FormatRibbonModule
         }
     }
     /// <summary>
-    /// Aceasta clasa are ca scop crearea unui dialog pentru schimbarea fontului unui RichTextBox
+    /// Această clasă are ca scop crearea unui dialog pentru schimbarea fontului unui RichTextBox.
     /// </summary>
     public class FontCommand : MainTextBoxCommand
     {
@@ -478,6 +491,9 @@ namespace FormatRibbonModule
           
         }
     }
+    /// <summary>
+    /// Această clasă are ca scop identarea conținutului unui RichTextBox.
+    /// </summary>
     public class FormatDocument : MainTextBoxCommand
     {
         private static FormatDocument _singletonInstance;
@@ -510,9 +526,8 @@ namespace FormatRibbonModule
         }
 
         /// <summary>
-        /// Functia returneaza un string care contine doar taburi. Numarul de taburi este dat de variabila _tabNum. 
+        /// Acesată funcție returnează un string care conține doar taburi. Numărul de taburi este dat de variabila _tabNum. 
         /// </summary>
-        /// <returns></returns>
         private string Tabs()
         {
             string tabs = "";
@@ -533,8 +548,8 @@ namespace FormatRibbonModule
         }
 
         /// <summary>
-        /// Se face formatare pe textul curent pentru reliza identarea in functie de "{", "}" si de ";".
-        /// Sunt luate in considerare cazurile in care ";" se afla dupa un for sau cand ";" se afla intre ghilimele
+        /// Această funcție face o formatare pe textul curent pentru a realiza identarea in funcție de "{", "}" si de ";".
+        /// Sunt luate in considerare cazurile in care ";" se află după un for() sau cand ";" se află între ghilimele.
         /// </summary>
         private void ExecuteFormat()
         {

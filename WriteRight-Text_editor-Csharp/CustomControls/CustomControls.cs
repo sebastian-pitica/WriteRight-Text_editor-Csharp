@@ -15,7 +15,7 @@ using static CustomControls.SystemMessageHandler;
  *  Description: Fișierul conține clase de tip wrap-up (peste controalele *
  *  clasice) utilizate în cadrul proiectului, separate pentru             *
  *  a putea fi folosit pe tot cuprinsul celorlalte module                 *
- *  Updated by: Caulea Vasile                                             *
+ *  Updated by: Caulea Vasile, Matei Rares                                *
  *                                                                        *
  **************************************************************************/
 

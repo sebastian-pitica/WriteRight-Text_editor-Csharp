@@ -19,7 +19,7 @@ using static CommonsModule.Utilities;
  *  Description: Fișierul conține codul interfeței grafice pentru         *
  *  proiectul WriteRight.                                                 *
  *  Designed by: Pitica Sebastian                                         *
- *  Updated by: Pitica Sebastian, Caulea Vasile                           *
+ *  Updated by: Pitica Sebastian, Caulea Vasile, Matei Rares              *
  *                                                                        *
  **************************************************************************/
 

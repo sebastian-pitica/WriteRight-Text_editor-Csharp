@@ -15,7 +15,7 @@ using static CommonsModule.Utilities;
  *  aferente ribbonului Help și pentru unele comenzi de pe interfața      *
  *  grafică, separate pentru a se putea lucra individual de celelalte     *
  *  ribbonuri.                                                            *
- *                                                                        *
+ *  Updated by: Matei Rares                                               *
  **************************************************************************/
 
 
