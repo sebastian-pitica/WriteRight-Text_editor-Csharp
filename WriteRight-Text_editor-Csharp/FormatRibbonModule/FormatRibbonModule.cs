@@ -9,22 +9,33 @@ using System.Xml;
 using CustomControls;
 using static CommonsModule.UtilitiesFormat;
 using static CustomControls.SystemMessageHandler;
+using CommonsModule;
+
+/**************************************************************************
+ *                                                                        *
+ *  File:        FormatRibbonModule.cs                                    *
+ *  Copyright:   (c) 2023, Matei Rares                                    *
+ *  Description:                                                          *
+ *  Updated by: Matei Rares                                               *
+ *                                                                        *
+ **************************************************************************/
 
 namespace FormatRibbonModule
 {
     public class ThemeCommand : MainWindowCommand
     {
+        private static ThemeCommand _singletonInstance;
+        private Form _mainFormWindowRef;
+        private readonly List<Control> _controls = new List<Control>();
+        private static readonly Color BackColor = ColorTranslator.FromHtml("#24292E");
+        private static readonly Color ForeColor = ColorTranslator.FromHtml("#C8D3DA");
+
+
         private static void SetDarkTitleBar(IntPtr handle)
         {
             int preference = 1;    
             DwmSetWindowAttribute(handle, 20, ref preference, sizeof(int));
         }
-        
-        private static ThemeCommand _singletonInstance;
-        private Form _mainFormWindowRef;
-        private readonly List<Control> _controls= new List<Control>();
-        private static readonly Color BackColor = ColorTranslator.FromHtml("#24292E");
-        private static readonly Color ForeColor = ColorTranslator.FromHtml("#C8D3DA");
         
         private ThemeCommand(){}
 
@@ -35,94 +46,126 @@ namespace FormatRibbonModule
         
         public override void Execute()
         {
-            if (!IsDarkmode)
+            if (!isDarkmode)
             {
-                SetDarkTitleBar(_mainFormWindowRef.Handle);
-                _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
-                for (int i = 0; i < _controls.Count; i++) {
-                    string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");                    
-                    switch (type) {
-                        case "RichTextBox":
-                            _controls[i].BackColor = BackColor;
-                            _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
-                            break;
-                        case "Label":
-                        case "TextBox":
-                        case "StatusStrip":
-                        case "Button":
-                            _controls[i].BackColor = BackColor;
-                            _controls[i].ForeColor = ForeColor;
-                            break;
-                        case "MenuStrip":
-                            _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
-                            foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
-                            {
-                                item.BackColor = ColorTranslator.FromHtml("#1F2428");
-                                item.ForeColor = ColorTranslator.FromHtml("#D7DADE");
-                                foreach (ToolStripItem subItem in item.DropDownItems)
-                                {
-                                    if (subItem.Text == "Theme: Light") {
-                                        subItem.Text = "Theme: Dark";
-                                    }
-                                    subItem.BackColor = ColorTranslator.FromHtml("#1F2428");
-                                    subItem.ForeColor = ColorTranslator.FromHtml("#D7DADE");
-                                }
-                            }
-                            break;
-                        case "TabControl":
-                            foreach (TabPage page in ((TabControl)_controls[i]).TabPages) {
-                                page.BackColor = BackColor;
-                                page.ForeColor = ForeColor;
-                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = BackColor;
-                                ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = ForeColor;
-                                ((TextEditorControl)page.Controls[0]).BackColor = ForeColor;
-
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = BackColor;
-                                ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ForeColor;
-                            }
-                            break;
-                    }
+                try
+                {
+                    SetDarkmode();
                 }
-                IsDarkmode = true;
+                catch (Exception ex) {
+                    Utilities.HandleException(ex);  
+                }
+                isDarkmode = true;
             }
             else {
-                foreach (Control control in _controls)
-                { 
-                   control.BackColor= new Color();
-                   control.ForeColor=new Color();
+                try
+                {
+                    SetWhiteMode();
                 }
-                _mainFormWindowRef.BackColor = new Color();
-                for (int i = 0; i < _controls.Count; i++) {
-                    if (_controls[i] is MenuStrip)
-                    {
+                catch (Exception ex) {
+                    Utilities.HandleException(ex);
+                }
+                isDarkmode = false;
+            }
+        }
+
+        /// <summary>
+        /// Aplica un background si un foreground pentru fiecare Control din Form
+        /// </summary>
+        internal void SetDarkmode() {
+            SetDarkTitleBar(_mainFormWindowRef.Handle);
+            _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
+            for (int i = 0; i < _controls.Count; i++)
+            {
+                string type = _controls[i].GetType().ToString().Trim().Replace("System.Windows.Forms.", "").Replace("CommonsModule.", "");
+                switch (type)
+                {
+                    case "RichTextBox":
+                        _controls[i].BackColor = BackColor;
+                        _controls[i].ForeColor = ColorTranslator.FromHtml("#E1E4E8");
+                        break;
+                    case "Label":
+                    case "TextBox":
+                    case "StatusStrip":
+                    case "Button":
+                        _controls[i].BackColor = BackColor;
+                        _controls[i].ForeColor = ForeColor;
+                        break;
+                    case "MenuStrip":
+                        _controls[i].BackColor = ColorTranslator.FromHtml("#1F2428");
                         foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
                         {
-                            item.BackColor = new Color();
-                            item.ForeColor = new Color();
+                            item.BackColor = ColorTranslator.FromHtml("#1F2428");
+                            item.ForeColor = ColorTranslator.FromHtml("#D7DADE");
                             foreach (ToolStripItem subItem in item.DropDownItems)
                             {
-                                if (subItem.Text == "Theme: Dark")
+                                if (subItem.Text == "Theme: Light")
                                 {
-                                    subItem.Text = "Theme: Light";
+                                    subItem.Text = "Theme: Dark";
                                 }
-                                subItem.BackColor = new Color();
-                                subItem.ForeColor = new Color();
+                                subItem.BackColor = ColorTranslator.FromHtml("#1F2428");
+                                subItem.ForeColor = ColorTranslator.FromHtml("#D7DADE");
                             }
                         }
-                    }
-                    else if (_controls[i] is TabControl) {
-                        foreach (TabPage page in ((TabControl)_controls[i]).Controls) {
-                            page.BackColor = new Color();
-                            page.ForeColor = new Color();
-                            ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = new Color();
-                            ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = new Color();
-
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = new Color();
-                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = new Color();
+                        break;
+                    case "TabControl":
+                        foreach (TabPage page in ((TabControl)_controls[i]).TabPages)
+                        {
+                            page.BackColor = BackColor;
+                            page.ForeColor = ForeColor;
+                            ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = BackColor;
+                            ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = ForeColor;
+                            ((TextEditorControl)page.Controls[0]).BackColor = ForeColor;
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = BackColor;
+                            ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = ForeColor;
+                        }
+                        break;
+                }
+            }
+        }
+        /// <summary>
+        /// Aplica fundal alb si font negru pentru controalele din Form
+        /// </summary>
+        internal void SetWhiteMode()
+        {
+            foreach (Control control in _controls)
+            {
+                control.BackColor = new Color();
+                control.ForeColor = new Color();
+            }
+            _mainFormWindowRef.BackColor = new Color();
+            for (int i = 0; i < _controls.Count; i++)
+            {
+                if (_controls[i] is MenuStrip)
+                {
+                    foreach (ToolStripMenuItem item in ((MenuStrip)_controls[i]).Items)
+                    {
+                        item.BackColor = new Color();
+                        item.ForeColor = new Color();
+                        foreach (ToolStripItem subItem in item.DropDownItems)
+                        {
+                            if (subItem.Text == "Theme: Dark")
+                            {
+                                subItem.Text = "Theme: Light";
+                            }
+                            subItem.BackColor = new Color();
+                            subItem.ForeColor = new Color();
                         }
                     }
                 }
-                IsDarkmode = false;
+                else if (_controls[i] is TabControl)
+                {
+                    foreach (TabPage page in ((TabControl)_controls[i]).Controls)
+                    {
+                        page.BackColor = new Color();
+                        page.ForeColor = new Color();
+                        ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).BackColor = new Color();
+                        ((RichTextBoxV2)((TextEditorControl)page.Controls[0]).RichTextBoxEditor).ForeColor = new Color();
+
+                        ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.BackColor = new Color();
+                        ((TextEditorControl)page.Controls[0]).RichTextBoxNumbering.ForeColor = new Color();
+                    }
+                }
             }
         }
 
@@ -134,6 +177,8 @@ namespace FormatRibbonModule
             }
         }
     }
+
+
     public class SyntaxHighlightCommand : MainTextBoxCommand
     {
         private static SyntaxHighlightCommand _singletonInstance;
@@ -141,7 +186,6 @@ namespace FormatRibbonModule
         private Form _popupForm;
         private Label _label;
         private bool _isDefault=true;
-        public static bool IsXmlChanged=false;
 
         private SyntaxHighlightCommand() { }
 
@@ -151,7 +195,13 @@ namespace FormatRibbonModule
         }
         public override void Execute()
         {
-            ShowDialog();
+            try
+            {
+                ShowDialog();
+            }
+            catch (Exception ex) { 
+            Utilities.HandleException(ex);
+            }
         }
 
         public override void SetTarget(IRichTextBoxV2 mainTextBox)
@@ -159,6 +209,9 @@ namespace FormatRibbonModule
             _mainRichTextBoxV2Ref =(RichTextBoxV2) mainTextBox;
         }
 
+        /// <summary>
+        /// Acesta functie afiseaza un Form din care se poate selecta profilul de culori pentru cuvinte cheie.
+        /// </summary>
         private void ShowDialog()
         {
             _popupForm = new Form();
@@ -247,6 +300,13 @@ namespace FormatRibbonModule
 
             _popupForm.ShowDialog();
         }
+
+        /// <summary>
+        /// Daca s-a apasat default/personalized se seteaza profilul de culori.In cazul in care s-a apasat Personalized 
+        /// butoanele pentru fiecare tip de cuvant devin vizibile.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChangeProfile_Click(object sender, EventArgs e)
         {
             string buttonText = ((Button)sender).Text;
@@ -258,6 +318,7 @@ namespace FormatRibbonModule
                 case "Personalized":
                     if (_popupForm.Width == 300)
                     {
+
                         _popupForm.Width = 195;
                     }
                     else if (_popupForm.Width == 195) {
@@ -283,84 +344,105 @@ namespace FormatRibbonModule
                     break;
             }
         }
-
+        /// <summary>
+        /// Daca se apasa Save, se salveaza profilul ales.
+        /// Daca se apasa Close,ferestra se inchide.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonActions_Click(object sender, EventArgs e)
         {
             string buttonText = ((Button)sender).Text;
-            XmlDocument doc = new XmlDocument();
-            doc.Load("../../../../colors.xml");
-            switch (buttonText) { 
-                case "Close":
-                    _popupForm.Close();
-                    break;
-                case "Save":
-                    if (_isDefault)
-                    {
-                        doc.SelectSingleNode("//default").InnerText="true";
-                        IsXmlChanged = true;
-                    }
-                    else {
-                        doc.SelectSingleNode("//default").InnerText = "false";
-                        IsXmlChanged = true;
-                    }
-                    break;
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load("../../../../colors.xml");
+                switch (buttonText)
+                {
+                    case "Close":
+                        _popupForm.Close();
+                        break;
+                    case "Save":
+                        if (_isDefault)
+                        {
+                            doc.SelectSingleNode("//default").InnerText = "true";
+                            isXMLChanged = true;
+                        }
+                        else
+                        {
+                            doc.SelectSingleNode("//default").InnerText = "false";
+                            isXMLChanged = true;
+                        }
+                        break;
+                }
+                doc.Save("../../../../colors.xml");
             }
-            doc.Save("../../../../colors.xml");
+            catch (Exception ex) {
+                Utilities.HandleException(ex);
+            }
         }
 
-
+        /// <summary>
+        /// Apasarea unui buton va deschide un ColorDialog prin care va seta cculoarea pentru o categorie de cuvinte.
+        /// Alegerea unei culori duce la salvarea culorii in fisierul colors.xml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonChooseColor_Click(object sender, EventArgs e)
         {
             string buttonTag = (string)((Button)sender).Tag;
             ColorDialog colorDialog = new ColorDialog();
-            XmlDocument doc = new XmlDocument();
-            doc.Load("../../../../colors.xml");
-            DialogResult result = colorDialog.ShowDialog();
-
-            if (result == DialogResult.OK)
+            try
             {
-                XmlNode xml=doc.SelectSingleNode("//type");
-                switch (buttonTag)
+                XmlDocument doc = new XmlDocument();
+                doc.Load("../../../../colors.xml");
+                DialogResult result = colorDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
                 {
-                    case "Types":
-                        _mainRichTextBoxV2Ref.Text += "types";
-                        xml = doc.SelectSingleNode("//type");
-                        break;
-                    case "Expressions":
-                        _mainRichTextBoxV2Ref.Text += "expression";
-                        xml = doc.SelectSingleNode("//expression");
-                        break;
-                    case "Operators":
-                        _mainRichTextBoxV2Ref.Text += "operator";
-                        xml = doc.SelectSingleNode("//operator");
-                        break;
-                    case "Comments":
-                        _mainRichTextBoxV2Ref.Text += "comment";
-                        xml = doc.SelectSingleNode("//comment");
-                        break;
-                    case "Strings":
-                        _mainRichTextBoxV2Ref.Text += "string";
-                        xml = doc.SelectSingleNode("//string");
-                        break;
-                    case "Preprocesor":
-                        _mainRichTextBoxV2Ref.Text += "preproces";
-                        xml = doc.SelectSingleNode("//preprocesor");
-                        break;
-                    case "Text":
-                        break;
+                    XmlNode xml = doc.SelectSingleNode("//type");
+                    switch (buttonTag)
+                    {
+                        case "Types":
+                            xml = doc.SelectSingleNode("//type");
+                            break;
+                        case "Expressions":
+                            xml = doc.SelectSingleNode("//expression");
+                            break;
+                        case "Operators":
+                            xml = doc.SelectSingleNode("//operator");
+                            break;
+                        case "Comments":
+                            xml = doc.SelectSingleNode("//comment");
+                            break;
+                        case "Strings":
+                            xml = doc.SelectSingleNode("//string");
+                            break;
+                        case "Preprocesor":
+                            xml = doc.SelectSingleNode("//preprocesor");
+                            break;
+                        case "Text":
+                            break;
+                    }
+                    ((Button)sender).BackColor = colorDialog.Color;
+                    int r = 255 - colorDialog.Color.R;
+                    int g = 255 - colorDialog.Color.G;
+                    int b = 255 - colorDialog.Color.B;
+                    Color contrastingColor = Color.FromArgb(r, g, b);
+                    ((Button)sender).ForeColor = contrastingColor;
+                    if (xml != null) xml.InnerText = ColorTranslator.ToHtml(colorDialog.Color);
+                    doc.Save("../../../../colors.xml");
+                    isXMLChanged = true;
                 }
-                ((Button)sender).BackColor = colorDialog.Color;
-                int r = 255 - colorDialog.Color.R;
-                int g = 255 - colorDialog.Color.G;
-                int b = 255 - colorDialog.Color.B;
-                Color contrastingColor = Color.FromArgb(r, g, b);
-                ((Button)sender).ForeColor = contrastingColor;
-                if (xml != null) xml.InnerText = ColorTranslator.ToHtml(colorDialog.Color);
-                doc.Save("../../../../colors.xml");
-            IsXmlChanged = true;
+            }
+            catch (Exception ex) {
+                Utilities.HandleException(ex);
             }
         }
     }
+    /// <summary>
+    /// Aceasta clasa are ca scop crearea unui dialog pentru schimbarea fontului unui RichTextBox
+    /// </summary>
     public class FontCommand : MainTextBoxCommand
     {
         private static FontCommand _singletonInstance;
@@ -375,13 +457,19 @@ namespace FormatRibbonModule
        
         public override void Execute()
         {
-            FontDialog fontDialog = new FontDialog();         
-            DialogResult fontResult = fontDialog.ShowDialog();          
-                    
-            if (fontResult == DialogResult.OK)
+            try
             {
-                _mainRichTextBoxV2Ref.SelectionFont = fontDialog.Font;
-            }            
+                FontDialog fontDialog = new FontDialog();
+                DialogResult fontResult = fontDialog.ShowDialog();
+
+                if (fontResult == DialogResult.OK)
+                {
+                    _mainRichTextBoxV2Ref.SelectionFont = fontDialog.Font;
+                }
+            }
+            catch (Exception ex) {
+                Utilities.HandleException(ex);
+            }
         }
 
         public override void SetTarget(IRichTextBoxV2 mainTextBox)
@@ -405,7 +493,14 @@ namespace FormatRibbonModule
 
         public override void Execute()
         {
-            ExecuteFormat();
+            try
+            {
+                ExecuteFormat();
+            }
+            catch(Exception ex)
+            {
+                Utilities.HandleException(ex);
+            }
         }
 
         public override void SetTarget(IRichTextBoxV2 mainTextBox)
@@ -414,6 +509,10 @@ namespace FormatRibbonModule
 
         }
 
+        /// <summary>
+        /// Functia returneaza un string care contine doar taburi. Numarul de taburi este dat de variabila _tabNum. 
+        /// </summary>
+        /// <returns></returns>
         private string Tabs()
         {
             string tabs = "";
@@ -433,13 +532,17 @@ namespace FormatRibbonModule
             }
         }
 
+        /// <summary>
+        /// Se face formatare pe textul curent pentru reliza identarea in functie de "{", "}" si de ";".
+        /// Sunt luate in considerare cazurile in care ";" se afla dupa un for sau cand ";" se afla intre ghilimele
+        /// </summary>
         private void ExecuteFormat()
         {
             RichTextBoxV2 richTextBox = _mainRichTextBoxV2Ref;
             richTextBox.Text = richTextBox.Text.Replace("\t", " ");
             richTextBox.Text = (Regex.Replace(richTextBox.Text, @"\s+", " ")).Replace("\n\n", "\n");
             
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 _tabNum = 0;
                 string total = "";

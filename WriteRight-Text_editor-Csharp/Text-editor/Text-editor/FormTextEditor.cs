@@ -353,12 +353,15 @@ namespace TextEditor
 
         #endregion
 
+        #region <creator>Matei Rares</creator>
+        /// <summary>
+        /// Modifica actiunea de Paste pentru a pastra fontul si daca e fisier C/C++/C#, face highlight pe cuvintele speciale
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RichTextBoxKeyDown(object sender, KeyEventArgs e)
         {
             tabControlFiles.SelectedTab.BorderStyle = BorderStyle.None;
-
-            //_richTextBoxMainV2.AcceptsTab = true; 
-
             if (e.Control && e.KeyCode == Keys.V)
             {
                 e.Handled = true;
@@ -366,7 +369,6 @@ namespace TextEditor
 
                 if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
                 {
-
                     CompleteHighlight(_richTextBoxMainV2);
                 }
             }
@@ -374,7 +376,7 @@ namespace TextEditor
         }
 
         /// <summary>
-        ///  Aplica functiile dupa ce s-a terminat de apasat butonul si s-au facut schimbarile in textbox
+        ///  Aplica highlight pe cuvintele speciale si adauga identare daca fisierul deschis este unul de tip C/C++/C#
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -396,7 +398,7 @@ namespace TextEditor
             }
             PrintCounts();
         }
-
+        #endregion
         #endregion
 
     }
