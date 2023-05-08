@@ -1,6 +1,0 @@
-D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.dll
-D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.pdb
-D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.AssemblyReference.cache
-D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
-D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
-D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb
