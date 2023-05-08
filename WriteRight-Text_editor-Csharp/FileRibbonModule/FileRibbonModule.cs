@@ -6,6 +6,17 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
+/**************************************************************************
+ *                                                                        *
+ *  File:        FileRibbonModule.cs                                      *
+ *  Copyright:   (c) 2023, Caulea Vasile                                  *
+ *  Description: Fișierul conține obiectele de tip Singleton-Command      *
+ *  asociate cu ribbon-ul File, care pun la dispozitie comenzile de       *
+ *  creare, salvare, deschidere, inchidere a unui fisier si deschidere a  *
+ *  unei noi ferestre.                                                    *
+ *                                                                        *
+ **************************************************************************/
+
 namespace FileRibbonModule
 {
     public class NewFileCommand : TabControlCommand
