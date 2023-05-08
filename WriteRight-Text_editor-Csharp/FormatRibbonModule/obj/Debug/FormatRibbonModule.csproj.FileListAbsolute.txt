@@ -1,0 +1,26 @@
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
+D:\xxxxxxxxxxxxxWriteRight-Text_editor-Csharp-main\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
