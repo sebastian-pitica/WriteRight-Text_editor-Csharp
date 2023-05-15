@@ -41,15 +41,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CommonsModule\CommonsModule.csproj">
+    <ProjectReference Include="..\CommonsModule\CommonsModule.csproj">
       <Project>{7bc394e9-afa5-4cf3-a037-52eae13355ff}</Project>
       <Name>CommonsModule</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CustomControls\CustomControls.csproj">
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj">
       <Project>{75C23451-3E89-4517-9F24-4EA823542471}</Project>
       <Name>CustomControls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{31DDAE14-ADDA-4A06-BE84-6588CA00CDBD}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>

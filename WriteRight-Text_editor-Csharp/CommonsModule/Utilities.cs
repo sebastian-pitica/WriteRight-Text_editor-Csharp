@@ -24,15 +24,17 @@ using System.Xml;
 namespace CommonsModule
 {
     #region <creator>Caulea Vasile</creator>
-    #region <updated>Pitica Sebastian</updated>
 
     /// <summary>
     /// Clasa utilizata pentru uz general
     /// </summary>
     public static class Utilities
     {
+        #region Constante
+        #region <updated>Pitica Sebastian</updated>
         public const string Ready = "Ready";
         public const string Loading = "Loading";
+        #endregion
 
         public static List<string> FileFilters = new List<string>()
         {
@@ -41,6 +43,9 @@ namespace CommonsModule
             "All Files(*.*)|*.*"
         };
 
+        #endregion
+
+        #region Metode publice 
         #region <updated>Matei Rares</updated>
         /// <summary>
         /// Creaza un TabPage care contine un element TextEditorControl.
@@ -71,6 +76,7 @@ namespace CommonsModule
             return tabPage;
         }
         #endregion
+
         public static void WriteFile(in string filePath, in string text)
         {
             StreamWriter streamWriter = new StreamWriter(filePath);
@@ -106,16 +112,18 @@ namespace CommonsModule
             return isFilePath ? filePath : fileName;
         }
 
+        #region <updated>Pitica Sebastian</updated>
         public static void HandleException(Exception ex)
         {
             MessageBox.Show(ex.ToString(), "- EXCEPTION -", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        #endregion
+        #endregion
     }
-    #endregion
     #endregion
 
     #region <creator>Matei Rares</creator>
-      /// <summary>
+    /// <summary>
     /// Această clasă este utilizată pentru a face highlight pe cuvintele cheie dintr-un fisier C/C++/C#.
     /// </summary>
     public static class UtilitiesFormat
@@ -314,7 +322,8 @@ namespace CommonsModule
             {
                 InitColors();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Utilities.HandleException(ex);
             }
 
@@ -347,7 +356,8 @@ namespace CommonsModule
                 /*multiline comments*/
                 ColorMultilineCommentsFromRichTextBox(richTextBox);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Utilities.HandleException(ex);
             }
 
@@ -567,7 +577,8 @@ namespace CommonsModule
                     }
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Utilities.HandleException(ex);
             }
             richTextBox.SelectionStart = initialPos;

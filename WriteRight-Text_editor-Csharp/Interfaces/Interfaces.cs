@@ -30,6 +30,11 @@ namespace Interfaces
         bool IsSaved { set; get; }
     }
 
+    /// <summary>
+    /// Interfața pentru obiecte personalizate de tip Text Editor.
+    /// Adaugă proprietăți ce pot fi utilizate pentru a usura accesul la controale în timpul rulării programului.
+    /// </summary>
+    /// <creator>Caulea Vasile</creator>
     public interface ITextEditorControl
     {
         IRichTextBoxV2 RichTextBoxEditor { get; }

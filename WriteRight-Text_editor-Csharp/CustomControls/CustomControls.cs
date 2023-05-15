@@ -72,10 +72,10 @@ namespace CustomControls
         public bool IsSaved
         {
             get => _isSaved;
-            set 
-            { 
-                 _isSaved = value;
-                 NotifyObservers();
+            set
+            {
+                _isSaved = value;
+                NotifyObservers();
             }
         }
 
@@ -92,7 +92,7 @@ namespace CustomControls
 
         public void NotifyObservers()
         {
-            foreach(IObserver observer in _observers)
+            foreach (IObserver observer in _observers)
             {
                 observer.UpdateObserver();
             }
@@ -101,6 +101,7 @@ namespace CustomControls
     #endregion
     #endregion
 
+    #region <created>Caulea Vasile</created>
     public class TextEditorControl : SplitContainer, ITextEditorControl
     {
         private readonly RichTextBoxV2 _richTextBoxContent;
@@ -184,6 +185,7 @@ namespace CustomControls
 
         public RichTextBox RichTextBoxNumbering => _richTextBoxNumbering;
 
+        #region <updated>Matei Rares</updated>
         public float ZoomFactor
         {
             get => _richTextBoxContent.ZoomFactor;
@@ -194,5 +196,7 @@ namespace CustomControls
                 _richTextBoxNumbering.ZoomFactor = value;
             }
         }
+        #endregion
     }
+    #endregion
 }

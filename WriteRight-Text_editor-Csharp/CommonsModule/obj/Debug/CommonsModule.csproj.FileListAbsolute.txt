@@ -20,3 +20,14 @@ D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Comm
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CopyComplete
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\CustomControls.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\CommonsModule\obj\Debug\CommonsModule.pdb

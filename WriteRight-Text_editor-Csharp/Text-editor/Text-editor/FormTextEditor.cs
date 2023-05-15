@@ -200,9 +200,9 @@ namespace TextEditor
             textEditorControlCommand.SetTarget(_textEditorControl);
             textEditorControlCommand.Execute();
         }
-        
+
         #endregion
-        
+
         private void ExecuteCommand(SingletonCommand singletonCommand)
         {
             singletonCommand.Execute();
@@ -254,44 +254,51 @@ namespace TextEditor
 
         private void TabControlFilesDrawItem(object sender, DrawItemEventArgs e)
         {
+            TabPage tabPage = tabControlFiles.TabPages[e.Index];
+            Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
+
+            e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
+
+            tabRect.Inflate(-5, -2);
+            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
+                tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+
             try
             {
-                TabPage tabPage = tabControlFiles.TabPages[e.Index];
-                Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
-
-                e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
-                
-                tabRect.Inflate(-5, -2);
-                TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
-                    tabRect, tabPage.ForeColor, TextFormatFlags.Left);
-
                 var closeImage = Resources.CloseButton;
                 e.Graphics.DrawImage(closeImage,
                 (tabRect.Right - closeImage.Width),
                 tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("Error with resource: 'close.png'");
             }
+
         }
 
         private void TabControlFilesMouseDown(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < tabControlFiles.TabPages.Count; i++)
+            try
             {
-                var tabRect = tabControlFiles.GetTabRect(i);
                 var closeImage = Resources.CloseButton;
-                var imageRect = new Rectangle(
-                    (tabRect.Right - closeImage.Width),
-                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
-                    closeImage.Width,
-                    closeImage.Height);
-                if (!imageRect.Contains(e.Location)) continue;
-                tabControlFiles.SelectedIndex = i;
-                ExecuteCommand(CloseFileCommand.GetCommandObj());
-                break;
+                for (var i = 0; i < tabControlFiles.TabPages.Count; i++)
+                {
+                    var tabRect = tabControlFiles.GetTabRect(i);
+                    var imageRect = new Rectangle(
+                        (tabRect.Right - closeImage.Width),
+                        tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                        closeImage.Width,
+                        closeImage.Height);
+                    if (!imageRect.Contains(e.Location)) continue;
+                    tabControlFiles.SelectedIndex = i;
+                    ExecuteCommand(CloseFileCommand.GetCommandObj());
+                    break;
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error with resource: 'close.png'");
             }
         }
 

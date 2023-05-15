@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32922.545
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text-editor", "Text-editor\Text-editor.csproj", "{4482D650-22D1-4C55-BD6C-7D5C1E1EC3F6}"
 EndProject
@@ -53,6 +53,10 @@ Global
 		{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

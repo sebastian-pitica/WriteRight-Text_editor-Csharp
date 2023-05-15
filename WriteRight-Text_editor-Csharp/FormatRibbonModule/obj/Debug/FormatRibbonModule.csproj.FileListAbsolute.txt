@@ -24,3 +24,16 @@ D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Form
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\FormatRibbonModule.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CommonsModule.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\CustomControls.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\bin\Debug\Interfaces.pdb
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.AssemblyReference.cache
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CoreCompileInputs.cache
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.csproj.CopyComplete
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.dll
+D:\FACULTY\anul3\sem2\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\FormatRibbonModule\obj\Debug\FormatRibbonModule.pdb
