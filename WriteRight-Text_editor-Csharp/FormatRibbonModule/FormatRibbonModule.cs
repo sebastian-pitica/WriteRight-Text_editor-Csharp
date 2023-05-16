@@ -54,16 +54,16 @@ namespace FormatRibbonModule
         
         public override void Execute()
         {
-            if (!isDarkmode)
+            if (!IsDarkMode)
             {
                 try
                 {
-                    SetDarkmode();
+                    SetDarkMode();
                 }
                 catch (Exception ex) {
                     Utilities.HandleException(ex);  
                 }
-                isDarkmode = true;
+                IsDarkMode = true;
             }
             else {
                 try
@@ -73,14 +73,14 @@ namespace FormatRibbonModule
                 catch (Exception ex) {
                     Utilities.HandleException(ex);
                 }
-                isDarkmode = false;
+                IsDarkMode = false;
             }
         }
 
         /// <summary>
         /// Această functie aplică un background și un foreground pentru fiecare Control din Form.
         /// </summary>
-        internal void SetDarkmode() {
+        internal void SetDarkMode() {
             SetDarkTitleBar(_mainFormWindowRef.Handle);
             _mainFormWindowRef.BackColor = ColorTranslator.FromHtml("#1F2428");
             for (int i = 0; i < _controls.Count; i++)
@@ -268,13 +268,13 @@ namespace FormatRibbonModule
             button5.Visible = false;
             _popupForm.Controls.Add(button5);
 
-            Button buttton6 = new Button();
-            buttton6.Text = "Expressions";
-            buttton6.Location = new Point(120, 80);
-            buttton6.Tag = "Expressions";
-            buttton6.Click += ButtonChooseColor_Click;
-            buttton6.Visible = false;
-            _popupForm.Controls.Add(buttton6);
+            Button button6 = new Button();
+            button6.Text = "Expressions";
+            button6.Location = new Point(120, 80);
+            button6.Tag = "Expressions";
+            button6.Click += ButtonChooseColor_Click;
+            button6.Visible = false;
+            _popupForm.Controls.Add(button6);
 
             Button button7 = new Button();
             button7.Text = "Operators";
@@ -378,12 +378,12 @@ namespace FormatRibbonModule
                         if (_isDefault)
                         {
                             doc.SelectSingleNode("//default").InnerText = "true";
-                            isXMLChanged = true;
+                            IsXmlChanged = true;
                         }
                         else
                         {
                             doc.SelectSingleNode("//default").InnerText = "false";
-                            isXMLChanged = true;
+                            IsXmlChanged = true;
                         }
                         break;
                 }
@@ -445,7 +445,7 @@ namespace FormatRibbonModule
                     ((Button)sender).ForeColor = contrastingColor;
                     if (xml != null) xml.InnerText = ColorTranslator.ToHtml(colorDialog.Color);
                     doc.Save("../../../../colors.xml");
-                    isXMLChanged = true;
+                    IsXmlChanged = true;
                 }
             }
             catch (Exception ex) {

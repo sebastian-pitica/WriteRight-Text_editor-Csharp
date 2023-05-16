@@ -17,7 +17,7 @@ using System.Xml;
  *  cuprinsul celorlalte module sau pentru că nu pot fi asociate cu alt   *
  *  modul concret.                                                        *
  *  Designed by: Pitica Sebastian                                         *
- *  Updated by: Pitica Sebastian, Matei Rares                             *
+ *  Updated by: Pitica Sebastian, Matei Rares, Caulea Vasile              *
  *                                                                        *
  **************************************************************************/
 
@@ -36,7 +36,7 @@ namespace CommonsModule
         public const string Loading = "Loading";
         #endregion
 
-        public static List<string> FileFilters = new List<string>()
+        public static readonly List<string> FileFilters = new List<string>()
         {
             "C/C++/C# Files (*.c, *.cpp, *.cs)|*.c;*.cpp;*.cs",
             "Text Files(*.txt)|*.txt",
@@ -61,7 +61,7 @@ namespace CommonsModule
             TextEditorControl textEditor = new TextEditorControl();
             tabPage.Controls.Add(textEditor);
 
-            if (UtilitiesFormat.isDarkmode)
+            if (UtilitiesFormat.IsDarkMode)
             {
                 tabPage.BackColor = ColorTranslator.FromHtml("#24292E");
                 tabPage.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
@@ -123,13 +123,14 @@ namespace CommonsModule
     #endregion
 
     #region <creator>Matei Rares</creator>
+    #region <update>Pitica Sebastian</updated>
     /// <summary>
     /// Această clasă este utilizată pentru a face highlight pe cuvintele cheie dintr-un fisier C/C++/C#.
     /// </summary>
     public static class UtilitiesFormat
     {
-        public static bool isXMLChanged = false;
-        public static bool isDarkmode = false;
+        public static bool IsXmlChanged = false;
+        public static bool IsDarkMode = false;
         static string typesColor = "Blue";
         static string expressionColor = "Purple";
         static string operatorsColor = "Blue";
@@ -147,7 +148,7 @@ namespace CommonsModule
         /// </summary>
         internal static void InitColors()
         {
-            if (isXMLChanged)
+            if (IsXmlChanged)
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load("../../../../colors.xml");
@@ -169,7 +170,7 @@ namespace CommonsModule
                     stringColor = (doc.SelectSingleNode("//string").InnerText == "default") ? "Gray" : doc.SelectSingleNode("//string").InnerText; ;
                     commentColor = (doc.SelectSingleNode("//comment").InnerText == "default") ? "Green" : doc.SelectSingleNode("//comment").InnerText; ;
                 }
-                isXMLChanged = false;
+                IsXmlChanged = false;
             }
         }
         /// <summary>
@@ -606,34 +607,43 @@ namespace CommonsModule
         /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         public static void EnterTab(RichTextBox richTextBox)
         {
-            int currentPos = richTextBox.SelectionStart;
-            string text = richTextBox.Text;
-            int braceCount = 0;
-
-            for (int i = 0; i < currentPos; i++)
+            try
             {
-                if (text[i] == '{')
+                int currentPos = richTextBox.SelectionStart;
+                string text = richTextBox.Text;
+                int braceCount = 0;
+
+                for (int i = 0; i < currentPos; i++)
                 {
-                    braceCount++;
+                    if (text[i] == '{')
+                    {
+                        braceCount++;
+                    }
+                    else if (text[i] == '}')
+                    {
+                        braceCount--;
+                    }
                 }
-                else if (text[i] == '}')
+
+                int position = 0;
+                string tabs = "";
+                while (braceCount > 0)
                 {
+                    tabs += "\t";
+                    position += 4;
                     braceCount--;
                 }
+                richTextBox.Select(richTextBox.SelectionStart, 0);
+                if (tabs == "") { return; }
+
+                Clipboard.SetText(tabs);
+                richTextBox.Paste();
             }
 
-            int position = 0;
-            string tabs = "";
-            while (braceCount > 0)
+            catch (Exception ex)
             {
-                tabs += "\t";
-                position += 4;
-                braceCount--;
+                Utilities.HandleException(ex);
             }
-            richTextBox.Select(richTextBox.SelectionStart, 0);
-            if (tabs == "") { return; }
-            Clipboard.SetText(tabs);
-            richTextBox.Paste();
         }
 
         /// <summary>
@@ -688,5 +698,6 @@ namespace CommonsModule
             richTextBox.DeselectAll();
         }
     }
+    #endregion
     #endregion
 }

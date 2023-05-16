@@ -74,7 +74,12 @@
             // 
             // menuFile
             // 
-            this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.buttonNew, this.buttonOpen, this.buttonSave, this.buttonClose, this.buttonNewWindow });
+            this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonNew,
+            this.buttonOpen,
+            this.buttonSave,
+            this.buttonClose,
+            this.buttonNewWindow});
             this.menuFile.Name = "menuFile";
             this.menuFile.Size = new System.Drawing.Size(41, 23);
             this.menuFile.Text = "File";
@@ -122,14 +127,25 @@
             // 
             this.buttonNewWindow.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonNewWindow.Name = "buttonNewWindow";
-            this.buttonNewWindow.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) | System.Windows.Forms.Keys.N)));
+            this.buttonNewWindow.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
             this.buttonNewWindow.Size = new System.Drawing.Size(247, 24);
             this.buttonNewWindow.Text = "New Window";
             this.buttonNewWindow.Click += new System.EventHandler(this.NewWindowClick);
             // 
             // menuEdit
             // 
-            this.menuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.buttonUndo, this.buttonRedo, this.toolStripSeparator1, this.buttonCut, this.buttonCopy, this.buttonPaste, this.buttonDelete, this.toolStripSeparator2, this.buttonSearch, this.buttonSearchAndReplace });
+            this.menuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonUndo,
+            this.buttonRedo,
+            this.toolStripSeparator1,
+            this.buttonCut,
+            this.buttonCopy,
+            this.buttonPaste,
+            this.buttonDelete,
+            this.toolStripSeparator2,
+            this.buttonSearch,
+            this.buttonSearchAndReplace});
             this.menuEdit.Name = "menuEdit";
             this.menuEdit.Size = new System.Drawing.Size(44, 23);
             this.menuEdit.Text = "Edit";
@@ -137,72 +153,85 @@
             // buttonUndo
             // 
             this.buttonUndo.Name = "buttonUndo";
-            this.buttonUndo.Size = new System.Drawing.Size(195, 24);
+            this.buttonUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.buttonUndo.Size = new System.Drawing.Size(246, 24);
             this.buttonUndo.Text = "Undo";
             this.buttonUndo.Click += new System.EventHandler(this.UndoClick);
             // 
             // buttonRedo
             // 
             this.buttonRedo.Name = "buttonRedo";
-            this.buttonRedo.Size = new System.Drawing.Size(195, 24);
+            this.buttonRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.buttonRedo.Size = new System.Drawing.Size(246, 24);
             this.buttonRedo.Text = "Redo";
             this.buttonRedo.Click += new System.EventHandler(this.RedoClick);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(243, 6);
             // 
             // buttonCut
             // 
             this.buttonCut.Name = "buttonCut";
-            this.buttonCut.Size = new System.Drawing.Size(195, 24);
+            this.buttonCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.buttonCut.Size = new System.Drawing.Size(246, 24);
             this.buttonCut.Text = "Cut";
             this.buttonCut.Click += new System.EventHandler(this.CutClick);
             // 
             // buttonCopy
             // 
             this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(195, 24);
+            this.buttonCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.buttonCopy.Size = new System.Drawing.Size(246, 24);
             this.buttonCopy.Text = "Copy";
             this.buttonCopy.Click += new System.EventHandler(this.CopyClick);
             // 
             // buttonPaste
             // 
             this.buttonPaste.Name = "buttonPaste";
-            this.buttonPaste.Size = new System.Drawing.Size(195, 24);
+            this.buttonPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.buttonPaste.Size = new System.Drawing.Size(246, 24);
             this.buttonPaste.Text = "Paste";
             this.buttonPaste.Click += new System.EventHandler(this.PasteClick);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(195, 24);
+            this.buttonDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.buttonDelete.Size = new System.Drawing.Size(246, 24);
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.Click += new System.EventHandler(this.DeleteClick);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(243, 6);
             // 
             // buttonSearch
             // 
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(195, 24);
+            this.buttonSearch.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.buttonSearch.Size = new System.Drawing.Size(246, 24);
             this.buttonSearch.Text = "Search";
             this.buttonSearch.Click += new System.EventHandler(this.SearchClick);
             // 
             // buttonSearchAndReplace
             // 
             this.buttonSearchAndReplace.Name = "buttonSearchAndReplace";
-            this.buttonSearchAndReplace.Size = new System.Drawing.Size(195, 24);
+            this.buttonSearchAndReplace.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.buttonSearchAndReplace.Size = new System.Drawing.Size(246, 24);
             this.buttonSearchAndReplace.Text = "Search and Replace";
             this.buttonSearchAndReplace.Click += new System.EventHandler(this.SearchAndReplaceClick);
             // 
             // menuFormat
             // 
-            this.menuFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.buttoColoring, this.buttonColoringPreferences, this.toolStripSeparator4, this.buttonFormatDocument, this.buttonToggleComment });
+            this.menuFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttoColoring,
+            this.buttonColoringPreferences,
+            this.toolStripSeparator4,
+            this.buttonFormatDocument,
+            this.buttonToggleComment});
             this.menuFormat.Name = "menuFormat";
             this.menuFormat.Size = new System.Drawing.Size(65, 23);
             this.menuFormat.Text = "Format";
@@ -242,7 +271,10 @@
             // 
             // menuHelp
             // 
-            this.menuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.buttonDocs, this.buttonReportBug, this.buttonAbout });
+            this.menuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buttonDocs,
+            this.buttonReportBug,
+            this.buttonAbout});
             this.menuHelp.Name = "menuHelp";
             this.menuHelp.Size = new System.Drawing.Size(49, 23);
             this.menuHelp.Text = "Help";
@@ -250,21 +282,24 @@
             // buttonDocs
             // 
             this.buttonDocs.Name = "buttonDocs";
-            this.buttonDocs.Size = new System.Drawing.Size(151, 24);
+            this.buttonDocs.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.buttonDocs.Size = new System.Drawing.Size(180, 24);
             this.buttonDocs.Text = "Docs";
             this.buttonDocs.Click += new System.EventHandler(this.DocsClick);
             // 
             // buttonReportBug
             // 
             this.buttonReportBug.Name = "buttonReportBug";
-            this.buttonReportBug.Size = new System.Drawing.Size(151, 24);
+            this.buttonReportBug.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.buttonReportBug.Size = new System.Drawing.Size(180, 24);
             this.buttonReportBug.Text = "Report  Bug";
             this.buttonReportBug.Click += new System.EventHandler(this.ReportBugClick);
             // 
             // buttonAbout
             // 
             this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(151, 24);
+            this.buttonAbout.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.buttonAbout.Size = new System.Drawing.Size(180, 24);
             this.buttonAbout.Text = "About";
             this.buttonAbout.Click += new System.EventHandler(this.AboutClick);
             // 
@@ -272,7 +307,11 @@
             // 
             this.menuStripRibbons.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStripRibbons.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStripRibbons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.menuFile, this.menuEdit, this.menuFormat, this.menuHelp });
+            this.menuStripRibbons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuFile,
+            this.menuEdit,
+            this.menuFormat,
+            this.menuHelp});
             this.menuStripRibbons.Location = new System.Drawing.Point(0, 0);
             this.menuStripRibbons.Name = "menuStripRibbons";
             this.menuStripRibbons.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -282,7 +321,9 @@
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.toolStripStatusLabel, this.toolStripProgressBar });
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel,
+            this.toolStripProgressBar});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.statusStrip.Location = new System.Drawing.Point(0, 487);
             this.statusStrip.Name = "statusStrip";
@@ -387,7 +428,9 @@
             // 
             // tabControlFiles
             // 
-            this.tabControlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlFiles.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControlFiles.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControlFiles.Location = new System.Drawing.Point(0, 28);
@@ -429,6 +472,7 @@
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

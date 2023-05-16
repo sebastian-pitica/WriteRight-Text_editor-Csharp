@@ -110,9 +110,9 @@
       <Project>{b7cfa4a4-fadd-4ce9-8732-bfcc9e594dc9}</Project>
       <Name>FormatRibbonModule</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\HelpModule\HelpModule.csproj">
+    <ProjectReference Include="..\..\HelpRibbonModule\HelpRibbonModule.csproj">
       <Project>{15f95071-aca5-41ea-9ff4-73856bb07b65}</Project>
-      <Name>HelpModule</Name>
+      <Name>HelpRibbonModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Interfaces\Interfaces.csproj">
       <Project>{31ddae14-adda-4a06-be84-6588ca00cdbd}</Project>

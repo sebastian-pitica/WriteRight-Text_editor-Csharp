@@ -53,18 +53,18 @@ namespace CustomControls
             int direction = Math.Sign(e.Delta);
             // Setam directia de derulare
             int scrollDirection = direction == -1 ? ScrollDown : ScrollUp;
-            SendMessage(Handle, WmVscroll, (IntPtr)scrollDirection, IntPtr.Zero);
+            SendMessage(Handle, WmVScroll, (IntPtr)scrollDirection, IntPtr.Zero);
         }
 
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
 
-            if (m.Msg != WmVscroll && m.Msg != WmGetdlgcode && m.Msg != WmMousefirst) return;
-            Point p = new Point();
-            SendMessage(Handle, EmGetscrollpos, IntPtr.Zero, ref p);
+            if (m.Msg != WmVScroll && m.Msg != WmGetDlgCode && m.Msg != WmMouseFirst) return;
+            var p = new Point();
+            SendMessage(Handle, EmGetScrollPos, IntPtr.Zero, ref p);
             p.X = 0;
-            SendMessage(_richTextBoxRef.Handle, EmSetscrollpos, IntPtr.Zero, ref p);
+            SendMessage(_richTextBoxRef.Handle, EmSetScrollPos, IntPtr.Zero, ref p);
         }
 
         public string FilePath { get; set; }
