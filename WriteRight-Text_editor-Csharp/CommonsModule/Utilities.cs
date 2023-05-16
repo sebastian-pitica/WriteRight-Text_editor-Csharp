@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
-using System.Runtime.ExceptionServices;
 
 /**************************************************************************
  *                                                                        *
@@ -37,7 +36,7 @@ namespace CommonsModule
         public const string Loading = "Loading";
         #endregion
 
-        public static List<string> FileFilters = new List<string>()
+        public static readonly List<string> FileFilters = new List<string>()
         {
             "C/C++/C# Files (*.c, *.cpp, *.cs)|*.c;*.cpp;*.cs",
             "Text Files(*.txt)|*.txt",
@@ -62,7 +61,7 @@ namespace CommonsModule
             TextEditorControl textEditor = new TextEditorControl();
             tabPage.Controls.Add(textEditor);
 
-            if (UtilitiesFormat.isDarkmode)
+            if (UtilitiesFormat.IsDarkMode)
             {
                 tabPage.BackColor = ColorTranslator.FromHtml("#24292E");
                 tabPage.ForeColor = ColorTranslator.FromHtml("#C8D3DA");
@@ -130,8 +129,8 @@ namespace CommonsModule
     /// </summary>
     public static class UtilitiesFormat
     {
-        public static bool isXMLChanged = false;
-        public static bool isDarkmode = false;
+        public static bool IsXmlChanged = false;
+        public static bool IsDarkMode = false;
         static string typesColor = "Blue";
         static string expressionColor = "Purple";
         static string operatorsColor = "Blue";
@@ -149,7 +148,7 @@ namespace CommonsModule
         /// </summary>
         internal static void InitColors()
         {
-            if (isXMLChanged)
+            if (IsXmlChanged)
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load("../../../../colors.xml");
@@ -171,7 +170,7 @@ namespace CommonsModule
                     stringColor = (doc.SelectSingleNode("//string").InnerText == "default") ? "Gray" : doc.SelectSingleNode("//string").InnerText; ;
                     commentColor = (doc.SelectSingleNode("//comment").InnerText == "default") ? "Green" : doc.SelectSingleNode("//comment").InnerText; ;
                 }
-                isXMLChanged = false;
+                IsXmlChanged = false;
             }
         }
         /// <summary>

@@ -18,13 +18,14 @@ using static CommonsModule.Utilities;
 
 namespace EditRibbonModule
 {
-
     public class UndoCommand : MainTextBoxCommand
     {
         private static UndoCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
 
-        private UndoCommand() { }
+        private UndoCommand()
+        {
+        }
 
         public new static UndoCommand GetCommandObj()
         {
@@ -33,7 +34,7 @@ namespace EditRibbonModule
 
         public override void SetTarget(IRichTextBoxV2 textBox)
         {
-            _mainTextBoxRef =(RichTextBoxV2) textBox;
+            _mainTextBoxRef = (RichTextBoxV2)textBox;
         }
 
         public override void Execute()
@@ -47,7 +48,9 @@ namespace EditRibbonModule
         private static RedoCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
 
-        private RedoCommand() { }
+        private RedoCommand()
+        {
+        }
 
         public new static RedoCommand GetCommandObj()
         {
@@ -70,7 +73,9 @@ namespace EditRibbonModule
         private static CutCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
 
-        private CutCommand() { }
+        private CutCommand()
+        {
+        }
 
         public new static CutCommand GetCommandObj()
         {
@@ -93,7 +98,9 @@ namespace EditRibbonModule
         private static CopyCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
 
-        private CopyCommand() { }
+        private CopyCommand()
+        {
+        }
 
         public new static CopyCommand GetCommandObj()
         {
@@ -116,7 +123,9 @@ namespace EditRibbonModule
         private static PasteCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
 
-        private PasteCommand() { }
+        private PasteCommand()
+        {
+        }
 
         public new static PasteCommand GetCommandObj()
         {
@@ -139,7 +148,9 @@ namespace EditRibbonModule
         private static DeleteCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
 
-        private DeleteCommand() { }
+        private DeleteCommand()
+        {
+        }
 
         public new static DeleteCommand GetCommandObj()
         {
@@ -163,8 +174,11 @@ namespace EditRibbonModule
         private RichTextBoxV2 _mainTextBoxRef;
         private int _indexReplaceNext;
         private string _lastSearchedText;
-        private Boolean _isVisible=false;
-        private SearchAndReplaceCommand() { }
+        private bool _isVisible = false;
+
+        private SearchAndReplaceCommand()
+        {
+        }
 
         public new static SearchAndReplaceCommand GetCommandObj()
         {
@@ -270,7 +284,6 @@ namespace EditRibbonModule
                 {
                     HandleException(e);
                 }
-
             };
 
             buttonReplaceNext.Click += (sender, args) =>
@@ -297,7 +310,8 @@ namespace EditRibbonModule
                     }
 
                     if (_indexReplaceNext == -1) return;
-                    _indexReplaceNext = _mainTextBoxRef.Text.IndexOf(searchWord, _indexReplaceNext, StringComparison.Ordinal);
+                    _indexReplaceNext =
+                        _mainTextBoxRef.Text.IndexOf(searchWord, _indexReplaceNext, StringComparison.Ordinal);
 
                     if (_indexReplaceNext == -1) return;
                     _mainTextBoxRef.Select(_indexReplaceNext, searchWord.Length);
@@ -335,10 +349,12 @@ namespace EditRibbonModule
     {
         private static SearchCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
-        private Boolean _isVisible=false;
+        private bool _isVisible = false;
 
 
-        private SearchCommand() { }
+        private SearchCommand()
+        {
+        }
 
         public new static SearchCommand GetCommandObj()
         {
@@ -352,8 +368,6 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
-            var prevState = _mainTextBoxRef.Rtf;
-
             // Creez fereastra pentru preluarea inputului
             Form inputDataForm = new Form
             {
@@ -375,7 +389,6 @@ namespace EditRibbonModule
                 FlowDirection = FlowDirection.TopDown,
                 WrapContents = false,
                 AutoSize = true,
-
             };
 
             Label labelSearchText = new Label
@@ -424,14 +437,11 @@ namespace EditRibbonModule
                 }
                 catch (Exception e)
                 {
-                   HandleException(e);
+                    HandleException(e);
                 }
             };
 
-            buttonCancel.Click += (sender, args) =>
-            {
-                inputDataForm.Close();
-            };
+            buttonCancel.Click += (sender, args) => { inputDataForm.Close(); };
 
             flowLayoutPanel.Controls.Add(labelSearchText);
             flowLayoutPanel.Controls.Add(textBoxSearchText);
@@ -448,7 +458,4 @@ namespace EditRibbonModule
             //_mainTextBoxRef.Rtf=prevState;
         }
     }
-
 }
-
-

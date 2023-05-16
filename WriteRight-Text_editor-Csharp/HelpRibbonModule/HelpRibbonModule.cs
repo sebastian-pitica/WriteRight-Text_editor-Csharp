@@ -25,7 +25,7 @@ namespace HelpRibbonModule
     public class ReportBugCommand : SingletonCommand
     {
         private static ReportBugCommand _singletonInstance;
-        private Boolean _isVisible = false;
+        private bool _isVisible = false;
 
         private ReportBugCommand() { }
 
@@ -117,7 +117,7 @@ namespace HelpRibbonModule
                 Anchor = AnchorStyles.None
             };
 
-            buttonSend.Click += (senderl, args) =>
+            buttonSend.Click += (sender, args) =>
             {
                 try
                 {
@@ -144,7 +144,7 @@ namespace HelpRibbonModule
             };
 
 
-            buttonCancel.Click += (senderl, args) =>
+            buttonCancel.Click += (sender, args) =>
             {
                 MessageBox.Show("Bug report canceled.");
                 windowInputData.Close();
@@ -170,7 +170,7 @@ namespace HelpRibbonModule
     {
         private static HelpCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
-        private Boolean _isVisible = false;
+        private bool _isVisible = false;
 
         private HelpCommand() { }
 
@@ -195,7 +195,7 @@ namespace HelpRibbonModule
     public class AboutCommand : SingletonCommand
     {
         private static AboutCommand _singletonInstance;
-        private Boolean _isVisible = false;
+        private bool _isVisible = false;
 
         private AboutCommand() { }
 

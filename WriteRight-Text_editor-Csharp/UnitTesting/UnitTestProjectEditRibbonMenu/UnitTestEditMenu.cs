@@ -1,16 +1,14 @@
-﻿using System;
-using CustomControls;
+﻿using CustomControls;
 using EditRibbonModule;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
-using System.Windows.Forms;
 using TextEditor;
 
 /**************************************************************************
  *                                                                        *
  *  File:        UnitTestEditMenu.cs                                      *
  *  Copyright:   (c) 2023, Pitica Sebastian                               *
- *  Description: Fișierul conține funcți de test pentru funcționalitățile *
+ *  Description: Fișierul conține funcții de test pentru funcționalitățile*
  *  moduluilui Edit                                                       *
  *                                                                        * 
  **************************************************************************/
@@ -126,7 +124,7 @@ namespace UnitTestProjectEditRibbonMenu
             command.Execute();
             var windowField = command.GetType()
                .GetField("_isVisible", BindingFlags.NonPublic | BindingFlags.Instance);
-            var visible = (Boolean)windowField.GetValue(command);
+            var visible = (bool)windowField.GetValue(command);
             Assert.AreEqual(true, visible);
         }
 
@@ -138,7 +136,7 @@ namespace UnitTestProjectEditRibbonMenu
             command.Execute();
             var windowField = command.GetType()
                .GetField("_isVisible", BindingFlags.NonPublic | BindingFlags.Instance);
-            var visible = (Boolean)windowField.GetValue(command);
+            var visible = (bool)windowField.GetValue(command);
             Assert.AreEqual(true, visible);
         }
     }

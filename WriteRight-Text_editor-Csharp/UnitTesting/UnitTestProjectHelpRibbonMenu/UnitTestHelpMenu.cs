@@ -13,7 +13,7 @@ using TextEditor;
  *                                                                        *
  *  File:        UnitTestHelpMenu.cs                                      *
  *  Copyright:   (c) 2023, Pitica Sebastian                               *
- *  Description: Fișierul conține funcți de test pentru funcționalitățile *
+ *  Description: Fișierul conține funcții de test pentru funcționalitățile*
  *  moduluilui Help                                                       *
  *                                                                        * 
  **************************************************************************/

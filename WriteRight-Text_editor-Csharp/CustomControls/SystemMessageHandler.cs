@@ -25,12 +25,12 @@ namespace CustomControls
         [DllImport("dwmapi.dll")]
         public static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int attrValue, int attrSize);
         
-        public const int WmVscroll = 0x115;
+        public const int WmVScroll = 0x115;
 
-        public const int EmGetscrollpos = 0x4DD;
-        public const int EmSetscrollpos = 0x4DE;
-        public const int WmGetdlgcode = 0x87;
-        public const int WmMousefirst = 0x200;
+        public const int EmGetScrollPos = 0x4DD;
+        public const int EmSetScrollPos = 0x4DE;
+        public const int WmGetDlgCode = 0x87;
+        public const int WmMouseFirst = 0x200;
 
     }
 }

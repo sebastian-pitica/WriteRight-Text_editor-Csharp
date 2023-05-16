@@ -11,7 +11,7 @@ using TextEditor;
  *                                                                        *
  *  File:        UnitTestEditMenu.cs                                      *
  *  Copyright:   (c) 2023, Vasile Caulea                                  *
- *  Description: Fișierul conține funcți de test pentru funcționalitățile *
+ *  Description: Fișierul conține funcții de test pentru funcționalitățile*
  *  moduluilui File                                                       *               
  *                                                                        * 
  **************************************************************************/
@@ -38,9 +38,9 @@ namespace UnitTestProjectFileRibbonMenu
         [TestMethod]
         public void TestMethodNewFile()
         {
-            int expectedOutput = _tabControlFiles.TabCount + 1;
+            var expectedOutput = _tabControlFiles.TabCount + 1;
 
-            NewFileCommand command = NewFileCommand.GetCommandObj();
+            var command = NewFileCommand.GetCommandObj();
             command.SetTarget(_tabControlFiles);
             command.Execute();
             
@@ -50,8 +50,8 @@ namespace UnitTestProjectFileRibbonMenu
         [TestMethod]
         public void TestMethodCloseFile()
         {
-            int expectedOutput = _tabControlFiles.TabCount - 1;
-            CloseFileCommand command = CloseFileCommand.GetCommandObj();
+            var expectedOutput = _tabControlFiles.TabCount - 1;
+            var command = CloseFileCommand.GetCommandObj();
             command.SetTarget(_tabControlFiles);
             command.Execute();
 
@@ -62,15 +62,15 @@ namespace UnitTestProjectFileRibbonMenu
         [TestMethod]
         public void TestMethodOpenFile()
         {
-            int expectedTabNumber = _tabControlFiles.TabCount + 1;
-            OpenFileCommand command = OpenFileCommand.GetCommandObj();
+            var expectedTabNumber = _tabControlFiles.TabCount + 1;
+            var command = OpenFileCommand.GetCommandObj();
             command.SetTarget(_tabControlFiles);
             command.Execute();
 
             Assert.AreEqual(expectedTabNumber, _tabControlFiles.TabCount);
 
             _mainTextBox = Utilities.GetRichTextBoxV2FromTabControl(_tabControlFiles);
-            StreamReader streamReader = new StreamReader(_mainTextBox.FilePath);
+            var streamReader = new StreamReader(_mainTextBox.FilePath);
 
             Assert.AreEqual(streamReader.ReadToEnd(), _mainTextBox.Text);
             streamReader.Close();
@@ -84,18 +84,19 @@ namespace UnitTestProjectFileRibbonMenu
             Assert.IsTrue(_mainTextBox.IsSaved);
             
             // modify the text
-            _mainTextBox.Text = "acesta este un text modificat 22";
+            const string text = "acesta este un text modificat 22";
+            _mainTextBox.Text = text;
 
             //Assert.IsFalse(mainTextBox.IsSaved);
 
-            SaveFileCommand command = SaveFileCommand.GetCommandObj();
+            var command = SaveFileCommand.GetCommandObj();
             command.SetTarget(_mainTextBox);
             command.Execute();
             // if executed properly the file should appear as saved
             Assert.IsTrue(_mainTextBox.IsSaved, "The file could not be saved.");
 
             // verify if content saved properly
-            StreamReader streamReader = new StreamReader(_mainTextBox.FilePath);
+            var streamReader = new StreamReader(_mainTextBox.FilePath);
             Assert.AreEqual(streamReader.ReadToEnd(), _mainTextBox.Text);
             streamReader.Close();
         }
