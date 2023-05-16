@@ -19,7 +19,7 @@ using static CommonsModule.Utilities;
  *  Description: Fișierul conține codul interfeței grafice pentru         *
  *  proiectul WriteRight.                                                 *
  *  Designed by: Pitica Sebastian                                         *
- *  Updated by: Pitica Sebastian, Caulea Vasile                           *
+ *  Updated by: Pitica Sebastian, Caulea Vasile, Matei Rares              *
  *                                                                        *
  **************************************************************************/
 
@@ -108,10 +108,10 @@ namespace TextEditor
             ExecuteCommand(SyntaxHighlightCommand.GetCommandObj());
         }
 
-        private void FontClick(object sender, EventArgs e)
-        {
-            ExecuteCommand(FontCommand.GetCommandObj());
-        }
+        // private void FontClick(object sender, EventArgs e)
+        // {
+        //     ExecuteCommand(FontCommand.GetCommandObj());
+        // }
 
         private void DocsClick(object sender, EventArgs e)
         {
@@ -145,6 +145,7 @@ namespace TextEditor
                 CompleteHighlight(_richTextBoxMainV2);
             }
             SetStatus(Ready);
+            PrintCounts();
         }
 
         private void FormatDocumentClick(object sender, EventArgs e)
@@ -199,9 +200,9 @@ namespace TextEditor
             textEditorControlCommand.SetTarget(_textEditorControl);
             textEditorControlCommand.Execute();
         }
-        
+
         #endregion
-        
+
         private void ExecuteCommand(SingletonCommand singletonCommand)
         {
             singletonCommand.Execute();
@@ -253,44 +254,51 @@ namespace TextEditor
 
         private void TabControlFilesDrawItem(object sender, DrawItemEventArgs e)
         {
+            TabPage tabPage = tabControlFiles.TabPages[e.Index];
+            Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
+
+            e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
+
+            tabRect.Inflate(-5, -2);
+            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
+                tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+
             try
             {
-                TabPage tabPage = tabControlFiles.TabPages[e.Index];
-                Rectangle tabRect = tabControlFiles.GetTabRect(e.Index);
-
-                e.Graphics.FillRectangle(new SolidBrush(tabPage.BackColor), tabRect);
-                
-                tabRect.Inflate(-5, -2);
-                TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
-                    tabRect, tabPage.ForeColor, TextFormatFlags.Left);
-
                 var closeImage = Resources.CloseButton;
                 e.Graphics.DrawImage(closeImage,
                 (tabRect.Right - closeImage.Width),
                 tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("Error with resource: 'close.png'");
             }
+
         }
 
         private void TabControlFilesMouseDown(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < tabControlFiles.TabPages.Count; i++)
+            try
             {
-                var tabRect = tabControlFiles.GetTabRect(i);
                 var closeImage = Resources.CloseButton;
-                var imageRect = new Rectangle(
-                    (tabRect.Right - closeImage.Width),
-                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
-                    closeImage.Width,
-                    closeImage.Height);
-                if (!imageRect.Contains(e.Location)) continue;
-                tabControlFiles.SelectedIndex = i;
-                ExecuteCommand(CloseFileCommand.GetCommandObj());
-                break;
+                for (var i = 0; i < tabControlFiles.TabPages.Count; i++)
+                {
+                    var tabRect = tabControlFiles.GetTabRect(i);
+                    var imageRect = new Rectangle(
+                        (tabRect.Right - closeImage.Width),
+                        tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                        closeImage.Width,
+                        closeImage.Height);
+                    if (!imageRect.Contains(e.Location)) continue;
+                    tabControlFiles.SelectedIndex = i;
+                    ExecuteCommand(CloseFileCommand.GetCommandObj());
+                    break;
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error with resource: 'close.png'");
             }
         }
 
@@ -353,12 +361,15 @@ namespace TextEditor
 
         #endregion
 
+        #region <creator>Matei Rares</creator>
+        /// <summary>
+        /// Modifica actiunea de Paste pentru a pastra fontul si daca e fisier C/C++/C#, face highlight pe cuvintele speciale
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RichTextBoxKeyDown(object sender, KeyEventArgs e)
         {
             tabControlFiles.SelectedTab.BorderStyle = BorderStyle.None;
-
-            //_richTextBoxMainV2.AcceptsTab = true; 
-
             if (e.Control && e.KeyCode == Keys.V)
             {
                 e.Handled = true;
@@ -366,7 +377,6 @@ namespace TextEditor
 
                 if (_richTextBoxMainV2.FileType == ".cpp" || _richTextBoxMainV2.FileType == ".cs" || _richTextBoxMainV2.FileType == ".c")
                 {
-
                     CompleteHighlight(_richTextBoxMainV2);
                 }
             }
@@ -374,7 +384,7 @@ namespace TextEditor
         }
 
         /// <summary>
-        ///  Aplica functiile dupa ce s-a terminat de apasat butonul si s-au facut schimbarile in textbox
+        ///  Aplica highlight pe cuvintele speciale si adauga identare daca fisierul deschis este unul de tip C/C++/C#
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -396,7 +406,7 @@ namespace TextEditor
             }
             PrintCounts();
         }
-
+        #endregion
         #endregion
 
     }

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
  *  Copyright:   (c) 2023, Caulea Vasile                                  *
  *  Description: Fisierul contine clasa care se ocupa cu mentinearea      *
  *  functiilor care se ocupa cu trimiterea mesajelor catre sistem         *
+ *  Updated by: Matei Rares                                               * 
  *                                                                        *
  **************************************************************************/
 

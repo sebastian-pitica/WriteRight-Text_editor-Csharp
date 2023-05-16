@@ -1,11 +1,11 @@
 <colors>
-  <default>false</default>
+  <default>true</default>
   <personalized>
-    <type>#400040</type>
-    <expression>#00FF40</expression>
+    <type>Black</type>
+    <expression>Teal</expression>
     <operator>#FF8040</operator>
-    <preprocesor>Maroon</preprocesor>
-    <string>#8080FF</string>
-    <comment>#0000A0</comment>
+    <preprocesor>#FF8080</preprocesor>
+    <string>#004040</string>
+    <comment>#00FF80</comment>
   </personalized>
 </colors>
