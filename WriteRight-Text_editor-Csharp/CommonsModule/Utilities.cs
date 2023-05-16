@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
+using System.Runtime.ExceptionServices;
 
 /**************************************************************************
  *                                                                        *
@@ -123,6 +124,7 @@ namespace CommonsModule
     #endregion
 
     #region <creator>Matei Rares</creator>
+    #region <update>Pitica Sebastian</updated>
     /// <summary>
     /// Această clasă este utilizată pentru a face highlight pe cuvintele cheie dintr-un fisier C/C++/C#.
     /// </summary>
@@ -606,34 +608,43 @@ namespace CommonsModule
         /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
         public static void EnterTab(RichTextBox richTextBox)
         {
-            int currentPos = richTextBox.SelectionStart;
-            string text = richTextBox.Text;
-            int braceCount = 0;
-
-            for (int i = 0; i < currentPos; i++)
+            try
             {
-                if (text[i] == '{')
+                int currentPos = richTextBox.SelectionStart;
+                string text = richTextBox.Text;
+                int braceCount = 0;
+
+                for (int i = 0; i < currentPos; i++)
                 {
-                    braceCount++;
+                    if (text[i] == '{')
+                    {
+                        braceCount++;
+                    }
+                    else if (text[i] == '}')
+                    {
+                        braceCount--;
+                    }
                 }
-                else if (text[i] == '}')
+
+                int position = 0;
+                string tabs = "";
+                while (braceCount > 0)
                 {
+                    tabs += "\t";
+                    position += 4;
                     braceCount--;
                 }
+                richTextBox.Select(richTextBox.SelectionStart, 0);
+                if (tabs == "") { return; }
+
+                Clipboard.SetText(tabs);
+                richTextBox.Paste();
             }
 
-            int position = 0;
-            string tabs = "";
-            while (braceCount > 0)
+            catch (Exception ex)
             {
-                tabs += "\t";
-                position += 4;
-                braceCount--;
+                Utilities.HandleException(ex);
             }
-            richTextBox.Select(richTextBox.SelectionStart, 0);
-            if (tabs == "") { return; }
-            Clipboard.SetText(tabs);
-            richTextBox.Paste();
         }
 
         /// <summary>
@@ -688,5 +699,6 @@ namespace CommonsModule
             richTextBox.DeselectAll();
         }
     }
+    #endregion
     #endregion
 }

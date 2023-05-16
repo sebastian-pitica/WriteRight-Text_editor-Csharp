@@ -352,6 +352,8 @@ namespace EditRibbonModule
 
         public override void Execute()
         {
+            var prevState = _mainTextBoxRef.Rtf;
+
             // Creez fereastra pentru preluarea inputului
             Form inputDataForm = new Form
             {
@@ -403,7 +405,6 @@ namespace EditRibbonModule
                 Margin = new Padding(0),
                 Anchor = AnchorStyles.None
             };
-
             buttonSearch.Click += (sender, args) =>
             {
                 try
@@ -441,6 +442,10 @@ namespace EditRibbonModule
             inputDataForm.Controls.Add(flowLayoutPanel);
             inputDataForm.ShowDialog();
             _isVisible = true;
+            _mainTextBoxRef.Select(0, _mainTextBoxRef.TextLength);
+            _mainTextBoxRef.SelectionBackColor = Color.White;
+            _mainTextBoxRef.Select(0, 0);
+            //_mainTextBoxRef.Rtf=prevState;
         }
     }
 
