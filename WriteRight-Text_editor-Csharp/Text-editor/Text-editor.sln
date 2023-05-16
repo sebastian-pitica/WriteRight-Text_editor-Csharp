@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatRibbonModule", "..\Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpModule", "..\HelpModule\HelpModule.csproj", "{15F95071-ACA5-41EA-9FF4-73856BB07B65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectFileRibbonMenu", "..\UnitTesting\UnitTestProjectFileRibbonMenu\UnitTestProjectFileRibbonMenu.csproj", "{2431BD6F-BBE9-446D-8715-F1C38E98B094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectUtilities", "..\UnitTesting\UnitTestProjectUtilities\UnitTestProjectUtilities.csproj", "{2151E426-DDA8-4D8D-A23B-0DA8A491D987}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

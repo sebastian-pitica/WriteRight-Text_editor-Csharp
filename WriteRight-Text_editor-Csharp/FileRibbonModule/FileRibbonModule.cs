@@ -78,7 +78,7 @@ namespace FileRibbonModule
 
                 TabPage tabPage = Utilities.CreateTab(Path.GetFileName(path));
                 _mainTabControlRef.TabPages.Add(tabPage);
-               _mainTabControlRef.SelectedIndex = _mainTabControlRef.TabPages.Count - 1;
+                _mainTabControlRef.SelectedIndex = _mainTabControlRef.TabPages.Count - 1;
 
                 RichTextBoxV2 mainTextBoxRef = Utilities.GetRichTextBoxV2FromTabControl(_mainTabControlRef);
 
@@ -153,7 +153,7 @@ namespace FileRibbonModule
 
         public override void SetTarget(IRichTextBoxV2 mainTextBox)
         {
-            _mainTextBoxRef = (RichTextBoxV2) mainTextBox;
+            _mainTextBoxRef = (RichTextBoxV2)mainTextBox;
         }
     }
 
@@ -184,15 +184,15 @@ namespace FileRibbonModule
                 switch (result)
                 {
                     case DialogResult.Yes:
-                    {
-                        MainTextBoxCommand command = SaveFileCommand.GetCommandObj();
-                        command.SetTarget(richTextBoxV2);
-                        command.Execute();
+                        {
+                            MainTextBoxCommand command = SaveFileCommand.GetCommandObj();
+                            command.SetTarget(richTextBoxV2);
+                            command.Execute();
 
-                        if (richTextBoxV2.IsSaved)
-                            RemoveCurrentTab();
-                        break;
-                    }
+                            if (richTextBoxV2.IsSaved)
+                                RemoveCurrentTab();
+                            break;
+                        }
                     case DialogResult.No:
                         RemoveCurrentTab();
                         break;
