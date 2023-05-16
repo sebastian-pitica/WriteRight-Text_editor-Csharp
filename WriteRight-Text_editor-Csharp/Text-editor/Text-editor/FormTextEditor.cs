@@ -9,7 +9,7 @@ using WriteRight_Text_editor_Csharp.Properties;
 using CustomControls;
 using static CommonsModule.UtilitiesFormat;
 using FormatRibbonModule;
-using HelpModule;
+using HelpRibbonModule;
 using static CommonsModule.Utilities;
 
 /**************************************************************************

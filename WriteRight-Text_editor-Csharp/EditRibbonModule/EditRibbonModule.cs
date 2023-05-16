@@ -163,6 +163,7 @@ namespace EditRibbonModule
         private RichTextBoxV2 _mainTextBoxRef;
         private int _indexReplaceNext;
         private string _lastSearchedText;
+        private Boolean _isVisible=false;
         private SearchAndReplaceCommand() { }
 
         public new static SearchAndReplaceCommand GetCommandObj()
@@ -190,7 +191,6 @@ namespace EditRibbonModule
                 AutoSizeMode = AutoSizeMode.GrowAndShrink,
                 Padding = new Padding(20, 10, 20, 10)
             };
-
             // Creaza un panou pentru atasarea elementelor grafice
             FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel()
             {
@@ -327,6 +327,7 @@ namespace EditRibbonModule
             //Adaug panoul in fereastra si afisez fereastra
             windowInputData.Controls.Add(flowLayoutPanel);
             windowInputData.ShowDialog();
+            _isVisible = true;
         }
     }
 
@@ -334,6 +335,8 @@ namespace EditRibbonModule
     {
         private static SearchCommand _singletonInstance;
         private RichTextBoxV2 _mainTextBoxRef;
+        private Boolean _isVisible=false;
+
 
         private SearchCommand() { }
 
@@ -436,7 +439,8 @@ namespace EditRibbonModule
 
             // Adaug panoul in fereastra si afisez fereastra
             inputDataForm.Controls.Add(flowLayoutPanel);
-            inputDataForm.Show();
+            inputDataForm.ShowDialog();
+            _isVisible = true;
         }
     }
 

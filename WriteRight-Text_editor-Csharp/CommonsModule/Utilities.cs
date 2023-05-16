@@ -17,7 +17,7 @@ using System.Xml;
  *  cuprinsul celorlalte module sau pentru că nu pot fi asociate cu alt   *
  *  modul concret.                                                        *
  *  Designed by: Pitica Sebastian                                         *
- *  Updated by: Pitica Sebastian, Matei Rares                             *
+ *  Updated by: Pitica Sebastian, Matei Rares, Caulea Vasile              *
  *                                                                        *
  **************************************************************************/
 

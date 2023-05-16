@@ -6,6 +6,15 @@ using System.Reflection;
 using System.Windows.Forms;
 using TextEditor;
 
+/**************************************************************************
+ *                                                                        *
+ *  File:        UnitTestEditMenu.cs                                      *
+ *  Copyright:   (c) 2023, Vasile Caulea                                  *
+ *  Description: Fișierul conține funcți de test pentru funcționalitățile *
+ *  moduluilui Utilities                                                  *               
+ *                                                                        * 
+ **************************************************************************/
+
 namespace UnitTestProjectUtilities
 {
     [TestClass]

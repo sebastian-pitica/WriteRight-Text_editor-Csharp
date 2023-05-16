@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33529.622
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text-editor", "Text-editor\Text-editor.csproj", "{4482D650-22D1-4C55-BD6C-7D5C1E1EC3F6}"
 EndProject
@@ -17,11 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "..\Custom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatRibbonModule", "..\FormatRibbonModule\FormatRibbonModule.csproj", "{B7CFA4A4-FADD-4CE9-8732-BFCC9E594DC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpModule", "..\HelpModule\HelpModule.csproj", "{15F95071-ACA5-41EA-9FF4-73856BB07B65}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectFileRibbonMenu", "..\UnitTesting\UnitTestProjectFileRibbonMenu\UnitTestProjectFileRibbonMenu.csproj", "{2431BD6F-BBE9-446D-8715-F1C38E98B094}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpRibbonModule", "..\HelpRibbonModule\HelpRibbonModule.csproj", "{15F95071-ACA5-41EA-9FF4-73856BB07B65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectUtilities", "..\UnitTesting\UnitTestProjectUtilities\UnitTestProjectUtilities.csproj", "{2151E426-DDA8-4D8D-A23B-0DA8A491D987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectEditRibbonMenu", "..\UnitTesting\UnitTestProjectEditRibbonMenu\UnitTestProjectEditRibbonMenu.csproj", "{2431BD6F-BBE9-446D-8715-F1C38E98B094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectHelpRibbonMenu", "..\UnitTesting\UnitTestProjectHelpRibbonMenu\UnitTestProjectHelpRibbonMenu.csproj", "{3665C99C-32C8-443F-AAE6-6D6324583D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectFileRibbonMenu", "..\UnitTesting\UnitTestProjectFileRibbonMenu\UnitTestProjectFileRibbonMenu.csproj", "{6AFCB9FE-F6EB-4135-A73C-594FC11BDDB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,14 +65,22 @@ Global
 		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15F95071-ACA5-41EA-9FF4-73856BB07B65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2151E426-DDA8-4D8D-A23B-0DA8A491D987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2431BD6F-BBE9-446D-8715-F1C38E98B094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3665C99C-32C8-443F-AAE6-6D6324583D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3665C99C-32C8-443F-AAE6-6D6324583D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3665C99C-32C8-443F-AAE6-6D6324583D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3665C99C-32C8-443F-AAE6-6D6324583D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFCB9FE-F6EB-4135-A73C-594FC11BDDB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFCB9FE-F6EB-4135-A73C-594FC11BDDB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFCB9FE-F6EB-4135-A73C-594FC11BDDB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFCB9FE-F6EB-4135-A73C-594FC11BDDB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

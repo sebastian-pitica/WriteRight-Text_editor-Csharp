@@ -1,0 +1,13 @@
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\HelpRibbonModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\HelpRibbonModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CommonsModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CustomControls.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\Interfaces.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CommonsModule.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CustomControls.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\Interfaces.pdb
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.AssemblyReference.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.CoreCompileInputs.cache
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.CopyComplete
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.dll
+D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.pdb
