@@ -11,3 +11,16 @@ D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Help
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.CopyComplete
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.dll
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\HelpRibbonModule.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\HelpRibbonModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CommonsModule.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CustomControls.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\Interfaces.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CommonsModule.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\CustomControls.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\bin\Debug\Interfaces.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.AssemblyReference.cache
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.CoreCompileInputs.cache
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.csproj.CopyComplete
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\HelpRibbonModule\obj\Debug\HelpRibbonModule.pdb

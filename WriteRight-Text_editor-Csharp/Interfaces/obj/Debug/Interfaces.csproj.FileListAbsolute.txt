@@ -10,3 +10,9 @@ D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Inte
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
 D:\AC\an III\IP\WriteRight-Text_editor-Csharp\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.AssemblyReference.cache
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.dll
+C:\Users\matei\Desktop\ip_proiect\proiect git\WriteRight-Text_editor-Csharp\Interfaces\obj\Debug\Interfaces.pdb

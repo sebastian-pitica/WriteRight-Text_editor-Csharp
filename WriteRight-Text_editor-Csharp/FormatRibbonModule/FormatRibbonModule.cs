@@ -378,13 +378,13 @@ namespace FormatRibbonModule
                         if (_isDefault)
                         {
                             doc.SelectSingleNode("//default").InnerText = "true";
-                            IsXmlChanged = true;
                         }
                         else
                         {
                             doc.SelectSingleNode("//default").InnerText = "false";
-                            IsXmlChanged = true;
                         }
+                        IsXmlChanged = true;
+
                         break;
                 }
                 doc.Save("../../../../colors.xml");

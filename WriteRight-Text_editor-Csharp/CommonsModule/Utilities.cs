@@ -499,7 +499,7 @@ namespace CommonsModule
         /// operatori, preprocesor, strings,comentarii line si multiline.
         /// </summary>
         /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
-        public static void LiniarHighLighting(RichTextBoxV2 richTextBox)
+        public static void LinearHighLighting(RichTextBoxV2 richTextBox)
         {
             try
             {
@@ -589,7 +589,7 @@ namespace CommonsModule
         /// Verifica daca Selection este intr-un commment block
         /// </summary>
         /// <param name="richTextBox">Parametrul reprezintă Controlul in a carui text se fac procesarile</param>
-        private static bool IsSelectionInCommentBlock(RichTextBox richTextBox)
+        public static bool IsSelectionInCommentBlock(RichTextBox richTextBox)
         {
             int selectionStart = richTextBox.SelectionStart;
             string text = richTextBox.Text;
@@ -633,8 +633,9 @@ namespace CommonsModule
                     position += 4;
                     braceCount--;
                 }
-                richTextBox.Select(richTextBox.SelectionStart, 0);
                 if (tabs == "") { return; }
+                richTextBox.Select(richTextBox.SelectionStart, 0);
+                
 
                 Clipboard.SetText(tabs);
                 richTextBox.Paste();
@@ -683,6 +684,7 @@ namespace CommonsModule
             {
                 richTextBox.SelectionColor = currColor;
                 richTextBox.SelectedText = richTextBox.SelectedText.Replace("*/", "").Replace("/*", "");
+                CompleteHighlight(richTextBox); 
                 return;
             }
             int firstIndex = richTextBox.SelectionStart;
@@ -690,6 +692,7 @@ namespace CommonsModule
             richTextBox.SelectionColor = ColorTranslator.FromHtml(commentColor);
             richTextBox.SelectedText = "/*" + richTextBox.SelectedText + "*/";
             richTextBox.DeselectAll();
+            if (firstIndex == 0) firstIndex = 1;
             richTextBox.Select(firstIndex - 1, 1);
             richTextBox.SelectionColor = new Color();
             richTextBox.DeselectAll();

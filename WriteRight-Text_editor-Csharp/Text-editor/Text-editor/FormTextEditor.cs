@@ -400,7 +400,7 @@ namespace TextEditor
                 {
                     _richTextBoxMainV2.HideSelection = true;
                     ActiveControl = tabControlFiles;
-                    LiniarHighLighting(_richTextBoxMainV2);
+                    LinearHighLighting(_richTextBoxMainV2);
                     _richTextBoxMainV2.Select();
                 }
             }
