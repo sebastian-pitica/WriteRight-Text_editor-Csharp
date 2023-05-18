@@ -1,10 +1,8 @@
-﻿using CommonsModule;
-using CustomControls;
+﻿using CustomControls;
 using HelpRibbonModule;
 using Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using TextEditor;

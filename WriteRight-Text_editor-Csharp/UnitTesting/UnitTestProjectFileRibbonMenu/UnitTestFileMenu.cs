@@ -28,19 +28,19 @@ namespace UnitTestProjectFileRibbonMenu
         [TestInitialize]
         public void Setup()
         {
-            var tabControlField = _formMainWindow.GetType().GetField("tabControlFiles", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo tabControlField = _formMainWindow.GetType().GetField("tabControlFiles", BindingFlags.NonPublic | BindingFlags.Instance);
             if (tabControlField != null) _tabControlFiles = (TabControl)tabControlField.GetValue(_formMainWindow);
 
-            var mainTextBoxField = _formMainWindow.GetType().GetField("_richTextBoxMainV2", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo mainTextBoxField = _formMainWindow.GetType().GetField("_richTextBoxMainV2", BindingFlags.NonPublic | BindingFlags.Instance);
             if (mainTextBoxField != null) _mainTextBox = (RichTextBoxV2)mainTextBoxField.GetValue(_formMainWindow);
         }
 
         [TestMethod]
         public void TestMethodNewFile()
         {
-            var expectedOutput = _tabControlFiles.TabCount + 1;
+            int expectedOutput = _tabControlFiles.TabCount + 1;
 
-            var command = NewFileCommand.GetCommandObj();
+            NewFileCommand command = NewFileCommand.GetCommandObj();
             command.SetTarget(_tabControlFiles);
             command.Execute();
             
@@ -50,8 +50,8 @@ namespace UnitTestProjectFileRibbonMenu
         [TestMethod]
         public void TestMethodCloseFile()
         {
-            var expectedOutput = _tabControlFiles.TabCount - 1;
-            var command = CloseFileCommand.GetCommandObj();
+            int expectedOutput = _tabControlFiles.TabCount - 1;
+            CloseFileCommand command = CloseFileCommand.GetCommandObj();
             command.SetTarget(_tabControlFiles);
             command.Execute();
 
@@ -62,8 +62,8 @@ namespace UnitTestProjectFileRibbonMenu
         [TestMethod]
         public void TestMethodOpenFile()
         {
-            var expectedTabNumber = _tabControlFiles.TabCount + 1;
-            var command = OpenFileCommand.GetCommandObj();
+            int expectedTabNumber = _tabControlFiles.TabCount + 1;
+            OpenFileCommand command = OpenFileCommand.GetCommandObj();
             command.SetTarget(_tabControlFiles);
             command.Execute();
 
@@ -89,7 +89,7 @@ namespace UnitTestProjectFileRibbonMenu
 
             //Assert.IsFalse(mainTextBox.IsSaved);
 
-            var command = SaveFileCommand.GetCommandObj();
+            SaveFileCommand command = SaveFileCommand.GetCommandObj();
             command.SetTarget(_mainTextBox);
             command.Execute();
             // if executed properly the file should appear as saved

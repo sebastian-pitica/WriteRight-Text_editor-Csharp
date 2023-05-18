@@ -3,7 +3,6 @@ using CustomControls;
 using Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Drawing;
-using System.IO.IsolatedStorage;
 using System.Reflection;
 using System.Windows.Forms;
 using TextEditor;
@@ -30,11 +29,11 @@ namespace UnitTestProjectUtilities
         [TestInitialize]
         public void Setup()
         {
-            var tabControlField = _formMainWindow.GetType()
+            FieldInfo tabControlField = _formMainWindow.GetType()
                 .GetField("tabControlFiles", BindingFlags.NonPublic | BindingFlags.Instance);
             _tabControlFiles = (TabControl)tabControlField?.GetValue(_formMainWindow);
 
-            var mainTextBoxField = _formMainWindow.GetType().GetField("_richTextBoxMainV2", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo mainTextBoxField = _formMainWindow.GetType().GetField("_richTextBoxMainV2", BindingFlags.NonPublic | BindingFlags.Instance);
             if (mainTextBoxField != null) _mainTextBox = (RichTextBoxV2)mainTextBoxField.GetValue(_formMainWindow);
 
         }
@@ -43,7 +42,7 @@ namespace UnitTestProjectUtilities
         public void TestMethodCreateTab()
         {
             const string tabName = "newTab";
-            var tab = Utilities.CreateTab(tabName);
+            TabPage tab = Utilities.CreateTab(tabName);
 
             Assert.AreEqual(tabName, tab.Text);
             Assert.IsInstanceOfType(tab.Controls[0], typeof(ITextEditorControl));
@@ -52,7 +51,7 @@ namespace UnitTestProjectUtilities
         [TestMethod]
         public void TestMethodGetFileNameFromTabControlFilePath()
         {
-            var result = Utilities.GetFileNameFromTabControl(_tabControlFiles, true);
+            string result = Utilities.GetFileNameFromTabControl(_tabControlFiles, true);
             Assert.AreEqual("new", result);
         }
 
@@ -72,7 +71,7 @@ namespace UnitTestProjectUtilities
             const string filePath = "/new/file.txt";
             ((TextEditorControl)_tabControlFiles.TabPages[0].Controls[0]).RichTextBoxEditor.FilePath = filePath;
 
-            var result = Utilities.GetFileNameFromTabControl(_tabControlFiles, false);
+            string result = Utilities.GetFileNameFromTabControl(_tabControlFiles, false);
             Assert.AreEqual(filePath.Substring(filePath.LastIndexOf('/') + 1), result);
         }
 
@@ -89,7 +88,7 @@ namespace UnitTestProjectUtilities
         public void TestMethodEnterTab()
         {
             _mainTextBox.Text = "Acesta este un test menit adauge un tab { daca selectia \n se afla intr-un code block }";
-            string test = "Acesta este un test menit adauge un tab { \tdaca selectia \n se afla intr-un code block }";
+            const string test = "Acesta este un test menit adauge un tab { \tdaca selectia \n se afla intr-un code block }";
             _mainTextBox.SelectionStart = 42;
             UtilitiesFormat.EnterTab(_mainTextBox);
             Assert.AreEqual(test, _mainTextBox.Text);
@@ -104,7 +103,7 @@ namespace UnitTestProjectUtilities
             
             UtilitiesFormat.CommentUncomment(_mainTextBox);
 
-            Assert.AreEqual(test, _mainTextBox.Text.ToString());
+            Assert.AreEqual(test, _mainTextBox.Text);
         }
 
         [TestMethod]
@@ -112,17 +111,17 @@ namespace UnitTestProjectUtilities
         {
             _mainTextBox.Text = "Voi insera un text aici://; textul ar trebui sa aiba acelasi font ca cel din RichTextBox";
             _mainTextBox.SelectionStart=25;
-            Font fontCurent=_mainTextBox.Font;
+            Font fontCurrent=_mainTextBox.Font;
             
             Clipboard.Clear();
             Clipboard.SetText("Un text format din 35 de caracteree");
            
-            string test = "Voi insera un text aici:/Un text format din 35 de caracteree/; textul ar trebui sa aiba acelasi font ca cel din RichTextBox"; ;
+            const string test = "Voi insera un text aici:/Un text format din 35 de caracteree/; textul ar trebui sa aiba acelasi font ca cel din RichTextBox";
             UtilitiesFormat.FormatPaste(_mainTextBox);
             
             Assert.AreEqual(test,_mainTextBox.Text);
             _mainTextBox.Select(25, 60);
-            Assert.AreEqual(fontCurent, _mainTextBox.SelectionFont);
+            Assert.AreEqual(fontCurrent, _mainTextBox.SelectionFont);
         }
 
         [TestMethod]
